@@ -6,7 +6,7 @@ COGS 121 REPO
   Xinyi Jiao  
   Siyu Zhou
 
-## Project Proposal:
+## Project Description:
   Hi, we are team "ZZZZ". This quarter, we are designing for the people with
   disabilities.
   Introducing our web-app "#TBD#", a platform for people with disabilities to seek help with daily matters.  
