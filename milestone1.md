@@ -13,4 +13,4 @@
   How does "#TBD#" works? #TBD# is not only a platform to seek help, we are making it a platform to provide help as well. People with disabilities could submit a request to our platform while the volunteers could accept the tickets.
 
 ## Why #TBD# fits the project theme?
-  We believe that this is a meaningful and helpful platform that our target population *NEEDS*. From our friends experiences, there's always some moments that they need helps from others. However, it isn't always easy to ask for help. "TBD" provides a fast, safe and convenient platform for people with disabilities to solve there needs.
+  We believe that this is a meaningful and helpful platform that our target population **NEEDS**. From our friends experiences, there's always some moments that they need helps from others. However, it isn't always easy to ask for help. "TBD" provides a fast, safe and convenient platform for people with disabilities to solve there needs.
