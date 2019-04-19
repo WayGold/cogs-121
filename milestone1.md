@@ -1,10 +1,10 @@
-#COGS 121 Team ZZZZ milestone 1
+# COGS 121 Team ZZZZ milestone 1
 
-##Team Members:
+## Team Members:
   Wei Zeng
   Qianzi Li
   Xinyi Jiao
   Siyu Zhou
 
-##Project Proposal:
+## Project Proposal:
   Hi, we are team "ZZZZ".  
