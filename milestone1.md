@@ -11,3 +11,6 @@
   disabilities.
   Introducing our web-app "#TBD#", a platform for people with disabilities to seek help with daily matters.  
   How does "#TBD#" works? #TBD# is not only a platform to seek help, we are making it a platform to provide help as well. People with disabilities could submit a request to our platform while the volunteers could accept the tickets.
+
+## Why #TBD# fits the project theme?
+  We believe that this is a meaningful and helpful platform that our target population *NEEDS*.
