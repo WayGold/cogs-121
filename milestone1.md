@@ -19,5 +19,6 @@
   We plan to use the Google Map API so that we can access the location info and use the distance matrix API to calculate the distance between the requester and volunteers so that we can sort the tickets. Also we can mark the destination for the volunteers etc.
 
 ## Storyboards:
+  ![Prototype 1](images/prototype1.png)
 
 ## Prototypes:
