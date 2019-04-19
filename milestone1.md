@@ -3,7 +3,7 @@
 ## Team Members:
   Wei Zeng  
   Qianzi Li  
-  Xinyi Jiao
+  Xinyi Jiao  
   Siyu Zhou
 
 ## Project Proposal:
