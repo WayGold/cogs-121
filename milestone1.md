@@ -20,6 +20,7 @@
 
 ## Storyboards:
 ### Storyboard 1:
-  ![Storyboard 1](images/prototype1.png)
-
+  ![Storyboard 1](images/storyboard1.png)
+### Storyboard 2:
+  ![Storyboard 2](images/storyboard2.jpg)
 ## Prototypes:
