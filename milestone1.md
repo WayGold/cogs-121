@@ -7,4 +7,5 @@
   Siyu Zhou
 
 ## Project Proposal:
-  Hi, we are team "ZZZZ".   
+  Hi, we are team "ZZZZ". This quarter, we are designing for the people with
+  disabilities. Introducing our web-app "<-- TBD -->", a platform for people with disabilities to seek help with daily matters. 
