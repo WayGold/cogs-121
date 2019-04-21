@@ -26,11 +26,13 @@
 ## Prototypes:
 ### Home Page:
   ![Home Page](images/HomePage.jpg)
+  
 ### Prototype 1:
   ![Request](images/RequestPage.jpg)
   ![Request Progress](images/RequestProg.png)
   ![Record](images/Record.jpg)
   ![Review](images/Review.jpg)
+
 ### Prototype 2:
   ![RequestBoard](images/RequestBoard.jpg)
   ![VolPage](images/VolPage.jpg)
