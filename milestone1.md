@@ -26,7 +26,7 @@
 ## Prototypes:
 ### Home Page:
   ![Home Page](images/HomePage.jpg)
-###Prototype 1:
+### Prototype 1:
   ![Request](images/RequestPage.jpg)
   ![Request Progress](images/RequestProg.png)
   ![Record](images/Record.jpg)
