@@ -28,18 +28,19 @@
 #### At the Home Page, our users could either click on "Be a volunteer.." or "Get Helps.." to enter our two different sections of interfaces.  
   ![Home Page](images/HomePage.jpg)
 
-### Prototype 1 (User Click on "Get Help"):
-  ![Request](images/RequestPage.jpg)
+### Prototype 1 (User Click on "Get Help"):  
+
 #### Once the user fill in all the information and hit submit, our app will navigate to the progress page. If the user hit cancel, the app will simply return to the home page.  
+  ![Request](images/RequestPage.jpg)
 
-  ![Request Progress](images/RequestProg.jpg)
 #### At the progress page, user have a view of who is picking up the order. Users could click cancel to cancel the order navigating back to the home page or they could hit record to see all ongoing and past orders.  
+  ![Request Progress](images/RequestProg.jpg)
 
-  ![Record](images/Record.jpg)
 #### At the record page, users could hit back to go back to the progress page.  
+  ![Record](images/Record.jpg)
 
+#### Once the order is complete, users could rate and comment the volunteer. If users hit cancel, no rate and comments will be documented, if they hit submit, info will be recorded.
   ![Review](images/Review.jpg)
-#### Once the order is complete, users could rate and comment the volunteer. If users hit cancel, no rate and comments will be documented, if they hit submit, info will be recorded.  
 
 ### Prototype 2 (User Click on "Be a volunteer"):
   ![RequestBoard](images/RequestBoard.jpg)
