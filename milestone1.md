@@ -26,14 +26,18 @@
 ## Prototypes:
 ### Home Page:
   ![Home Page](images/HomePage.jpg)
-  
-### Prototype 1:
+  At the Home Page, our users could either click on "Be a volunteer.." or "Get Helps.." to enter our two different sections of interfaces.  
+
+### Prototype 1 (User Click on "Get Help"):
   ![Request](images/RequestPage.jpg)
-  ![Request Progress](images/RequestProg.png)
+  Once the user fill in all the information and hit submit, our app will navigate to the progress page. If the user hit cancel, the app will simply return to the home page.  
+
+  ![Request Progress](images/RequestProg.jpg)
+
   ![Record](images/Record.jpg)
   ![Review](images/Review.jpg)
 
-### Prototype 2:
+### Prototype 2 (User Click on "Be a volunteer"):
   ![RequestBoard](images/RequestBoard.jpg)
   ![VolPage](images/VolPage.jpg)
   ![Record](images/RecordVol.jpg)
