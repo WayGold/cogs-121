@@ -43,7 +43,15 @@
   ![Review](images/Review.jpg)
 
 ### Prototype 2 (User Click on "Be a volunteer"):
-  ![RequestBoard](images/RequestBoard.jpg)
-  ![VolPage](images/VolPage.jpg)
-  ![Record](images/RecordVol.jpg)
+
+#### Once the users enter the Request Board page, they will be able to see all requests submitted and filter by their preferences. If they find a match, simply click on the ticket to accept.  
+  ![RequestBoard](images/RequestBoard.jpg)  
+
+#### After accepting a ticket, info about the requester will be displayed, including a map showing location, phone number and names. Users could click cancel to cancel the order navigating back to the home page or they could hit record to see all ongoing and past orders.     
+  ![VolPage](images/VolPage.jpg)  
+
+#### At the record page, users could hit back to go back to the previous page.
+  ![Record](images/RecordVol.jpg)  
+
+#### 
   ![Report](images/Report.jpg)
