@@ -47,11 +47,11 @@
 #### Once the users enter the Request Board page, they will be able to see all requests submitted and filter by their preferences. If they find a match, simply click on the ticket to accept.  
   ![RequestBoard](images/RequestBoard.jpg)  
 
-#### After accepting a ticket, info about the requester will be displayed, including a map showing location, phone number and names. Users could click cancel to cancel the order navigating back to the home page or they could hit record to see all ongoing and past orders.     
+#### After accepting a ticket, info about the requester will be displayed, including a map showing location, phone number and names. Users could click cancel to cancel the order navigating back to the home page or they could hit record to see all ongoing and past orders. If the volunteer is done with the help, simply hit "done!" to end the ticket and the app will navigate to the report page.
   ![VolPage](images/VolPage.jpg)  
 
 #### At the record page, users could hit back to go back to the previous page.
   ![Record](images/RecordVol.jpg)  
 
-#### 
+#### Once the order is complete, users could rate and comment the requester. If users hit cancel, no rate and comments will be documented, if they hit submit, info will be recorded.
   ![Report](images/Report.jpg)
