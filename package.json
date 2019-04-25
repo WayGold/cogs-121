@@ -1,0 +1,21 @@
+{
+  "name": "Ez_help-v1",
+  "version": "1.0.0",
+  "description": "Cogs-121 Class Project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Wei Zeng",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/WayGold/cogs-121.git"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "jquery": "^3.4.0",
+    "sqlite3": "^4.0.0"
+  }
+}
