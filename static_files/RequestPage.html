@@ -10,61 +10,87 @@
   <script type="text/javascript">
     $(document).ready(() => {
 
-      let emergency, catagory, disability, description;
+      let input_emergency, input_category, input_disability, input_description;
+      let current_user = 0;
 
       $('#zw_Low').click(() => {
         console.log("low clicked");
-        emergency = "Low";
-        $('#zw_emergency_status').html('Emergency: ' + emergency);
-      })
+        input_emergency = "Low";
+        $('#zw_emergency_status').html('Emergency: ' + input_emergency);
+      });
 
       $('#zw_Medium').click(() => {
         console.log("medium clicked");
-        emergency = "Medium";
-        $('#zw_emergency_status').html('Emergency: ' + emergency);
-      })
+        input_emergency = "Medium";
+        $('#zw_emergency_status').html('Emergency: ' + input_emergency);
+      });
 
       $('#zw_High').click(() => {
         console.log("high clicked");
-        emergency = "High";
-        $('#zw_emergency_status').html('Emergency: ' + emergency);
-      })
+        input_emergency = "High";
+        $('#zw_emergency_status').html('Emergency: ' + input_emergency);
+      });
 
       $('#zw_Routine').click(() => {
         console.log("Routine clicked");
-        category = "Routine";
-        $('#zw_category_status').html('Category: ' + category);
-      })
+        input_category = "Routine";
+        $('#zw_category_status').html('Category: ' + input_category);
+      });
 
       $('#zw_Trans').click(() => {
         console.log("Transportation clicked");
-        category = "Transportation";
-        $('#zw_category_status').html('Category: ' + category);
-      })
+        input_category = "Transportation";
+        $('#zw_category_status').html('Category: ' + input_category);
+      });
 
       $('#zw_Mental').click(() => {
         console.log("Mental clicked");
-        disability = "Mental";
-        $('#zw_disability_status').html('Disability: ' + disability);
-      })
+        input_disability = "Mental";
+        $('#zw_disability_status').html('Disability: ' + input_disability);
+      });
 
       $('#zw_Physical').click(() => {
         console.log("Physical clicked");
-        category = "Physical";
-        $('#zw_disability_status').html('Disability: ' + disability);
-      })
+        input_category = "Physical";
+        $('#zw_disability_status').html('Disability: ' + input_disability);
+      });
 
       $('#zw_submit').click(() => {
         console.log("Submit clicked");
         description = $('#zw_description').val();
-      })
+
+        if(confirm("Are you sure to submit?")){
+          $.ajax({
+            // all URLs are relative to http://localhost:3000/
+            url: 'request_info',
+            type: 'POST', // <-- this is POST, not GET
+            data: {
+              userid: current_user,
+              emergency: input_emergency,
+              category: input_category,
+              disability: input_disability,
+              description: input_description
+            },
+            success: (data) => {
+              if(confirm("Submission Completed!")){
+                //FIXME
+                window.location = "index.html";
+              }
+              else{
+                //FIXME
+                window.location = "index.html";
+              }
+            }
+          });
+        }
+      });
 
       $('#zw_cancel').click(() => {
         console.log("Cancel clicked");
         if(confirm("Are you sure to cancel?")) {
           window.location = "index.html";
         }
-      })
+      });
 
     })
   </script>

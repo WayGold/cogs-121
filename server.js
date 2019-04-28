@@ -1,3 +1,5 @@
+//Server backend file
+
 const express = require('express');
 app = express();
 
@@ -18,6 +20,29 @@ app.get('/users', (req, res) => {
   });
 });
 
+app.post('/request_info', (req, res) => {
+  console.log(req.body);
+
+  db.run(
+    'INSERT INTO request_info VALUES ($userid, $emergency, $category, $disability, $description)',
+    // parameters to SQL query:
+    {
+      $userid: req.body.userid,
+      $emergency: req.body.emergency,
+      $category: req.body.category,
+      $disability: req.body.disability,
+      $description: req.body.description,
+    },
+    // callback function to run when the query finishes:
+    (err) => {
+      if (err) {
+        res.send({message: 'error in app.post(/request_info)'});
+      } else {
+        res.send({message: 'successfully run app.post(/request_info)'});
+      }
+    }
+  );
+});
 
 app.listen(3000, () => {
   console.log('Server started at http://localhost:3000/');
