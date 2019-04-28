@@ -4,14 +4,19 @@ const db = new sqlite3.Database('ezhelp.db');
 
 db.serialize(() => {
   // create a new database table:
-  db.run("CREATE TABLE users (name TEXT, phone TEXT, location TEXT)");
-  db.run("CREATE TABLE request_info (emergency TEXT, category TEXT, disability TEXT, description TEXT)")
+  db.run("CREATE TABLE users (userid INT PRIMARY KEY, name TEXT, phone TEXT, location TEXT)");
+  db.run("CREATE TABLE request_info (userid INT PRIMARY KEY, emergency TEXT, category TEXT, disability TEXT, description TEXT)";
+
+  db.run("INSERT INTO users VALUES (0, 'Wei', '858-666-6666', '9500 Gilman Dr., La Jolla, CA')");
+  db.run("INSERT INTO users VALUES (1, 'Stella', '858-222-2222', '9500 Gilman Dr., La Jolla, CA')");
+  db.run("INSERT INTO users VALUES (2, 'Joyce', '858-888-8888', '9500 Gilman Dr., La Jolla, CA')");
+  db.run("INSERT INTO users VALUES (3, 'Siyu', '858-999-9999', '9500 Gilman Dr., La Jolla, CA')");
 
   console.log('successfully created the request_info table in ezhelp.db');
 
   // print them out to confirm their contents:
-  db.each("SELECT name, phone, location FROM request_info", (err, row) => {
-      console.log(row.name + ": " + row.phone + ' - ' + row.location);
+  db.each("SELECT userid, name, phone, location FROM request_info", (err, row) => {
+      console.log(row.userid + " -> " + row.name + ": " + row.phone + ' - ' + row.location);
   });
 });
 
