@@ -11,6 +11,7 @@
     $(document).ready(() => {
 
       let input_emergency, input_category, input_disability, input_description;
+      //FIXME
       let current_user = 0;
 
       $('#zw_Low').click(() => {
@@ -51,13 +52,13 @@
 
       $('#zw_Physical').click(() => {
         console.log("Physical clicked");
-        input_category = "Physical";
+        input_disability = "Physical";
         $('#zw_disability_status').html('Disability: ' + input_disability);
       });
 
       $('#zw_submit').click(() => {
         console.log("Submit clicked");
-        description = $('#zw_description').val();
+        input_description = $('#zw_description').val();
 
         if(confirm("Are you sure to submit?")){
           $.ajax({
