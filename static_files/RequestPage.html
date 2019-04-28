@@ -15,19 +15,56 @@
       $('#zw_Low').click(() => {
         console.log("low clicked");
         emergency = "Low";
+        $('#zw_emergency_status').html('Emergency: ' + emergency);
       })
 
       $('#zw_Medium').click(() => {
         console.log("medium clicked");
         emergency = "Medium";
+        $('#zw_emergency_status').html('Emergency: ' + emergency);
       })
 
       $('#zw_High').click(() => {
         console.log("high clicked");
         emergency = "High";
+        $('#zw_emergency_status').html('Emergency: ' + emergency);
       })
 
+      $('#zw_Routine').click(() => {
+        console.log("Routine clicked");
+        category = "Routine";
+        $('#zw_category_status').html('Category: ' + category);
+      })
 
+      $('#zw_Trans').click(() => {
+        console.log("Transportation clicked");
+        category = "Transportation";
+        $('#zw_category_status').html('Category: ' + category);
+      })
+
+      $('#zw_Mental').click(() => {
+        console.log("Mental clicked");
+        disability = "Mental";
+        $('#zw_disability_status').html('Disability: ' + category);
+      })
+
+      $('#zw_Physical').click(() => {
+        console.log("Physical clicked");
+        category = "Physical";
+        $('#zw_disability_status').html('Disability: ' + category);
+      })
+
+      $('#zw_submit').click(() => {
+        console.log("Submit clicked");
+        description = $('#zw_description').val();
+      })
+
+      $('#zw_cancel').click(() => {
+        console.log("Cancel clicked");
+        if(confirm("Are you sure to cancel?")) {
+          window.location = "index.html";
+        }
+      })
 
     })
   </script>
@@ -76,14 +113,16 @@
         <button class="button" id="zw_Low">Low</button>
         <button class="button" id="zw_Medium">Medium</button>
         <button class="button" id="zw_High">High</button>
+        <div id="zw_emergency_status"></div>
       </div>
     </div>
 
     <div class="container">
-      <h2 style="font-size: 30px;"> Catagory </h2>
+      <h2 style="font-size: 30px;"> Category </h2>
       <div class="div_button">
         <button class="button" id="zw_Routine">Routine</button>
         <button class="button" id="zw_Trans">Transportation</button>
+        <div id="zw_category_status"></div>
       </div>
     </div>
 
@@ -92,6 +131,7 @@
       <div class="div_button">
         <button class="button" id="zw_Mental">Mental</button>
         <button class="button" id="zw_Physical">Physical</button>
+        <div id="zw_disability_status"></div>
       </div>
     </div>
 
