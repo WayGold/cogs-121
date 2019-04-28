@@ -8,7 +8,7 @@ const db = new sqlite3.Database('ezhelp.db');
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use(express.static('static_files'));
+app.use(express.static('../static_files/html'));
 
 app.get('/users', (req, res) => {
   // db.all() fetches all results from an SQL query into the 'rows' variable:

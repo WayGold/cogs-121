@@ -63,7 +63,7 @@
         if(confirm("Are you sure to submit?")){
           $.ajax({
             // all URLs are relative to http://localhost:3000/
-            url: 'request_info',
+            url: '../request_info',
             type: 'POST', // <-- this is POST, not GET
             data: {
               userid: current_user,
@@ -75,11 +75,11 @@
             success: (data) => {
               if(confirm("Submission Completed!")){
                 //FIXME
-                window.location = "index.html";
+                window.location = "r_waiting.html";
               }
               else{
                 //FIXME
-                window.location = "index.html";
+                window.location = "r_waiting.html";
               }
             }
           });
@@ -89,7 +89,7 @@
       $('#zw_cancel').click(() => {
         console.log("Cancel clicked");
         if(confirm("Are you sure to cancel?")) {
-          window.location = "index.html";
+          window.location = "../index.html";
         }
       });
 
