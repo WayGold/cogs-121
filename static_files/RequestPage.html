@@ -4,8 +4,33 @@
   <head>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-    <script src="jquery-3.4.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   </head>
+
+  <script type="text/javascript">
+    $(document).ready(() => {
+
+      let emergency, catagory, disability, description;
+
+      $('#zw_Low').click(() => {
+        console.log("low clicked");
+        emergency = "Low";
+      })
+
+      $('#zw_Medium').click(() => {
+        console.log("medium clicked");
+        emergency = "Medium";
+      })
+
+      $('#zw_High').click(() => {
+        console.log("high clicked");
+        emergency = "High";
+      })
+
+
+
+    })
+  </script>
 
   <style>
     .fixed-top {
@@ -48,39 +73,38 @@
     <div class="container">
       <h2 style="font-size: 30px;"> Emergency Level </h2>
       <div class="div_button">
-        <button class="button" id="Low">Low</button>
-        <button class="button" id="Medium">Medium</button>
-        <button class="button" id="High">High</button>
+        <button class="button" id="zw_Low">Low</button>
+        <button class="button" id="zw_Medium">Medium</button>
+        <button class="button" id="zw_High">High</button>
       </div>
     </div>
 
     <div class="container">
       <h2 style="font-size: 30px;"> Catagory </h2>
       <div class="div_button">
-        <button class="button" id=""></button>
-        <button class="button" id=""></button>
-        <button class="button" id=""></button>
+        <button class="button" id="zw_Routine">Routine</button>
+        <button class="button" id="zw_Trans">Transportation</button>
       </div>
     </div>
 
     <div class="container">
       <h2 style="font-size: 30px;"> Disability Type</h2>
       <div class="div_button">
-        <button class="button" id="Mental">Mental</button>
-        <button class="button" id="Physical">Physical</button>
+        <button class="button" id="zw_Mental">Mental</button>
+        <button class="button" id="zw_Physical">Physical</button>
       </div>
     </div>
 
     <div class="container">
       <h2 style="font-size: 30px;"> Description</h2>
       <div class="div_button">
-        <input id="description" style="height: 100px;" type="text" size="50"/>
+        <input id="zw_description" style="height: 100px;" type="text" size="50"/>
       </div>
     </div>
 
     <div class="container" style="padding-top: 20px">
-      <button class="button" id="submit">Submit</button>
-      <button class="button" id="cancel">Cancel</button>
+      <button class="button" id="zw_submit">Submit</button>
+      <button class="button" id="zw_cancel">Cancel</button>
     </div>
 
   </body>
