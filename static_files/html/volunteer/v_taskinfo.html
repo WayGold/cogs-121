@@ -1,0 +1,142 @@
+</<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+    div.img {
+        border: 1px solid #ccc;
+    }
+
+    div.img:hover {
+        border: 1px solid #777;
+    }
+
+    div.img img {
+        width: 100%;
+        height: auto;
+    }
+
+    div.desc {
+        padding: 15px;
+        text-align: center;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .responsive {
+        padding: 0 6px;
+        float: left;
+        width: 50%;
+    }
+
+    @media only screen and (max-width: 700px){
+        .responsive {
+            width: 50%;
+            margin: 6px 0;
+        }
+    }
+
+    @media only screen and (max-width: 500px){
+        .responsive {
+            width: 100%;
+        }
+    }
+
+    .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    </style>
+
+  </head>
+
+  <script type="text/javascript">
+    $(document).ready(() => {
+      $('#zsy_finish').click(() => {
+        console.log("finish clicked");
+        if(confirm("Have you finished?")) {
+          window.location = "v_record.html";
+        }
+      });
+      $('#zsy_cancle').click(() => {
+        console.log("cancle clicked");
+        window.location = "v_record.html";
+      });
+
+    })
+  </script>
+  <style>
+    .fixed-top {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1030;
+    }
+
+    .navbar{
+      padding-top: .8rem;
+      padding-bottom: .8rem;
+      background-color: #05ffb0;
+    }
+    .container{
+      text-align: center;
+    }
+
+    .button{
+      padding-left: 1%;
+      padding-right: 1%;
+      top: 90%;
+    }
+
+    .div_button{
+      text-align: center;
+    }
+
+  </style>
+
+  <body>
+    <div style="padding:6px;">
+    <nav class="fixed-top navbar" id="mainNav">
+      <div>
+        <a href="index.html" style="padding-left: 1.0rem; font-family: 'Lobster'; color: white; font-size: 20px"> EzHelp </a>
+      </div>
+    </nav>
+
+    <h1 class="container" style="padding-top: 5%; font-size: 40px; position: relative"> REQUEST INFORMATION </h1>
+
+    <div class="responsive">
+      <div class="img">
+        <a target="_blank" href="zsy2.jpg">
+          <img src="zsy2.png" alt="ZSY" width="1200" height="800">
+        </a>
+        <div class="desc"></div>
+      </div>
+    </div>
+    <div class="responsive">
+      <div class="img">
+        <a target="_blank" href="zsy.jpg">
+          <img src="zsy.png" alt="ZSY" width="1200" height="800">
+        </a>
+        <div class="desc"></div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="container" style="padding-top: 20px">
+    <button class="button" id="zsy_cancle">cancle</button>
+    <button class="button" id="zsy_finish">finish</button>
+    </div>
+    </body>
+</html>

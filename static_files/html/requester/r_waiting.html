@@ -1,0 +1,97 @@
+</<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  </head>
+
+  <script type="text/javascript">
+    $(document).ready(() => {
+      $('#zsy_cancel').click(() => {
+        console.log("Cancel clicked");
+        if(confirm("Are you sure to cancel?")) {
+          window.location = "../index.html";
+        }
+      });
+
+    })
+  </script>
+
+  <script language="javascript" type="text/javascript">
+  setTimeout("javascript:location.href='r_matched.html'", 10000);
+  </script>
+
+  <style type="text/css">
+      .loading{
+          position: fixed;
+          top: 30%;
+          left: 50%;
+          margin: -20px 0 0 -20px;
+          width: 60px;
+          height: 60px;
+          border: 2px solid;
+          border-color: #333 #333 transparent;
+          border-radius: 50%;
+          box-sizing: border-box;
+          animation: loading 1s linear infinite;
+      }
+      @keyframes loading{
+          0%{
+              transform: rotate(0deg);
+          }
+          100%{
+              transform: rotate(360deg);
+          }
+      }
+  </style>
+  <style>
+    .fixed-top {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1030;
+    }
+
+    .navbar{
+      padding-top: .8rem;
+      padding-bottom: .8rem;
+      background-color: #05ffb0;
+    }
+    .container{
+      text-align: center;
+    }
+
+    .button{
+      padding-left: 1%;
+      padding-right: 1%;
+    }
+
+    .div_button{
+      text-align: center;
+    }
+
+  </style>
+
+  <body>
+    <nav class="fixed-top navbar" id="mainNav">
+      <div>
+        <a href="index.html" style="padding-left: 1.0rem; font-family: 'Lobster'; color: white; font-size: 20px"> EzHelp </a>
+      </div>
+    </nav>
+
+    <h1 class="container" style="padding-top: 5%; font-size: 60px; position: relative"> WAITING </h1>
+
+
+    <div class="loading"></div>
+
+    <p>Please Wait.</p>
+
+    <div class="container" style="padding-top: 100px";>
+      <button class="button" id="zsy_cancel">Cancel</button>
+    </div>
+
+  </body>
+</html>
