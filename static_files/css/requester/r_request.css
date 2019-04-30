@@ -1,0 +1,45 @@
+body {
+  background-image:url('../../images/bg.jpg');
+  /*background: #76b852; /* fallback for old browsers */
+  /*background: -webkit-linear-gradient(right, #dffad0, rgb(202, 235, 184));
+  /*background: -moz-linear-gradient(right, #76b852, #8DC26F);
+  background: -o-linear-gradient(right, #76b852, #8DC26F);
+  background: linear-gradient(to left, #76b852, #8DC26F);*/
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.click{
+  background-color: #42f4c5;
+}
+
+.btn-reset{
+  background-color: white;
+}
+
+.fixed-top{
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.navbar{
+  padding-top: .8rem;
+  padding-bottom: .8rem;
+  background-color: #05ffb0;
+}
+.container{
+  text-align: center;
+}
+
+.button{
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.div_button{
+  text-align: center;
+}
