@@ -7,9 +7,9 @@
   Siyu Zhou
 
 ## Idea Follow-Up & Restatement  
-  Nothing changed. We will continue designing for the people with disabilities.
+Nothing changed. We will continue designing for the people with disabilities.
 "Ezhelp" will be a platform where people in need could seek helps, and people
-with passion and love could provide.
+with passion and love could provide any kinds of help that people need.
 
 ## Early Development: UI Skeletons (April.27th ~ 30th)  
 
