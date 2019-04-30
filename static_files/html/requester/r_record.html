@@ -2,6 +2,8 @@
 <html>
 <head>
   <link rel="stylesheet" href="../../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../css/requester/r_record.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="../../lib/jquery-3.3.1.min.js"></script>
   <script src="../../js/requester/r_record.js"></script>
@@ -9,10 +11,15 @@
 </head>
 
 <body>
+  <nav class="fixed-top navbar" id="mainNav">
+      <div>
+          <a href="../index.html" style="padding-left: 1.0rem; font-family: 'Lobster'; color: white; font-size: 20px"> EzHelp </a>
+      </div>
+  </nav>
 
-  <div class="container">
+  <div class="container" style="padding-top: 10vh">
+
     <h1> Record </h1>
-
     <button class="btn-default" id="lqz_new_request">New Request</button>
     <button class="btn-default" id="lqz_home">Home</button>
     <button class="btn-default" id="lqz_refresh">
@@ -20,22 +27,25 @@
     </button>
 
     <script id="entry-template" type="text/x-handlebars-template">
-      <thead>
-        <tr>
-  				<td class='record'>
+      <div class='recordbox'>
+          <div class='record'>
+            <p>Status: ......</p>
             <p>Emergency Level: {{emergency}}</p>
             <p>Category: {{category}}</p>
             <p>Personal Condition: {{disability}}</p>
             <p>Description: {{description}}</p>
-  				</td>
-  			</tr>
-      </thead>
+          </div>
+          <div class='buttons'>
+            <button class='btn-default lqz_rate'> Rate </button>
+            <button class='btn-default lqz_report'> Report </button>
+          </div>
+  			</div>
 		</script>
 
 		<div class="list">
-			<table class="table table-bordered" id="templatedProjects" >
+			<div class="table" id="templatedProjects" >
         <!-- Records will be inserted here -->
-			</table>
+			</div>
 		</div>
 
   </div>

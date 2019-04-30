@@ -17,6 +17,19 @@ $(document).ready(() => {
           const curData = record;
           const curHtml = template(curData);
           parentDiv.append(curHtml);
+
+          $('.lqz_rate').click(() => {
+            window.location = "r_finished.html";
+          });
+
+          $('.lqz_report').click(() => {
+            window.location = "r_report.html";
+          });
+
+          $('.record').click(() => {
+            window.location = "r_waiting.html";
+          });
+
           console.log(curData)
         }
       }
@@ -29,6 +42,8 @@ $(document).ready(() => {
     $('#lqz_home').click(() => {
       window.location = "../index.html";
     });
+
+
 
     $('#lqz_refresh').click(() => {
       document.location.reload();
