@@ -48,7 +48,7 @@ textarea{
 }
 
 button {
-    
+
     background: #4CAF50;
     border-radius: 4px;
     border: 0;
@@ -93,11 +93,11 @@ button {
     content: '★ ';
 }
 .rate > input:checked ~ label {
-    color: #ffc700;    
+    color: #ffc700;
 }
 .rate:not(:checked) > label:hover,
 .rate:not(:checked) > label:hover ~ label {
-    color: #deb217;  
+    color: #deb217;
 }
 .rate > input:checked + label:hover,
 .rate > input:checked + label:hover ~ label,
@@ -108,3 +108,4 @@ button {
 }
 
 /* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
+>>>>>>> cbee3fcd1d71397f1b3794eb1483137a0e8b0032
