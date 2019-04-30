@@ -23,38 +23,94 @@
     <div>
       <h2 style="text-align:left; position: absolute; line-height: 0px"> Filter by: </h2>
     </div>
-<table>
-  <td>
 
-    <div class="div_button">
-      <h3 > Emergency Level </h3>
-      <button class="button" id="zw_Low">Low</button>
-      <button class="button" id="zw_Medium">Medium</button>
-      <button class="button" id="zw_High">High</button>
-      <div id="zw_emergency_status"></div>
+    <table>
+      <td>
+      <div class="div_button">
+        <h3 > Emergency Level </h3>
+        <button class="button" id="zw_Low">Low</button>
+        <button class="button" id="zw_Medium">Medium</button>
+        <button class="button" id="zw_High">High</button>
+        <div id="zw_emergency_status"></div>
+      </div>
+    </td>
+
+    <td>
+      <h3> Category </h3>
+      <div class="div_button">
+        <button class="button" id="zw_Routine">Routine</button>
+        <button class="button" id="zw_Trans">Transportation</button>
+        <div id="zw_category_status"></div>
+      </div>
+    </td>
+
+    <td>
+      <h3> Disability Type</h3>
+      <div class="div_button">
+        <button class="button" id="zw_Mental">Mental</button>
+        <button class="button" id="zw_Physical">Physical</button>
+        <div id="zw_disability_status"></div>
+      </div>
+    </td>
+  </table>
+
+  <div class="list">
+    <div class="table" id="templatedProjects" >
+
+  <div class='recordbox'>
+      <div class='record'>
+        <p>Requester: ......</p>
+        <p>Emergency Level: ......</p>
+        <p>Category: ......</p>
+        <p>Personal Condition: ......</p>
+        <p>Description: ......</p>
+      </div>
+      <div class='buttons'>
+        <button class='btn-default lqz_report'> Report </button>
+      </div>
     </div>
-  </td>
 
-  <td>
-    <h3> Category </h3>
-    <div class="div_button">
-      <button class="button" id="zw_Routine">Routine</button>
-      <button class="button" id="zw_Trans">Transportation</button>
-      <div id="zw_category_status"></div>
-    </div>
-  </td>
+    <div class='recordbox'>
+        <div class='record'>
+          <p>Requester: ......</p>
+          <p>Emergency Level: ......</p>
+          <p>Category: ......</p>
+          <p>Personal Condition: ......</p>
+          <p>Description: ......</p>
+        </div>
+        <div class='buttons'>
+          <button class='btn-default lqz_report'> Report </button>
+        </div>
+      </div>
 
-  <td>
-    <h3> Disability Type</h3>
-    <div class="div_button">
-      <button class="button" id="zw_Mental">Mental</button>
-      <button class="button" id="zw_Physical">Physical</button>
-      <div id="zw_disability_status"></div>
-    </div>
-  </td>
-</table>
+      <div class='recordbox'>
+          <div class='record'>
+            <p>Requester: ......</p>
+            <p>Emergency Level: ......</p>
+            <p>Category: ......</p>
+            <p>Personal Condition: ......</p>
+            <p>Description: ......</p>
+          </div>
+          <div class='buttons'>
+            <button class='btn-default lqz_report'> Report </button>
+          </div>
+        </div>
 
-
-
+        <div class='recordbox'>
+            <div class='record'>
+              <p>Requester: ......</p>
+              <p>Emergency Level: ......</p>
+              <p>Category: ......</p>
+              <p>Personal Condition: ......</p>
+              <p>Description: ......</p>
+            </div>
+            <div class='buttons'>
+              <button class='btn-default lqz_report'> Report </button>
+            </div>
+    			</div>
+          
+          <!-- Records will be inserted here -->
+        </div>
+      </div>
 </body>
 </html>
