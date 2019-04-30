@@ -63,7 +63,7 @@
         if(confirm("Are you sure to submit?")){
           $.ajax({
             // all URLs are relative to http://localhost:3000/
-            url: '../request_info',
+            url: '../../request_info',
             type: 'POST', // <-- this is POST, not GET
             data: {
               userid: current_user,
