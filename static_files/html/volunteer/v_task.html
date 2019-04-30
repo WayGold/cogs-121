@@ -1,0 +1,60 @@
+</<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="../../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../css/volunteer/v_task.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="../../lib/jquery-3.3.1.min.js"></script>
+  <script src="../../js/volunteer/v_task.js"></script>
+  <script src="../../lib/handlebars-v4.0.12.js"></script>
+</head>
+
+<body>
+  <nav class="fixed-top navbar" id="mainNav">
+      <div>
+          <a href="../index.html" style="padding-left: 1.0rem; font-family: 'Lobster'; color: white; font-size: 20px"> EzHelp </a>
+      </div>
+  </nav>
+
+  <div class="container">
+
+    <h1 style="margin-top: 10vh; text-align: center"> Request Board </h1>
+    <div>
+      <h2 style="text-align:left; position: absolute; line-height: 0px"> Filter by: </h2>
+    </div>
+<table>
+  <td>
+
+    <div class="div_button">
+      <h3 > Emergency Level </h3>
+      <button class="button" id="zw_Low">Low</button>
+      <button class="button" id="zw_Medium">Medium</button>
+      <button class="button" id="zw_High">High</button>
+      <div id="zw_emergency_status"></div>
+    </div>
+  </td>
+
+  <td>
+    <h3> Category </h3>
+    <div class="div_button">
+      <button class="button" id="zw_Routine">Routine</button>
+      <button class="button" id="zw_Trans">Transportation</button>
+      <div id="zw_category_status"></div>
+    </div>
+  </td>
+
+  <td>
+    <h3> Disability Type</h3>
+    <div class="div_button">
+      <button class="button" id="zw_Mental">Mental</button>
+      <button class="button" id="zw_Physical">Physical</button>
+      <div id="zw_disability_status"></div>
+    </div>
+  </td>
+</table>
+
+
+
+</body>
+</html>
