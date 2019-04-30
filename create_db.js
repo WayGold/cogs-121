@@ -5,7 +5,7 @@ const db = new sqlite3.Database('ezhelp.db');
 db.serialize(() => {
   // create a new database table:
   db.run("CREATE TABLE users (userid INT PRIMARY KEY, name TEXT, password TEXT, phone TEXT, location TEXT)");
-  db.run("CREATE TABLE request_info (userid INT PRIMARY KEY, emergency TEXT, category TEXT, disability TEXT, description TEXT)");
+  db.run("CREATE TABLE request_info (userid INT, emergency TEXT, category TEXT, disability TEXT, description TEXT)");
 
   db.run("INSERT INTO users VALUES (0, 'Wei', '123', '858-666-6666', '9500 Gilman Dr., La Jolla, CA')");
   db.run("INSERT INTO users VALUES (1, 'Stella', '123', '858-222-2222', '9500 Gilman Dr., La Jolla, CA')");

@@ -8,7 +8,7 @@ const db = new sqlite3.Database('ezhelp.db');
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use(express.static('../static_files/html'));
+app.use(express.static('static_files'));
 
 app.get('/users', (req, res) => {
   // db.all() fetches all results from an SQL query into the 'rows' variable:
@@ -17,6 +17,14 @@ app.get('/users', (req, res) => {
     const allUsernames = rows.map(e => e.name);
     console.log(allUsernames);
     res.send(allUsernames);
+  });
+});
+
+app.get('/request_info', (req, res) => {
+  // db.all() fetches all results from an SQL query into the 'rows' variable:
+  db.all('SELECT * FROM request_info', (err, rows) => {
+    console.log(rows);
+    res.send(rows);
   });
 });
 
