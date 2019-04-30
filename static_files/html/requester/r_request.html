@@ -63,7 +63,7 @@
         if(confirm("Are you sure to submit?")){
           $.ajax({
             // all URLs are relative to http://localhost:3000/
-            url: '../request_info',
+            url: '../../request_info',
             type: 'POST', // <-- this is POST, not GET
             data: {
               userid: current_user,
@@ -128,7 +128,7 @@
   <body>
     <nav class="fixed-top navbar" id="mainNav">
       <div>
-        <a href="index.html" style="padding-left: 1.0rem; font-family: 'Lobster'; color: white; font-size: 20px"> EzHelp </a>
+        <a href="../index.html" style="padding-left: 1.0rem; font-family: 'Lobster'; color: white; font-size: 20px"> EzHelp </a>
       </div>
     </nav>
 
