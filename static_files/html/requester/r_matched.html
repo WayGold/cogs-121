@@ -3,58 +3,16 @@
 
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="../../css/requester/r_matched.css">
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <meta charset="utf-8">
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<!-- <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script> -->
+  	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../../lib/jquery-3.3.1.min.js"></script>
+    <script src="../../js/requester/r_matched.js"></script>
+    <script src="../../lib/handlebars-v4.0.12.js"></script>
 
   </head>
-
-  <script type="text/javascript">
-    $(document).ready(() => {
-      //
-      // let input_emergency, input_category, input_disability, input_description;
-      // //FIXME
-      // let current_user = 0;
-
-      $('#zsy_finish').click(() => {
-        console.log("finish clicked");
-        window.location = "r_finish.html";
-      });
-
-    })
-  </script>
-  <style>
-    .fixed-top {
-      position: fixed;
-      top: 0;
-      right: 0;
-      left: 0;
-      z-index: 1030;
-    }
-
-    .navbar{
-      padding-top: .8rem;
-      padding-bottom: .8rem;
-      background-color: #05ffb0;
-    }
-    .container{
-      text-align: center;
-    }
-
-    .button{
-      padding-left: 1%;
-      padding-right: 1%;
-    }
-
-    .div_button{
-      text-align: center;
-    }
-
-  </style>
-
   <body>
     <nav class="fixed-top navbar" id="mainNav">
       <div>
@@ -62,20 +20,39 @@
       </div>
     </nav>
 
-    <h1 class="container" style="padding-top: 5%; font-size: 60px; position: relative"> MATCHED </h1>
+    <h1 class="container" style="padding-top: 5%; font-size: 50px; position: relative"> MATCHED </h1>
 
-    <h1>congratuation</h1>
-    <div class="progress progress-striped active">
-    	<div class="progress-bar progress-bar-success" role="progressbar"
-    		 aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-    		 style="width: 100%;">
-    		<span class="sr-only">100% finish</span>
+    <div class="stepInfo">
+    	<ul>
+    		<!-- <li></li> -->
+        <div class="progress progress-striped">
+            <div class="progress-bar progress-bar-info" role="progressbar"
+                 aria-valuenow="60" aria-valuemin="0" aria-valuemax="80"
+                 style="width: 50%;">
+                <span class="sr-only">50% finish</span>
+            </div>
+        </div>
+    		<!-- <li></li> -->
+    	</ul>
+    	<div class="stepIco stepIco1" id="wait">1
+    		<div class="stepText" id="createText">WAITING</div>
+    	</div>
+    	<div class="stepIco stepIco2" id="match">2
+    		<div class="stepText" id="checkText">MATCHED</div>
+    	</div>
+    	<div class="stepIco stepIco3" id="finish">3
+    		<div class="stepText" id="produceText">FINISH</div>
     	</div>
     </div>
 
-    <p>success</p>
 
-    <div class="container" style="padding-top: 20px">
+
+    <p>Conguatuation!</p>
+
+    <!-- <div class="container" style="padding-top: 100px">
+      <button class="button" id="zsy_cancel">Cancel</button>
+    </div> -->
+    <div class="container" style="padding-top: 300px">
       <button class="button" id="zsy_finish">finish</button>
     </div>
 
