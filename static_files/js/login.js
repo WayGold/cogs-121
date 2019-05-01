@@ -28,7 +28,7 @@ $(document).ready(() => {
               current_user = username;
               // Check user role
               if(data.role == 1) // volunteer
-                window.location = "/html/volunteer/v_record.html";
+                window.location = "/html/volunteer/v_task.html";
               else // requester
                 window.location = "/html/requester/r_record.html";
             }
@@ -60,6 +60,12 @@ $(document).ready(() => {
         },
         success: (data) => {
           console.log(data);
+          if(data == 'Success')
+            window.location = "../html/login.html";
+          else {
+            console.log("{message: 'error in app.post(/create_user), try another username'}");
+            $('#zw_create_status').html('Fail to create, try another username!');
+          }
         }
       });
     }

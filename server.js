@@ -95,9 +95,9 @@ app.post('/create_user', (req, res) => {
     // callback function to run when the query finishes:
     (err) => {
       if (err) {
-        res.send({message: 'error in app.post(/create_user), try another username'});
+        res.send('Fail');
       } else {
-        res.send({message: 'successfully run app.post(/create_user)'});
+        res.send('Success');
       }
     }
   );
