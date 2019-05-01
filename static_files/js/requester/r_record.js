@@ -39,12 +39,6 @@ $(document).ready(() => {
       window.location = "r_request.html";
     });
 
-    $('#lqz_home').click(() => {
-      window.location = "../index.html";
-    });
-
-
-
     $('#lqz_refresh').click(() => {
       document.location.reload();
     });

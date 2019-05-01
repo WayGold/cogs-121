@@ -32,12 +32,9 @@ $(document).ready(() => {
       }
     });
 
-
-    $('#lqz_home').click(() => {
-      window.location = "../../index.html";
+    $('#lqz_find').click(() => {
+      window.location = "v_task.html";
     });
-
-
 
     $('#lqz_refresh').click(() => {
       document.location.reload();
