@@ -24,9 +24,10 @@ from the static files directory with functionalities (1.) to get all users from
   The front-end access the data from back-end via ajax calls and feed the infos
   back to the htmls.
 
-#### Front-end UI Skeletons (Users can always navigate back to home by clicking the home button at upper right and the logo):
+#### Front-end UI Skeletons
 
-##### Home Page
+##### Home Page (Users can always navigate back to home by clicking the home button at upper right and the logo):
+
   ![Homepage 1](images/Milestone2/homepage.png)  
   ![Homepage 2](images/Milestone2/homepage1.png)
 
