@@ -32,3 +32,11 @@ from the static files directory with functionalities (1.) to get all users from
 
 ##### Hit TRY IT NOW navigate to login page
   ![Login](images/Milestone2/login.png)  
+  ![Register](images/Milestone2/register.png)
+
+##### If login as a volunteer, navigate to the volunteer sections of files  
+  ![v_task](images/Milestone2/v_task.png)  
+  ![v_taskinfo](images/Milestone2/v_taskinfo.png)
+  ![v_taskinfo1](images/Milestone2/v_taskinfo1.png)
+  ![v_record](images/Milestone2/v_record.png)
+  ![v_report](images/Milestone2/v_report.png)
