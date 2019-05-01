@@ -60,6 +60,12 @@ $(document).ready(() => {
         },
         success: (data) => {
           console.log(data);
+          if(data == 'Success')
+            window.location = "../html/login.html";
+          else {
+            console.log("{message: 'error in app.post(/create_user), try another username'}");
+            $('#zw_create_status').html('Fail to create, try another username!');
+          }
         }
       });
     }
