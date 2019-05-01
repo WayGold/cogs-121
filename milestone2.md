@@ -23,5 +23,12 @@ from the static files directory with functionalities (1.) to get all users from
 ### Front-end:
   The front-end access the data from back-end via ajax calls and feed the infos
   back to the htmls.
+
 #### Front-end UI Skeletons:
-  
+
+##### Home Page
+  ![Homepage 1](images/Milestone2/homepage.png)  
+  ![Homepage 2](images/Milestone2/homepage1.png)
+
+##### Hit TRY IT NOW navigate to login page
+  ![Login](images/Milestone2/login.png)  
