@@ -1,64 +1,71 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title> Login Page </title>
-        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-        <link rel="stylesheet" href="../css/login.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    </head>
+<head>
+  <meta charset="utf-8">
+  <title> Login Page </title>
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link rel="stylesheet" href="../css/login.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/login.js"></script>
+</head>
 
-    <style>
-            .fixed-top {
-              position: fixed;
-              top: 0;
-              right: 0;
-              left: 0;
-              z-index: 1030;
-            }
+<style>
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
 
-            .navbar{
-              padding-top: .8rem;
-              padding-bottom: .8rem;
-              background-color: #76b852;
-            }
-          </style>
+.navbar{
+  padding-top: .8rem;
+  padding-bottom: .8rem;
+  background-color: #76b852;
+}
+</style>
 
-    <body>
-            <nav class="fixed-top navbar" id="mainNav">
-                    <div>
-                      <a href="index.html" style="padding-left: 1.0rem; font-family: 'Lobster'; color: white; font-size: 20px"> EzHelp </a>
-                    </div>
-                  </nav>
+<body>
+  <nav class="fixed-top navbar" id="mainNav">
+    <div>
+      <a href="index.html" style="padding-left: 1.0rem; font-family: 'Lobster'; color: white; font-size: 20px"> EzHelp </a>
+    </div>
+  </nav>
 
-            <div class="login-page" >
-                    <div class="form">
-                      <form class="register-form">
-                          <h2>Register</h2>
-                        <input type="text" placeholder="name"/>
-                        <input type="password" placeholder="password"/>
-                        <input type="text" placeholder="email address"/>
-                        <button>create</button>
-                        <p class="message">Already registered? <a href="#">Sign In</a></p>
-                      </form>
-                      <form class="login-form">
-                          <h2>Welcome!</h2>
-                          <div class="icon">
-                              <img src="../images/icon.png" height=45; width=45>
-                          </div>
-                        <input type="text" placeholder="username"/>
-                        <input type="password" placeholder="password"/>
-                        <button>login</button>
-                        <p class="message">Do not have an accoount? <a href="#">Create an account</a></p>
-                      </form>
-                    </div>
-                  </div>
+  <div class="login-page" >
+    <div class="form">
+      <form class="register-form">
+        <h2>Register</h2>
+        <input id="zw_create_account_username" type="text" placeholder="username"/>
+        <input id="zw_create_account_name" type="text" placeholder="name"/>
+        <input id="zw_create_account_pwd" type="password" placeholder="password"/>
+        <input id="zw_create_account_phone" type="text" placeholder="Phone"/>
+        <input id="zw_create_account_loc" type="text" placeholder="address"/>
+        <input id="zw_create_account_role" type="text" placeholder="1 for volunteer, 0 to ask for help"/>
+        <button id="zw_create_account_btn">create</button>
+        <p class="message">Already registered? <a href="#">Sign In</a></p>
+        <p id="zw_create_status"></p>
+      </form>
+      <form class="login-form">
+        <h2>Welcome!</h2>
+        <div class="icon">
+          <img src="../images/icon.png" height=45; width=45>
+        </div>
+        <input id="zw_login_username" type="text" placeholder="username"/>
+        <input id="zw_login_pwd" type="password" placeholder="password"/>
+        <button id="zw_login_btn">login</button>
+        <p class="message">Do not have an accoount? <a href="#">Create an account</a></p>
+        <p id="zw_login_status"></p>
+      </form>
+    </div>
+  </div>
 
-    </body>
+</body>
 
-    <script type=text/javascript>
-        $('.message a').click(function(){
-           $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-        });
-        </script>
+<script type=text/javascript>
+$('.message a').click(function(){
+  $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+});
+</script>
 </html>

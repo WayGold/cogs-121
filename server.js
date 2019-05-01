@@ -20,6 +20,31 @@ app.get('/users', (req, res) => {
   });
 });
 
+app.get('/users/:username', (req, res) => {
+  const nameToLookup = req.params.username; // matches ':userid' above
+  console.log("ID to look up:" + nameToLookup);
+  // db.all() fetches all results from an SQL query into the 'rows' variable:
+  db.all(
+    'SELECT * FROM users WHERE username=$name',
+    // parameters to SQL query:
+    {
+      $name: nameToLookup
+    },
+    // callback function to run when the query finishes:
+    (err, rows) => {
+      console.log("Length: " + rows.length + " value: ");
+      console.log(rows);
+      if (rows.length > 0) {
+        console.log("Sending :");
+        console.log(rows[0]);
+        res.send(rows[0]);
+      } else {
+        res.send({}); // failed, so return an empty object instead of undefined
+      }
+    }
+  );
+});
+
 app.get('/request_info', (req, res) => {
   // db.all() fetches all results from an SQL query into the 'rows' variable:
   db.all('SELECT * FROM request_info', (err, rows) => {
@@ -28,14 +53,15 @@ app.get('/request_info', (req, res) => {
   });
 });
 
+//post request for adding request to the db
 app.post('/request_info', (req, res) => {
   console.log(req.body);
 
   db.run(
-    'INSERT INTO request_info VALUES ($userid, $emergency, $category, $disability, $description)',
+    'INSERT INTO request_info VALUES ($username, $emergency, $category, $disability, $description)',
     // parameters to SQL query:
     {
-      $userid: req.body.userid,
+      $username: req.body.username,
       $emergency: req.body.emergency,
       $category: req.body.category,
       $disability: req.body.disability,
@@ -47,6 +73,31 @@ app.post('/request_info', (req, res) => {
         res.send({message: 'error in app.post(/request_info)'});
       } else {
         res.send({message: 'successfully run app.post(/request_info)'});
+      }
+    }
+  );
+});
+
+app.post('/create_user', (req, res) => {
+  console.log(req.body);
+
+  db.run(
+    'INSERT INTO users VALUES ($username, $name, $password, $phone, $location, $role)',
+    // parameters to SQL query:
+    {
+      $username: req.body.username,
+      $name: req.body.name,
+      $password: req.body.password,
+      $phone: req.body.phone,
+      $location: req.body.location,
+      $role: req.body.role,
+    },
+    // callback function to run when the query finishes:
+    (err) => {
+      if (err) {
+        res.send({message: 'error in app.post(/create_user), try another username'});
+      } else {
+        res.send({message: 'successfully run app.post(/create_user)'});
       }
     }
   );
