@@ -1,13 +1,14 @@
 .fixed-top {
   position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1030;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 1030px;
 }
 
 .navbar{
-  padding-top: .8rem;
-  padding-bottom: .8rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
   background-color: #76b852;
+  border-radius: 0px;
 }
