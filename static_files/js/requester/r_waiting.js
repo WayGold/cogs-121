@@ -1,5 +1,5 @@
 
-setTimeout("javascript:location.href='r_matched.html'", 5000);
+setTimeout("javascript:location.href='r_matched.html'", 8000);
 
 $(document).ready(() => {
   $('#zsy_cancel').click(() => {

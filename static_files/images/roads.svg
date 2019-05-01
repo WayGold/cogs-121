@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 650 650" style="enable-background:new 0 0 650 650;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#FBC8FF;stroke-width:2;}
+	.st1{fill:none;stroke:#7034E2;stroke-width:3;}
+</style>
+<g id="Road-Map">
+	<g id="Artboard-2">
+		<path id="road" class="st0" d="M650,366H0 M83,0v650 M178,366v284 M178,0v165.5 M439,0v201.5c0,2.2-1.8,4-4,4H83 M439,467.5V650
+			 M82.5,484.2l288,100.1 M370.5,623H561"/>
+		<path id="road_1_" class="st1" d="M122.5,0v160c0,3.3,2.7,6,6,6h147c3.3,0,6,2.7,6,6v289c0,3.3,2.7,6,6,6H650"/>
+		<path id="road_2_" class="st1" d="M53.5,0v295.5c0,3.3,2.7,6,6,6h496c3.3,0,6,2.7,6,6V650"/>
+		<path id="road_3_" class="st1" d="M561.5,0v222c0,3.3-2.3,7.4-5.2,9L375.7,335.5c-2.9,1.6-5.2,5.7-5.2,9V650 M370.5,0v85.5
+			c0,3.3-2.7,6-6,6H0 M562,91.5h88 M53.5,650V440c0-3.3,1.9-7.9,4.3-10.2l64.4-63.5 M122.5,301.5V650 M53,467H0"/>
+	</g>
+</g>
+</svg>

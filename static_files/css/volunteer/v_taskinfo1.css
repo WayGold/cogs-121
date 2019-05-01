@@ -1,21 +1,27 @@
 .icon1{
     margin-left: 0%;
-    float: center;
-    size:100%;
+    /* float: center; */
+    width:30%;
+    margin-top:0px;
 }
 
 .info{
     margin-top:50px;
-    width:100%;
+    width:50%;
     display:inline-block;
 }
 
 .requester{
     position:flex;
-    margin-top:20px;
-    margin-right: 50%;
+    margin-top:40px;
+    margin-right: 20%;
     display: inline-block;
     /* float: center; */
+}
+
+.btns{
+    margin-top:50px;
+    margin-left:7%;
 }
 
 textarea{
@@ -26,19 +32,6 @@ textarea{
     border: 2px solid #ccc;
     border-radius: 4px;
 }
-
-
-  .position{
-      margin-top:100px;
-      float:center;
-      /* margin-left: 350px; */
-  }
-
-  *{
-    margin: 0;
-    padding: 0;
-}
-
 button {
 
     background: #4CAF50;
@@ -52,5 +45,14 @@ button {
     transition: all 0.3 ease;
     cursor: pointer;
   }
-/* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
->>>>>>> cbee3fcd1d71397f1b3794eb1483137a0e8b0032
+
+  .position{
+      margin-top:100px;
+      float:center;
+      /* margin-left: 350px; */
+  }
+
+  *{
+    margin: 0;
+    padding: 0;
+}
