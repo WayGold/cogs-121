@@ -24,7 +24,7 @@ from the static files directory with functionalities (1.) to get all users from
   The front-end access the data from back-end via ajax calls and feed the infos
   back to the htmls.
 
-#### Front-end UI Skeletons:
+#### Front-end UI Skeletons (Users can always navigate back to home by clicking the home button at upper right and the logo):
 
 ##### Home Page
   ![Homepage 1](images/Milestone2/homepage.png)  
@@ -40,3 +40,14 @@ from the static files directory with functionalities (1.) to get all users from
   ![v_taskinfo1](images/Milestone2/v_taskinfo1.png)
   ![v_record](images/Milestone2/v_record.png)
   ![v_report](images/Milestone2/v_report.png)
+
+##### If login as a requester, navigate to requester sections of files
+  ![r_record](images/Milestone2/r_record.png)
+  ![r_request](images/Milestone2/r_request.png)
+  ![r_waiting](images/Milestone2/r_waiting.png)
+  ![r_matched](images/Milestone2/r_matched.png)
+  ![r_finished1](images/Milestone2/r_finished1.png)
+  ![r_finished](images/Milestone2/r_finished.png)
+
+### Comparing to original papaer prototypes:
+  Most functionalities are identical to our original design, the only differences at this stage would be the alignments and aesthetic part of the whole thing.
