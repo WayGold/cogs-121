@@ -4,9 +4,15 @@ body{background:#f2f2f2;font:12px/180% Arial, Helvetica, sans-serif;}
 .stepInfo{position:relative;background:#f2f2f2;margin:20px auto 0 auto;width:500px;top:10%}
 .stepInfo li{float:left;width:90%;height:0.15em;background:#bbb;}
 .stepIco{border-radius:2em;padding:1.3em;background:#bbb;text-align:center;line-height:1.em;color:#fff; position:absolute;width:2.4em;height:2.4em;}
-.stepIco1{top:-0.5em;left:-1%;background:#666}
-.stepIco2{top:-0.5em;left:48%;}
-.stepIco3{top:-0.5em;left:95%;}
+.stepIco11{top:-0.5em;left:-1%;background:#666;}
+.stepIco12{top:-0.5em;left:48%;}
+.stepIco13{top:-0.5em;left:95%;}
+.stepIco21{top:-0.5em;left:-1%;background:#666;}
+.stepIco22{top:-0.5em;left:48%;background:#666;}
+.stepIco23{top:-0.5em;left:95%;}
+.stepIco31{top:-0.5em;left:-1%;background:#666;}
+.stepIco32{top:-0.5em;left:48%;background:#666;}
+.stepIco33{top:-0.5em;left:95%;background:#666;}
 
 .stepText{color:#666;margin-top:0.2em;width:4em;text-align:center;margin-left:-1.8em;}
 
