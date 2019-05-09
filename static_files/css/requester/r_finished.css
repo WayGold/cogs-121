@@ -1,50 +1,79 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body{
+
+    background: url(../../images/bg-02.jpg);
+    background-size:100%;
+}
+
+.container{
+    background: #FFFFFF;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    max-width:800px;
+    margin:auto;
+    max-height:650px;
+    margin-top:-10px;
+}
+
+#line{
+    color:rgb(156, 156, 156);
+    margin-top: 15px;
+    margin-left:50px;
+    margin-right:50px;
+    opacity:0.7;
+}
 .icon1{
-    margin-left: 250px;
+    margin-left: 210px;
+    margin-top:10px;
     float: left;
-    size:80%;
+    padding:0;
 }
 
 .info{
-    margin-top:50px;
     width:100%;
     display:inline-block;
 }
+#title{
+    font-family: "Roboto", sans-serif;
+    text-align:center;
+    color: #fcfdfc; 
+    padding-bottom: 25px;
 
+}
 .requester{
     position:flex;
     margin-top:20px;
-    margin-right: 200px;
+    margin-right: 140px;
     display: inline-block;
     float:right;
 }
 
-.complaint{
-    margin-left:280px;
-    margin-top:30px;
-    margin-bottom:40px;
-    float:left;
-}
 
 textarea{
-    width:600px;
-    height:200px;
+    width:380px;
+    height:170px;
     resize:none;
-    margin-right: 175px;
+    margin-top:10px;
+    margin-right: 50px;
     border: 2px solid #ccc;
     border-radius: 4px;
 
 }
-
+ h3{
+     padding-bottom:15px;
+     font-family: "Roboto", sans-serif;
+ }
 .text{
-    float:right;
-    margin-right:40px;
+    margin-left:240px;
+    margin-top:10px;
+    align-self:center;
     padding-right:20px;
 
 }
 
 .btns{
-    margin-top:250px;
-    margin-left:930px;
+    margin-top:10px;
+    margin-left:500px;
 }
 
 button {
@@ -53,7 +82,7 @@ button {
     border-radius: 4px;
     border: 0;
     padding: 15px;
-    margin:10px;
+    margin:20px;
     color: #FFFFFF;
     font-size: 14px;
     -webkit-transition: all 0.3 ease;
@@ -62,8 +91,10 @@ button {
   }
 
   .position{
-      margin-top:100px;
-      margin-left: 350px;
+      margin-top:80px;
+      padding-top: 35px;
+      background:url(../../images/bgcolor.PNG);
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   }
 
   *{
@@ -73,8 +104,10 @@ button {
 .rate {
     height: 46px;
     padding: 0 10px;
-    margin-right:500px;
-    margin-bottom:50px;
+    margin-top:20px;
+    margin-right:235px;
+    margin-bottom:20px;
+    align-self: center;
 }
 .rate:not(:checked) > input {
     position:absolute;
@@ -86,7 +119,7 @@ button {
     overflow:hidden;
     white-space:nowrap;
     cursor:pointer;
-    font-size:30px;
+    font-size:60px;
     color:#ccc;
 }
 .rate:not(:checked) > label:before {
@@ -108,4 +141,3 @@ button {
 }
 
 /* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
->>>>>>> cbee3fcd1d71397f1b3794eb1483137a0e8b0032
