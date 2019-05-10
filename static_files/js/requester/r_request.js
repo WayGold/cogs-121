@@ -81,11 +81,11 @@ $(document).ready(() => {
         success: (data) => {
           if(confirm("Submission Completed!")){
             //FIXME
-            window.location = "r_waiting.html";
+            window.location = "waiting.html";
           }
           else{
             //FIXME
-            window.location = "r_waiting.html";
+            window.location = "waiting.html";
           }
         }
       });

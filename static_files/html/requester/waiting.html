@@ -1,0 +1,157 @@
+</<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <link rel="stylesheet" href="../../css/requester/r_waiting.css">
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <script src="../../lib/jquery-3.3.1.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="../../lib/handlebars-v4.0.12.js"></script>
+  <script src="../../js/requester/waiting.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>wait_match_finish</title>
+  <style type="text/css">
+  .top{height:50px;}
+  .waiting .matched .finish{margin-top:40px;}
+  </style>
+
+</head>
+
+<body>
+  <nav class="fixed-top zzzz_navbar" id="mainNav">
+      <div>
+          <a style="position: absolute" href="../../index.html">
+              <img src="../../images/navbar.png"  style="height: 40px;">
+           </a>
+         </div>
+        <div style="text-align: right" >
+          <a  href="../../index.html">
+            <i style="padding: 5px; color: white; font-size: 30px;" class="fas fa-home"></i>
+          </a>
+      </div>
+  </nav>
+
+  <div style="display:none" id="waiting">
+    <h1 class="container" style="padding-top: 5%; font-size: 50px; position: relative"> WAITING </h1>
+    <div class="stepInfo">
+      <ul>
+        <div class="progress progress-striped">
+            <div class="progress-bar progress-bar-info" role="progressbar"
+                 aria-valuenow="60" aria-valuemin="0" aria-valuemax="80"
+                 style="width: 0%;">
+                <span class="sr-only">0% finish</span>
+            </div>
+        </div>
+      </ul>
+      <div class="stepIco stepIco11" id="wait1">1
+        <div class="stepText" id="createText">WAITING</div>
+      </div>
+      <div class="stepIco stepIco12" id="match1">2
+        <div class="stepText" id="checkText">MATCHED</div>
+      </div>
+      <div class="stepIco stepIco13" id="finish1">3
+        <div class="stepText" id="produceText">FINISH</div>
+      </div>
+    </div>
+    <p style="padding-top: 50px">Please wait!</p>
+
+    <div class="container" style="padding-top: 300px">
+      <button class="button" id="zsy_cancel">cancel</button>
+    </div>
+  </div>
+
+
+  <div style="display:none" id="matched">
+    <h1 class="container" style="padding-top: 5%; font-size: 50px; position: relative"> MATCHED </h1>
+    <div class="stepInfo">
+      <ul>
+        <!-- <li></li> -->
+        <div class="progress progress-striped">
+            <div class="progress-bar progress-bar-info" role="progressbar"
+                 aria-valuenow="60" aria-valuemin="0" aria-valuemax="80"
+                 style="width: 50%;">
+                <span class="sr-only">50% finish</span>
+            </div>
+        </div>
+        <!-- <li></li> -->
+      </ul>
+      <div class="stepIco stepIco21" id="wait2">1
+        <div class="stepText" id="createText">WAITING</div>
+      </div>
+      <div class="stepIco stepIco22" id="match2">2
+        <div class="stepText" id="checkText">MATCHED</div>
+      </div>
+      <div class="stepIco stepIco23" id="finish2">3
+        <div class="stepText" id="checkText">FINISH</div>
+      </div>
+    </div>
+    <p style="padding-top: 50px">Conguatuations!</p>
+    <!-- <p>Conguatuations!</p> -->
+
+    <div class="container" style="padding-top: 300px">
+      <button class="button" id="zsy_cancel">cancel</button>
+    </div>
+  </div>
+
+
+  <div style="display:none" id="finished">
+    <h1 class="container" style="padding-top: 5%; font-size: 50px; position: relative"> FINISH </h1>
+    <div class="stepInfo">
+      <ul>
+        <div class="progress progress-striped">
+            <div class="progress-bar progress-bar-info" role="progressbar"
+                 aria-valuenow="60" aria-valuemin="0" aria-valuemax="80"
+                 style="width: 100%;">
+                <span class="sr-only">100% finish</span>
+            </div>
+        </div>
+
+      </ul>
+      <div class="stepIco stepIco31" id="wait3">1
+        <div class="stepText" id="createText">WAITING</div>
+      </div>
+      <div class="stepIco stepIco32" id="match3">2
+        <div class="stepText" id="checkText">MATCHED</div>
+      </div>
+      <div class="stepIco stepIco33" id="finish3">3
+        <div class="stepText" id="checkText">FINISH</div>
+      </div>
+    </div>
+    <p style="padding-top: 50px">Please click "finish" after the volunteer has leave.</p>
+    <div class="container" style="padding-top: 300px">
+      <button class="button" id="zsy_finish">finish</button>
+    </div>
+  </div>
+
+  <script>
+    function show1() {
+      document.getElementById("waiting").style.display = "block";
+      document.getElementById("matched").style.display = "none";
+      document.getElementById("finished").style.display = "none";
+    };
+
+    function show2() {
+      document.getElementById("matched").style.display = "block";
+      document.getElementById("waiting").style.display = "none";
+      document.getElementById("finished").style.display = "none";
+    }
+
+    function show3() {
+      document.getElementById("finished").style.display = "block";
+      document.getElementById("waiting").style.display = "none";
+      document.getElementById("matched").style.display = "none";
+    }
+    show1();
+    setTimeout("show2()",5000);
+    setTimeout("show3()",10000);
+
+  </script>
+}
+
+</body>
+
+</html>
