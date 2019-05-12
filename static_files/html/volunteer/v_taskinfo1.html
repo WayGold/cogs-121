@@ -2,6 +2,30 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <script src="../../js/main.js"></script>
+  <script src="../../js/key.js"></script>
+  <script type='text/javascript'>
+    function GetMap() {
+        var map = new Microsoft.Maps.Map('#myMap', {
+            credentials: key
+        });
+
+        //Request the user's location
+        navigator.geolocation.getCurrentPosition(function (position) {
+            var loc = new Microsoft.Maps.Location(
+                position.coords.latitude,
+                position.coords.longitude);
+
+            //Add a pushpin at the user's location.
+            var pin = new Microsoft.Maps.Pushpin(loc);
+            map.entities.push(pin);
+
+            //Center the map on the user's location.
+            map.setView({ center: loc, zoom: 15 });
+        });
+    }
+    </script>
+    <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
   <link rel="stylesheet" href="../../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <link rel="stylesheet" href="../../css/volunteer/v_taskinfo1.css">
@@ -9,30 +33,28 @@
   <link rel="stylesheet" href="../../css/main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="../../js/volunteer/v_taskinfo1.js"></script>
-</head>
 
-
-<body>
-  <nav class="fixed-top zzzz_navbar" id="mainNav">
+  </head>
+  <body>
+    <nav class="fixed-top zzzz_navbar" id="mainNav">
       <div>
-          <a style="position: absolute" href="../../index.html">
-              <img src="../../images/navbar.png"  style="height: 40px;">
-           </a>
-         </div>
-        <div style="text-align: right" >
-          <a  href="../../index.html">
-            <i style="padding: 5px; color: white; font-size: 30px;" class="fas fa-home"></i>
-          </a>
+        <a style="position: absolute" href="../../index.html">
+          <img src="../../images/navbar.png"  style="height: 40px;">
+        </a>
       </div>
-  </nav>
+      <div style="text-align: right" >
+        <a  href="../../index.html">
+          <i style="padding: 5px; color: white; font-size: 30px;" class="fas fa-home"></i>
+        </a>
+      </div>
+    </nav>
 
-  <div class ="container">
-    <div class = "requester">
-      <h1>MAP</h1>
-    </div>
-      <div class ="icon1">
-        <img src="../../images/zsy.png">
+    <div class ="container">
+      <div class = "requester">
+        <h1>MAP</h1>
       </div>
+      <div id="myMap" style="position:relative;width:800px;height:600px;"></div>
+
       <div class = "requester">
         <h4>Walk 7 min (0.3mi)</h4>
         <h4>101 Oceanside Scheduled in 5:26PM</h4>
@@ -47,6 +69,6 @@
 
 
 
-</body>
+  </body>
 
-</html>
+  </html>

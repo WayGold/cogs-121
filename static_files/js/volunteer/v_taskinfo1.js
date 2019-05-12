@@ -4,4 +4,5 @@ $(document).ready(() => {
     console.log("Arrived clicked");
     window.location = "v_record.html";
   })
+
 });
