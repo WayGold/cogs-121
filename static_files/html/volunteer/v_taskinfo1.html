@@ -2,37 +2,16 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="../../js/main.js"></script>
   <script src="../../js/key.js"></script>
-  <script type='text/javascript'>
-    function GetMap() {
-        var map = new Microsoft.Maps.Map('#myMap', {
-            credentials: key
-        });
-
-        //Request the user's location
-        navigator.geolocation.getCurrentPosition(function (position) {
-            var loc = new Microsoft.Maps.Location(
-                position.coords.latitude,
-                position.coords.longitude);
-
-            //Add a pushpin at the user's location.
-            var pin = new Microsoft.Maps.Pushpin(loc);
-            map.entities.push(pin);
-
-            //Center the map on the user's location.
-            map.setView({ center: loc, zoom: 15 });
-        });
-    }
-    </script>
-    <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
+  <script src="../../js/volunteer/v_taskinfo1.js"></script>
+  <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
   <link rel="stylesheet" href="../../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <link rel="stylesheet" href="../../css/volunteer/v_taskinfo1.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="../../css/main.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script src="../../js/volunteer/v_taskinfo1.js"></script>
 
   </head>
   <body>
