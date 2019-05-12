@@ -58,7 +58,7 @@ app.post('/request_info', (req, res) => {
   console.log(req.body);
 
   db.run(
-    'INSERT INTO request_info VALUES ($username, $emergency, $category, $disability, $description)',
+    'INSERT INTO request_info VALUES ($username, $emergency, $category, $disability, $description, $latitude, $longitude)',
     // parameters to SQL query:
     {
       $username: req.body.username,
@@ -66,10 +66,13 @@ app.post('/request_info', (req, res) => {
       $category: req.body.category,
       $disability: req.body.disability,
       $description: req.body.description,
+      $latitude: req.body.latitude,
+      $longitude: req.body.longitude,
     },
     // callback function to run when the query finishes:
     (err) => {
       if (err) {
+        console.log("Fail inserting!")
         res.send({message: 'error in app.post(/request_info)'});
       } else {
         res.send({message: 'successfully run app.post(/request_info)'});
