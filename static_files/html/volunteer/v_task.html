@@ -65,60 +65,28 @@
   <div class="list">
     <div class="table" id="templatedProjects" >
 
-  <div class='recordbox'>
-      <div class='record'>
-        <p>Requester: ......</p>
-        <p>Emergency Level: ......</p>
-        <p>Category: ......</p>
-        <p>Personal Condition: ......</p>
-        <p>Description: ......</p>
-      </div>
-      <div class='buttons'>
-        <button class='btn-default lqz_report'> Report </button>
-      </div>
-    </div>
-
-    <div class='recordbox'>
-        <div class='record'>
-          <p>Requester: ......</p>
-          <p>Emergency Level: ......</p>
-          <p>Category: ......</p>
-          <p>Personal Condition: ......</p>
-          <p>Description: ......</p>
-        </div>
-        <div class='buttons'>
-          <button class='btn-default lqz_report'> Report </button>
-        </div>
-      </div>
-
-      <div class='recordbox'>
-          <div class='record'>
-            <p>Requester: ......</p>
-            <p>Emergency Level: ......</p>
-            <p>Category: ......</p>
-            <p>Personal Condition: ......</p>
-            <p>Description: ......</p>
-          </div>
-          <div class='buttons'>
-            <button class='btn-default lqz_report'> Report </button>
-          </div>
-        </div>
-
+      <script id="entry-template" type="text/x-handlebars-template">
         <div class='recordbox'>
             <div class='record'>
+              <p>Status: ......</p>
               <p>Requester: ......</p>
-              <p>Emergency Level: ......</p>
-              <p>Category: ......</p>
-              <p>Personal Condition: ......</p>
-              <p>Description: ......</p>
+              <p>Emergency Level: {{emergency}}</p>
+              <p>Category: {{category}}</p>
+              <p>Personal Condition: {{disability}}</p>
+              <p>Description: {{description}}</p>
             </div>
             <div class='buttons'>
               <button class='btn-default lqz_report'> Report </button>
+              <button class='btn-default lqz_accept'> Accept </button>
             </div>
     			</div>
+  		</script>
 
+  		<div class="list">
+  			<div class="table" id="templatedProjects" >
           <!-- Records will be inserted here -->
-        </div>
+  			</div>
+  		</div>
       </div>
 </body>
 </html>
