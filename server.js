@@ -53,14 +53,39 @@ app.get('/request_info', (req, res) => {
   });
 });
 
+app.get('/request_info/:requestid', (req, res) => {
+  // db.all() fetches all results from an SQL query into the 'rows' variable:
+  const requestToLookup = req.params.requestid;
+
+  db.all('SELECT * FROM request_info WHERE uid=$uid',
+    // parameters to SQL query:
+    {
+      $uid: requestToLookup
+    },
+    (err, rows) => {
+    console.log(rows);
+    res.send(rows);
+  });
+});
+
+app.get('/request_info', (req, res) => {
+  // db.all() fetches all results from an SQL query into the 'rows' variable:
+  db.all('SELECT * FROM request_info', (err, rows) => {
+    console.log(rows);
+    res.send(rows);
+  });
+});
+
+
 //post request for adding request to the db
 app.post('/request_info', (req, res) => {
   console.log(req.body);
 
   db.run(
-    'INSERT INTO request_info VALUES ($username, $emergency, $category, $disability, $description, $latitude, $longitude)',
+    'INSERT INTO request_info VALUES ($uid, $username, $emergency, $category, $disability, $description, $latitude, $longitude)',
     // parameters to SQL query:
     {
+      $uid: null,
       $username: req.body.username,
       $emergency: req.body.emergency,
       $category: req.body.category,
@@ -72,7 +97,7 @@ app.post('/request_info', (req, res) => {
     // callback function to run when the query finishes:
     (err) => {
       if (err) {
-        console.log("Fail inserting!")
+        console.log("Fail inserting! " + err)
         res.send({message: 'error in app.post(/request_info)'});
       } else {
         res.send({message: 'successfully run app.post(/request_info)'});
