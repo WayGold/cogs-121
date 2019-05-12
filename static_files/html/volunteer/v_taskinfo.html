@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="../../css/volunteer/v_taskinfo.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="../../css/main.css">
+  <script src="../../lib/handlebars-v4.0.12.js"></script>
+  <script src="../../lib/jquery-3.3.1.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script src="../../js/volunteer/v_taskinfo.js"></script>
 </head>
@@ -35,15 +37,28 @@
       <div class ="icon1">
         <img src="../../images/dog.png" >
       </div>
-      <div class = "requester">
-        <h2>Name: David Wang</h2>
-        <h2>Tel: 858-XXX-XXXX</h2>
-        <h2>Gender: Male</h2>
-        <h2>Email: 8XXX8@gmail.com</h2>
-        <h2>Request Number: CB10000649X </h2>
-        <h2>Requirements: XXXXX </h2>
+      <script id="taskinfo" type="text/x-handlebars-template">
+        <div class='recordbox'>
+            <div class='record'>
+              <p>Request ID: {{uid}}</p>
+              <p>Requester: ......</p>
+              <p>Emergency Level: {{emergency}}</p>
+              <p>Category: {{category}}</p>
+              <p>Personal Condition: {{disability}}</p>
+              <p>Description: {{description}}</p>
+            </div>
+
+          </div>
+      </script>
+
+      <div class="list">
+        <div class="table" id="single_task" >
+          <!-- Records will be inserted here -->
+        </div>
       </div>
+
     </div>
+    <div class="list">
 
     <div class= "btns">
       <button id="zw_v_report_cancel">Cancel</button>

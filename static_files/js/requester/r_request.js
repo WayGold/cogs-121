@@ -1,7 +1,13 @@
 $(document).ready(() => {
 
-  let input_emergency, input_category, input_disability, input_description;
+  let input_emergency, input_category, input_disability, input_description, input_latitude, input_longitude;
   //FIXME
+  navigator.geolocation.getCurrentPosition(function (position) {
+    input_latitude = position.coords.latitude;
+    input_longitude = position.coords.longitude;
+    console.log("latitude: " + input_latitude);
+    console.log("longitude: " + input_longitude);
+  })
 
   $('#zw_Low').click(() => {
     console.log("low clicked");
@@ -76,7 +82,9 @@ $(document).ready(() => {
           emergency: input_emergency,
           category: input_category,
           disability: input_disability,
-          description: input_description
+          description: input_description,
+          latitude: input_latitude,
+          longitude: input_longitude
         },
         success: (data) => {
           if(confirm("Submission Completed!")){
