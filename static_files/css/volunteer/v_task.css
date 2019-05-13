@@ -29,7 +29,7 @@ button {
 .record {
   display: inline;
   font-size: 25px;
-  margin-top: -1vw;
+  margin-top: -0.8vw;
   margin-right: 2vw;
   float:right;
 
@@ -45,7 +45,7 @@ button {
     width: 80vw;
     margin:auto;
     height:auto;
-    margin-top:13vh;
+    margin-top:14vh;
     margin-bottom:100px;
     padding:0;
 }
@@ -56,7 +56,7 @@ button {
  }
 
  .title{
-  margin-left: 21vw;
+  margin-left: 14vw;
   font-family: "Roboto", sans-serif;
   text-align:center;
   color: #fcfdfc;
