@@ -20,4 +20,29 @@
 }
 .container{
   text-align: center;
+  background: #FFFFFF;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    max-width:800px;
+    margin:auto;
+    height:500px;
+    margin-top:150px;
+    padding:0;
 }
+
+.position{
+      padding-top: 25px;
+      background:url(../../images/bgcolor.PNG);
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+ body{
+  background: url(../../images/bg-02.jpg);
+  background-size:100%;
+ }
+
+ .title{
+  font-family: "Roboto", sans-serif;
+  text-align:center;
+  color: #fcfdfc; 
+  padding-bottom: 25px;
+ }
+
