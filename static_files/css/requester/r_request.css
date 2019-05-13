@@ -10,8 +10,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h2{
+  margin-top: 6vh;
+  color: #063a3a;
+  font-family: "Montserrat", sans-serif;
+}
 .click{
-  background-color: #42f4c5;
+  background-color: #1c5f5b;
 }
 
 .btn-reset{
@@ -21,36 +26,26 @@ body {
 .container{
   text-align: center;
 }
-
 .button{
-  padding-left: 1%;
-  padding-right: 1%;
+  margin:2px;
 }
-
 .div_button{
   text-align: center;
 }
  .containerb{
-  text-align: center;
   background: #FFFFFF;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-    max-width:800px;
+    width: 50vw;
     margin:auto;
-    max-height:650px;
     margin-top:90px;
     padding:0;
  }
 
- .box{
-  padding-top: 25px;
-  background:url(../../images/bgcolor.PNG);
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
- }
 
  #title{
   font-family: "Roboto", sans-serif;
   text-align:center;
-  color: #fcfdfc; 
+  color: #fcfdfc;
   padding-bottom: 25px;
  }
 
@@ -65,4 +60,13 @@ body {
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
+
+ }
+
+ .btn_white {
+    background: white;
+    color:#063a3a;
+    font-size: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 5px 5px 0 rgba(0, 0, 0, 0.1);
+
  }
