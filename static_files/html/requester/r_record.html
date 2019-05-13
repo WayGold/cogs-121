@@ -31,10 +31,12 @@
     <div class="position">
     <h1 class="title"> My Requests </h1>
     </div>
-    <button class="btn-default" id="lqz_new_request">New Request</button>
-    <button class="btn-default" id="lqz_refresh">
+    <div class="btns">
+    <button id="lqz_new_request">New Request</button>
+    <button id="lqz_refresh">Refresh
       <i class="fa fa-repeat"></i>
     </button>
+  </div>
 
 
     <script id="entry-template" type="text/x-handlebars-template">
@@ -48,17 +50,17 @@
             <p>Description: {{description}}</p>
           </div>
           <div class='buttons'>
-            <button class='btn-default lqz_rate'> Rate </button>
-            <button class='btn-default lqz_report'> Report </button>
+            <button class='lqz_rate'> Rate </button>
+            <button class='lqz_report'> Report </button>
           </div>
   			</div>
 		</script>
 
-		<div class="list">
-			<div class="table" id="templatedProjects" >
+
+			<div class="request_table" id="templatedProjects" >
         <!-- Records will be inserted here -->
 			</div>
-		</div>
+
 
   </div>
 </body>

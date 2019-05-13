@@ -68,14 +68,33 @@ app.get('/request_info/:requestid', (req, res) => {
   });
 });
 
-app.get('/request_info/requester/:username', (req, res) => {
-  // db.all() fetches all results from an SQL query into the 'rows' variable:
-  const nameToLookup = req.params.username;
+// app.get('/request_info/:requestid', (req, res) => {
+//   // db.all() fetches all results from an SQL query into the 'rows' variable:
+//   const requestToLookup = req.params.requestid;
+//
+//   db.all('SELECT * FROM request_info WHERE uid=$uid',
+//     // parameters to SQL query:
+//     {
+//       $uid: requestToLookup
+//     },
+//     (err, rows) => {
+//     console.log(rows);
+//     res.send(rows);
+//   });
+// });
 
-  db.all('SELECT * FROM request_info WHERE requester=$requester',
+app.get('/request_info/:property/:value', (req, res) => {
+  // db.all() fetches all results from an SQL query into the 'rows' variable:
+  const property = req.params.property;
+  const value = req.params.value;
+  const sql = 'SELECT * FROM request_info WHERE ' + property +" = $value";
+
+
+console.log(sql);
+  db.all(sql,
     // parameters to SQL query:
     {
-      $requester: nameToLookup
+      $value: value
     },
     (err, rows) => {
     console.log(rows);
@@ -83,20 +102,35 @@ app.get('/request_info/requester/:username', (req, res) => {
   });
 });
 
-app.get('/request_info/accepter/:username', (req, res) => {
-  // db.all() fetches all results from an SQL query into the 'rows' variable:
-  const nameToLookup = req.params.username;
-
-  db.all('SELECT * FROM request_info WHERE accepter=$accepter',
-    // parameters to SQL query:
-    {
-      $accepter: nameToLookup
-    },
-    (err, rows) => {
-    console.log(rows);
-    res.send(rows);
-  });
-});
+// app.get('/request_info/requester/:username', (req, res) => {
+//   // db.all() fetches all results from an SQL query into the 'rows' variable:
+//   const nameToLookup = req.params.username;
+//
+//   db.all('SELECT * FROM request_info WHERE requester=$requester',
+//     // parameters to SQL query:
+//     {
+//       $requester: nameToLookup
+//     },
+//     (err, rows) => {
+//     console.log(rows);
+//     res.send(rows);
+//   });
+// });
+//
+// app.get('/request_info/accepter/:username', (req, res) => {
+//   // db.all() fetches all results from an SQL query into the 'rows' variable:
+//   const nameToLookup = req.params.username;
+//
+//   db.all('SELECT * FROM request_info WHERE accepter=$accepter',
+//     // parameters to SQL query:
+//     {
+//       $accepter: nameToLookup
+//     },
+//     (err, rows) => {
+//     console.log(rows);
+//     res.send(rows);
+//   });
+// });
 
 //post request for adding request to the db
 app.post('/request_info', (req, res) => {

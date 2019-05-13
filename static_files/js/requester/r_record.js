@@ -1,6 +1,7 @@
 
 $(document).ready(() => {
   let all_records;
+
   $.ajax({
     url: '../../request_info/requester/' + localStorage.getItem("user"),
     type: 'GET',

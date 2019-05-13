@@ -2,7 +2,7 @@
 
 $(document).ready(() => {
 
-  let url = '../../request_info/' + localStorage.getItem("request_id");
+  let url = '../../request_info/uid/' + localStorage.getItem("request_id");
   console.log(url);
 
   $.ajax({

@@ -1,18 +1,22 @@
-.table {
+
+.request_table {
   border-spacing: 0;
   border-collapse: collapse;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-left: 2vw;
+  margin-right: 2vw;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 .recordbox{
-  border-style: solid;
+  background-color: #ecf1e9;
+  border-radius: 5px;
   border-width: 1px;
   padding: 2vw;
   margin-top:2vh;
   margin: 1vw;
-  text-align: left;
 }
 
 .buttons{
@@ -22,10 +26,11 @@
   text-align: center;
   background: #FFFFFF;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-    max-width:800px;
+    width: 80vw;
     margin:auto;
-    height:500px;
+    height:auto;
     margin-top:150px;
+    margin-bottom:100px;
     padding:0;
 }
 
@@ -42,7 +47,6 @@
  .title{
   font-family: "Roboto", sans-serif;
   text-align:center;
-  color: #fcfdfc; 
+  color: #fcfdfc;
   padding-bottom: 25px;
  }
-
