@@ -2,7 +2,7 @@
 $(document).ready(() => {
   let all_records;
   $.ajax({
-    url: '../../request_info',
+    url: '../../request_info/requester/' + localStorage.getItem("user"),
     type: 'GET',
     dataType : 'json',
     success: (data) => {
@@ -27,7 +27,7 @@ $(document).ready(() => {
           });
 
           $('.record').click(() => {
-            window.location = "r_waiting.html";
+            window.location = "waiting.html";
           });
 
           console.log(curData)

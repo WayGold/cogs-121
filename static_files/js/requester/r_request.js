@@ -78,13 +78,16 @@ $(document).ready(() => {
         url: '../../request_info',
         type: 'POST', // <-- this is POST, not GET
         data: {
-          username: current_user,
+          uid: null,
+          requester: localStorage.getItem("user"),
           emergency: input_emergency,
           category: input_category,
           disability: input_disability,
           description: input_description,
           latitude: input_latitude,
-          longitude: input_longitude
+          longitude: input_longitude,
+          status: "waiting",
+          accepter: null,
         },
         success: (data) => {
           if(confirm("Submission Completed!")){

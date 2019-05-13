@@ -68,31 +68,54 @@ app.get('/request_info/:requestid', (req, res) => {
   });
 });
 
-app.get('/request_info', (req, res) => {
+app.get('/request_info/requester/:username', (req, res) => {
   // db.all() fetches all results from an SQL query into the 'rows' variable:
-  db.all('SELECT * FROM request_info', (err, rows) => {
+  const nameToLookup = req.params.username;
+
+  db.all('SELECT * FROM request_info WHERE requester=$requester',
+    // parameters to SQL query:
+    {
+      $requester: nameToLookup
+    },
+    (err, rows) => {
     console.log(rows);
     res.send(rows);
   });
 });
 
+app.get('/request_info/accepter/:username', (req, res) => {
+  // db.all() fetches all results from an SQL query into the 'rows' variable:
+  const nameToLookup = req.params.username;
+
+  db.all('SELECT * FROM request_info WHERE accepter=$accepter',
+    // parameters to SQL query:
+    {
+      $accepter: nameToLookup
+    },
+    (err, rows) => {
+    console.log(rows);
+    res.send(rows);
+  });
+});
 
 //post request for adding request to the db
 app.post('/request_info', (req, res) => {
   console.log(req.body);
 
   db.run(
-    'INSERT INTO request_info VALUES ($uid, $username, $emergency, $category, $disability, $description, $latitude, $longitude)',
+    'INSERT INTO request_info VALUES ($uid, $requester, $emergency, $category, $disability, $description, $latitude, $longitude, $status, $accepter)',
     // parameters to SQL query:
     {
       $uid: null,
-      $username: req.body.username,
+      $requester: req.body.requester,
       $emergency: req.body.emergency,
       $category: req.body.category,
       $disability: req.body.disability,
       $description: req.body.description,
       $latitude: req.body.latitude,
       $longitude: req.body.longitude,
+      $status: req.body.status,
+      $accepter: req.body.accepter,
     },
     // callback function to run when the query finishes:
     (err) => {
