@@ -1,11 +1,11 @@
 $(document).ready(() => {
 
-  $("#lqz_cancel").click(() => {
+  $("#zw_finish_cancel").click(() => {
     console.log("cancel clicked!");
     window.location = "r_record.html";
   })
 
-  $("#lqz_submit").click(() => {
+  $("#zw_finish_submit").click(() => {
     console.log("submit clicked");
     window.location = "r_record.html";
   })

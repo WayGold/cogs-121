@@ -63,14 +63,13 @@ $(document).ready(() => {
         else if (data[0].status == 'Matched') {
           show2();
         } else if (data[0].status == 'Arrived'){
-          show2();
+          show3();
         }
-
       }
-
     });
 
   }
+  order();
   setInterval(order, 2000);
 
 });

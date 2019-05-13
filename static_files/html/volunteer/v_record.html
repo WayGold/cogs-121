@@ -27,12 +27,12 @@
   </nav>
 
   <div class="container" >
-<div class="position">
+<div class="title_bar">
     <h1 class="title"> Record </h1>
 </div>
 <div class="btn">
-    <button class="btn-default" id="lqz_find">Find Request</button>
-    <button class="btn-default" id="lqz_refresh">
+    <button id="lqz_find">Find Request</button>
+    <button id="lqz_refresh">Refresh
       <i class="fa fa-repeat"></i>
     </button>
     </div>
@@ -47,13 +47,13 @@
             <p>Description: {{description}}</p>
           </div>
           <div class='buttons'>
-            <button class='btn-default lqz_report'> Report </button>
+            <button class='lqz_report'> Report </button>
           </div>
   			</div>
 		</script>
 
 		<div class="list">
-			<div class="table" id="templatedProjects" >
+			<div class="request_table" id="templatedProjects" >
         <!-- Records will be inserted here -->
 			</div>
 		</div>

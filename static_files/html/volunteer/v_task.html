@@ -8,6 +8,8 @@
   <script src="../../lib/jquery-3.3.1.min.js"></script>
   <script src="../../js/volunteer/v_task.js"></script>
   <script src="../../lib/handlebars-v4.0.12.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
@@ -28,12 +30,15 @@
 
 
   <div class="container">
-<div class="position">
+<div class="title_bar">
     <h1 class="title"> Request Board </h1>
+    <button id="my_record" class='record'> My Record </button>
+
     </div>
-    <button class='btn-default record'> My Record </button>
+
     <div>
-      <h2 style="text-align:left; position: absolute; line-height: 0px"> Filter by: </h2>
+      <h3 style="text-align:left; position: absolute; line-height: 0px;
+      margin-left: 4vw;"> Filter by: </h3>
     </div>
 
 
@@ -81,14 +86,14 @@
               <p>Description: {{descriptions}}</p>
             </div>
             <div class='buttons'>
-              <button class='btn-default lqz_report' > Report </button>
-              <button class='btn-default lqz_accept' id="btn_{{uid}}"> More </button>
+              <button class='lqz_report' > Report </button>
+              <button class='lqz_accept' id="btn_{{uid}}"> More </button>
             </div>
     			</div>
   		</script>
 
   		<div class="list">
-  			<div class="table" id="templatedProjects" >
+  			<div class="request_table" id="templatedProjects" >
           <!-- Records will be inserted here -->
   			</div>
   		</div>

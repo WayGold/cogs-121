@@ -24,13 +24,12 @@ $(document).ready(() => {
     // console.log("Arrived clicked");
     // window.location = "v_record.html";
 
-    curr_record = localStorage.getItem("request_id");
+    let curr_record = localStorage.getItem("request_id");
     $.ajax({
       url: '../../change_status/' + curr_record,
       type: 'POST',
       data: {
         status: "Arrived",
-        accepter: localStorage.getItem("user")
       },
       success: (data) => {
         console.log("Arrived clicked");
