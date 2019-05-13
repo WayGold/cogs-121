@@ -154,6 +154,27 @@ app.post('/create_user', (req, res) => {
   );
 });
 
+app.post('/change_status/:uid', (req, res) => {
+  console.log(req.body);
+
+  db.run(
+    'UPDATE request_info SET status = $status WHERE uid = $uid',
+    // parameters to SQL query:
+    {
+      $uid: req.params.uid,
+      $status: req.body.status
+    },
+    // callback function to run when the query finishes:
+    (err) => {
+      if (err) {
+        res.send('Fail');
+      } else {
+        res.send('Success');
+      }
+    }
+  );
+});
+
 app.listen(3000, () => {
   console.log('Server started at http://localhost:3000/');
 });
