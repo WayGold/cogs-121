@@ -13,11 +13,20 @@ $(document).ready(() => {
 
   $(document).ready(() => {
     $('#zsy_finish').click(() => {
-      console.log("next clicked");
-      window.location = "r_finished.html";
+      $.ajax({
+        url: '../../change_status/' + localStorage.getItem("request_id"),
+        type: 'POST',
+        data: {
+          status: "Finished",
+          accepter: localStorage.getItem("user")
+        },
+        success: (data) => {
+          console.log("next clicked");
+          window.location = "r_finished.html";
+        }
+      });
     });
-
-  })
+  });
   $(document).ready(() => {
     $('#zsy_cancel').click(() => {
       console.log("Cancel clicked");
