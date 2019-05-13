@@ -35,7 +35,7 @@ table {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   max-width:800px;
   margin:auto;
-  height:500px;
+  height:600px;
   margin-top:130px;
   padding:0;
 }
@@ -52,6 +52,6 @@ background: url(../../images/bg.jpg);
 .title{
 font-family: "Roboto", sans-serif;
 text-align:center;
-color: #fcfdfc; 
+color: #fcfdfc;
 padding-bottom: 25px;
 }
