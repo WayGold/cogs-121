@@ -29,7 +29,7 @@
 
   <div class="container" >
     <div class="position">
-    <h1 class="title"> Record </h1>
+    <h1 class="title"> My Requests </h1>
     </div>
     <button class="btn-default" id="lqz_new_request">New Request</button>
     <button class="btn-default" id="lqz_refresh">
@@ -40,7 +40,7 @@
     <script id="entry-template" type="text/x-handlebars-template">
       <div class='recordbox'>
           <div class='record'>
-            <p>Status: ......</p>
+            <p>Status: {{status}}</p>
             <p>Request ID: {{uid}}</p>
             <p>Emergency Level: {{emergency}}</p>
             <p>Category: {{category}}</p>

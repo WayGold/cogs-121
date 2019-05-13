@@ -31,19 +31,17 @@
 
   <div class ="container">
     <div class="info">
-    
-        <div id="box">
-        <h1 class="title">Information</h1>
+      <div class = "requester">
+        <h1>Information</h1>
       </div>
-    
       <div class ="icon1">
-        <img src="../../images/dog.png" style="width:100px; height:100px; margin-top:20px;" >
+        <img src="../../images/dog.png" >
       </div>
       <script id="taskinfo" type="text/x-handlebars-template">
         <div class='recordbox'>
             <div class='record'>
               <p>Request ID: {{uid}}</p>
-              <p>Requester: ......</p>
+              <p>Requester: {{requester}}</p>
               <p>Emergency Level: {{emergency}}</p>
               <p>Category: {{category}}</p>
               <p>Personal Condition: {{disability}}</p>
@@ -64,7 +62,7 @@
 
     <div class= "btns">
       <button id="zw_v_report_cancel">Cancel</button>
-      <button id="zw_v_report_submit">Accept</button>
+      <button class id="zw_v_report_submit">Accept</button>
     </div>
 
   </div>

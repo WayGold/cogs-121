@@ -2,7 +2,7 @@
 $(document).ready(() => {
   let all_records;
   $.ajax({
-    url: '../../request_info',
+    url: '../../request_info/accepter/' + localStorage.getItem("user"),
     type: 'GET',
     dataType : 'json',
     success: (data) => {

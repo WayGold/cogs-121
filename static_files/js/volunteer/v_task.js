@@ -4,6 +4,10 @@ $(document).ready(() => {
   let all_records;
   let curr_request;
 
+  $('.record').click(() => {
+    window.location = "v_record.html";
+  });
+
   $.ajax({
     url: '../../request_info',
     type: 'GET',
@@ -23,10 +27,6 @@ $(document).ready(() => {
 
           $('.lqz_report').click(() => {
             window.location = "v_report.html";
-          });
-
-          $('.record').click(() => {
-            window.location = "v_record.html";
           });
 
           let btn_id = "#btn_"+record.uid;
