@@ -44,11 +44,9 @@ $(document).ready(() => {
         },
         success: (data) => {
           console.log("Successfully accepted!");
+          // console.log(data);
           window.location = "v_taskinfo1.html";
         }
       });
-
-      // console.log("accept clicked");
-      // window.location = "v_taskinfo1.html";
   })
 });
