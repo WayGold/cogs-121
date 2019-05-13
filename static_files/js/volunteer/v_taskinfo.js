@@ -40,6 +40,7 @@ $(document).ready(() => {
         type: 'POST',
         data: {
           status: "Matched",
+          accepter: localStorage.getItem("user")
         },
         success: (data) => {
           console.log("Successfully accepted!");

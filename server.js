@@ -158,11 +158,12 @@ app.post('/change_status/:uid', (req, res) => {
   console.log(req.body);
 
   db.run(
-    'UPDATE request_info SET status = $status WHERE uid = $uid',
+    'UPDATE request_info SET status = $status, accepter = $accepter WHERE uid = $uid',
     // parameters to SQL query:
     {
       $uid: req.params.uid,
-      $status: req.body.status
+      $status: req.body.status,
+      $accepter: req.body.accepter
     },
     // callback function to run when the query finishes:
     (err) => {
