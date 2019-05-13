@@ -22,7 +22,7 @@ $(document).ready(() => {
     $('#zsy_cancel').click(() => {
       console.log("Cancel clicked");
       if (confirm("Are you sure to cancel?")) {
-        window.location = "../../index.html";
+        window.location = "r_record.html";
       }
     });
 
@@ -57,7 +57,7 @@ $(document).ready(() => {
       dataType: 'json',
       success: (data) => {
         console.log('You received some data!', data[0].status);
-        if (data[0].status == 'waiting') {
+        if (data[0].status == 'Waiting') {
           show1();
         }
         else if (data[0].status == 'Matched') {

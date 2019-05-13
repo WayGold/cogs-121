@@ -70,6 +70,7 @@ $(document).ready(() => {
 
   $('#zw_submit').click(() => {
     console.log("Submit clicked");
+
     input_description = $('#zw_description').val();
 
     if(confirm("Are you sure to submit?")){
@@ -92,11 +93,11 @@ $(document).ready(() => {
         success: (data) => {
           if(confirm("Submission Completed!")){
             //FIXME
-            window.location = "waiting.html";
+            window.location = "r_record.html";
           }
           else{
             //FIXME
-            window.location = "waiting.html";
+            window.location = "r_record.html";
           }
         }
       });
