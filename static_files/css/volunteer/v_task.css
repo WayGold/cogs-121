@@ -68,6 +68,7 @@ td {
 table {
   margin-left: 2vw;
   margin-top: 2vh;
+  max-width: 90vw;
 }
 
 /*

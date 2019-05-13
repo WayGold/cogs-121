@@ -27,6 +27,12 @@ $(document).ready(() => {
             window.location = "r_report.html";
           });
 
+          let btn_id = "#btn_"+record.uid;
+          $(btn_id).click(() => {
+            localStorage.setItem("request_id", record.uid);
+            console.log(record.uid);
+          });
+
           $('.record').click(() => {
             window.location = "waiting.html";
           });

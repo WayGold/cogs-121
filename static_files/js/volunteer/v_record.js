@@ -23,8 +23,11 @@ $(document).ready(() => {
             window.location = "v_report.html";
           });
 
+
           $('.record').click(() => {
-            window.location = "v_taskinfo.html";
+            if (record.status == "Matching...")
+              window.location = "v_taskinfo.html";
+              else if (record.status == "Matching...")
           });
 
           console.log(curData)

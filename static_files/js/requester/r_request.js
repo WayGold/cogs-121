@@ -86,7 +86,7 @@ $(document).ready(() => {
           description: input_description,
           latitude: input_latitude,
           longitude: input_longitude,
-          status: "waiting",
+          status: "Waiting",
           accepter: null,
         },
         success: (data) => {

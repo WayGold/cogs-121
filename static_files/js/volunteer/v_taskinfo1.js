@@ -30,6 +30,7 @@ $(document).ready(() => {
       type: 'POST',
       data: {
         status: "Arrived",
+        accepter: localStorage.getItem("user")
       },
       success: (data) => {
         console.log("Arrived clicked");
