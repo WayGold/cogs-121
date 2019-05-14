@@ -34,7 +34,24 @@ $(document).ready(() => {
           });
 
           $('.record').click(() => {
-            window.location = "waiting.html";
+              $.ajax({
+                url: '../../request_info/' + localStorage.getItem("request_id"),
+                type: 'GET',
+                timeout: 2000,
+                cache: false,
+                async: true,
+                dataType: 'json',
+                success: (data) => {
+                  console.log('You received some data!', data[0].status);
+
+                  if (data[0].status == 'Finished') {
+                    window.location = "r_report.html";
+                  } else {
+                    window.location = "waiting.html";
+                  }
+                }
+              });
+            // window.location = "waiting.html";
           });
 
           console.log(curData)

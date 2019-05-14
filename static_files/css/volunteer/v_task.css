@@ -34,6 +34,14 @@ button {
   float:right;
 
 }
+.record1 {
+  display: inline;
+  font-size: 25px;
+  margin-top: -0.8vw;
+  margin-left: -12vw;
+  float:left;
+
+}
 
 .buttons{
   text-align: right;

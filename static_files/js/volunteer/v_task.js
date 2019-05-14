@@ -43,7 +43,9 @@ $(document).ready(() => {
         }
       }
     });
-
+    $('#lqz_refresh').click(() => {
+      document.location.reload();
+    });
 });
 
 

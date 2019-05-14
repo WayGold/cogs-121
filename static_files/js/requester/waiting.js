@@ -54,7 +54,7 @@ $(document).ready(() => {
     document.getElementById("waiting").style.display = "none";
     document.getElementById("matched").style.display = "none";
   }
-  // show1();
+   show1();
   function order() {
 
     $.ajax({
@@ -66,10 +66,8 @@ $(document).ready(() => {
       dataType: 'json',
       success: (data) => {
         console.log('You received some data!', data[0].status);
-        if (data[0].status == 'Waiting') {
-          show1();
-        }
-        else if (data[0].status == 'Matched') {
+
+        if (data[0].status == 'Matched') {
           show2();
         } else if (data[0].status == 'Arrived'){
           show3();
