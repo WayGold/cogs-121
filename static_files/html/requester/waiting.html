@@ -15,129 +15,166 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>wait_match_finish</title>
   <style type="text/css">
-  .top{height:50px;}
-  .waiting .matched .finish{margin-top:40px;}
+    .top {
+      height: 50px;
+    }
+
+    .waiting .matched .finish {
+      margin-top: 40px;
+    }
   </style>
 
 </head>
 
 <body>
+<ul>
   <nav class="fixed-top zzzz_navbar" id="mainNav">
-      <div>
-          <a style="position: absolute" href="../../index.html">
-              <img src="../../images/navbar.png"  style="height: 40px;">
-           </a>
-         </div>
-        <div style="text-align: right" >
-          <a  href="../../index.html">
-            <i style="padding: 5px; color: white; font-size: 30px;" class="fas fa-home"></i>
-          </a>
-      </div>
-  </nav>
-
-  <div class="container1">
-  <div style="display:none" id="waiting">
-    <div class="box">
-    <h1 id="name"> Waiting For Your Volunteer </h1>
+    <div>
+      <a style="position: absolute" href="../../index.html">
+        <img src="../../images/navbar.png" style="height: 40px;">
+      </a>
     </div>
-    <div class="stepInfo">
-      <ul>
-        <div class="progress progress-striped">
-            <div class="progress-bar progress-bar-info" role="progressbar"
-                 aria-valuenow="60" aria-valuemin="0" aria-valuemax="80"
-                 style="width: 0%;">
-                <span class="sr-only">0% finish</span>
+    <div style="text-align: right">
+      <a href="../../index.html">
+        <i style="padding: 5px; color: white; font-size: 30px;" class="fas fa-home"></i>
+      </a>
+    </div>
+
+    <div class="dropdown" style="text-align: right">
+      <div class="zsy">
+        <i style="padding: 5px;  color: white; font-size: 30px;" class="far fa-address-card"></i>
+      </div>
+      <div class="dropdown-content">
+        <!-- <div class ="container2"> -->
+        <div class='dropbtn'>
+        <div class="info">
+          <div class = "requester">
+            <h1>Information</h1>
+          </div>
+          <div class ="icon1">
+            <img src="../../images/dog.png" >
+          </div>
+          <script id="taskinfo" type="text/x-handlebars-template">
+            <div class='recordbox'>
+                <div class='record'>
+                  <p>Request ID: {{uid}}</p>
+                  <p>Requester: {{requester}}</p>
+                  <p>Emergency Level: {{emergency}}</p>
+                  <p>Category: {{category}}</p>
+                  <p>Personal Condition: {{disability}}</p>
+                  <p>Description: {{description}}</p>
+                </div>
+
+              </div>
+          </script>
+
+          <div class="list">
+            <div class="table" id="single_task" >
+              <!-- Records will be inserted here -->
             </div>
-        </div>
-      </ul>
-      <div class="stepIco stepIco11" id="wait1">1
-        <div class="stepText" id="createText">WAITING</div>
-      </div>
-      <div class="stepIco stepIco12" id="match1">2
-        <div class="stepText" id="checkText">MATCHED</div>
-      </div>
-      <div class="stepIco stepIco13" id="finish1">3
-        <div class="stepText" id="produceText">FINISH</div>
-      </div>
-    </div>
+          </div>
 
-    <div class="btn" >
-      <button class="button" id="zsy_cancel">Cancel</button>
+        </div>
+      </div>
     </div>
   </div>
+  </nav>
+</ul>
 
-
-  <div style="display:none" id="matched">
-    <div class="box">
-    <h1  id="name"> Successfully Matched! </h1>
-    </div>
-    <div class="stepInfo">
-      <ul>
-        <!-- <li></li> -->
-        <div class="progress progress-striped">
-            <div class="progress-bar progress-bar-info" role="progressbar"
-                 aria-valuenow="60" aria-valuemin="0" aria-valuemax="80"
-                 style="width: 50%;">
-                <span class="sr-only">50% finish</span>
+  <div class="container1">
+    <div style="display:none" id="waiting">
+      <div class="box">
+        <h1 id="name"> Waiting For Your Volunteer </h1>
+      </div>
+      <div class="stepInfo">
+        <ul>
+          <div class="progress progress-striped">
+            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="80" style="width: 0%;">
+              <span class="sr-only">0% finish</span>
             </div>
+          </div>
+        </ul>
+        <div class="stepIco stepIco11" id="wait1">1
+          <div class="stepText" id="createText">WAITING</div>
         </div>
-        <!-- <li></li> -->
-      </ul>
-      <div class="stepIco stepIco21" id="wait2">1
-        <div class="stepText" id="createText">WAITING</div>
+        <div class="stepIco stepIco12" id="match1">2
+          <div class="stepText" id="checkText">MATCHED</div>
+        </div>
+        <div class="stepIco stepIco13" id="finish1">3
+          <div class="stepText" id="produceText">FINISH</div>
+        </div>
       </div>
-      <div class="stepIco stepIco22" id="match2">2
-        <div class="stepText" id="checkText">MATCHED</div>
+
+      <!-- <div class="btn" >
+      <button class="button" id="zsy_cancel">Cancel</button>
+    </div> -->
+    </div>
+
+
+    <div style="display:none" id="matched">
+      <div class="box">
+        <h1 id="name"> Successfully Matched! </h1>
       </div>
-      <div class="stepIco stepIco23" id="finish2">3
-        <div class="stepText" id="checkText">FINISH</div>
+      <div class="stepInfo">
+        <ul>
+          <!-- <li></li> -->
+          <div class="progress progress-striped">
+            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="80" style="width: 50%;">
+              <span class="sr-only">50% finish</span>
+            </div>
+          </div>
+          <!-- <li></li> -->
+        </ul>
+        <div class="stepIco stepIco21" id="wait2">1
+          <div class="stepText" id="createText">WAITING</div>
+        </div>
+        <div class="stepIco stepIco22" id="match2">2
+          <div class="stepText" id="checkText">MATCHED</div>
+        </div>
+        <div class="stepIco stepIco23" id="finish2">3
+          <div class="stepText" id="checkText">FINISH</div>
+        </div>
+      </div>
+      <!-- <p>Conguatuations!</p> -->
+
+      <!-- <div class="btn">
+      <button class="button" id="zsy_cancel">Cancel</button>
+    </div> -->
+    </div>
+
+
+    <div style="display:none" id="finished">
+      <div class="box">
+        <h1 id="name"> Pleasr rate this service when it is over</h1>
+      </div>
+      <div class="stepInfo">
+        <ul>
+          <div class="progress progress-striped">
+            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="80" style="width: 100%;">
+              <span class="sr-only">100% finish</span>
+            </div>
+          </div>
+
+        </ul>
+        <div class="stepIco stepIco31" id="wait3">1
+          <div class="stepText" id="createText">WAITING</div>
+        </div>
+        <div class="stepIco stepIco32" id="match3">2
+          <div class="stepText" id="checkText">MATCHED</div>
+        </div>
+        <div class="stepIco stepIco33" id="finish3">3
+          <div class="stepText" id="checkText">FINISH</div>
+        </div>
+      </div>
+      <div class="btn">
+        <button class="button" id="zsy_finish">Finish</button>
       </div>
     </div>
-    <!-- <p>Conguatuations!</p> -->
-
     <div class="btn">
       <button class="button" id="zsy_cancel">Cancel</button>
     </div>
   </div>
-
-
-  <div style="display:none" id="finished">
-    <div class="box">
-    <h1 id="name"> Pleasr rate this service when it is over</h1>
-    </div>
-    <div class="stepInfo">
-      <ul>
-        <div class="progress progress-striped">
-            <div class="progress-bar progress-bar-info" role="progressbar"
-                 aria-valuenow="60" aria-valuemin="0" aria-valuemax="80"
-                 style="width: 100%;">
-                <span class="sr-only">100% finish</span>
-            </div>
-        </div>
-
-      </ul>
-      <div class="stepIco stepIco31" id="wait3">1
-        <div class="stepText" id="createText">WAITING</div>
-      </div>
-      <div class="stepIco stepIco32" id="match3">2
-        <div class="stepText" id="checkText">MATCHED</div>
-      </div>
-      <div class="stepIco stepIco33" id="finish3">3
-        <div class="stepText" id="checkText">FINISH</div>
-      </div>
-    </div>
-    <div class="btn" >
-      <button class="button" id="zsy_finish">Finish</button>
-    </div>
-  </div>
-  </div>
-
-  <!-- <script>
-
-
-
-  </script> -->
-}
+  }
 
 </body>
 
