@@ -8,12 +8,17 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
   <script src="../../lib/jquery-3.3.1.min.js"></script>
+  <script src="../../js/main.js"></script>
+  <script src="../../js/key.js"></script>
+  <script src="../../js/requester/waiting.js"></script>
   <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="../../lib/handlebars-v4.0.12.js"></script>
-  <script src="../../js/requester/waiting.js"></script>
+
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>wait_match_finish</title>
+
   <style type="text/css">
     .top {
       height: 50px;
@@ -130,6 +135,8 @@
         </div>
         <div class="stepIco stepIco22" id="match2">2
           <div class="stepText" id="checkText">MATCHED</div>
+          <div id="myMap-match" style="position:relative;width:800px;height:600px;"></div>
+          <div id='routeInfoPanel-match'></div>
         </div>
         <div class="stepIco stepIco23" id="finish2">3
           <div class="stepText" id="checkText">FINISH</div>

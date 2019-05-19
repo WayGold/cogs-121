@@ -1,13 +1,19 @@
-$(document).ready(() => {
-
-  let input_emergency, input_category, input_disability, input_description, input_latitude, input_longitude;
-  //FIXME
+let input_emergency, input_category, input_disability, input_description, input_latitude, input_longitude;
+//FIXMe
+if(navigator.geolocation){
   navigator.geolocation.getCurrentPosition(function (position) {
     input_latitude = position.coords.latitude;
     input_longitude = position.coords.longitude;
-    console.log("latitude: " + input_latitude);
-    console.log("longitude: " + input_longitude);
-  })
+  });
+}
+else{
+  console.log("Can't access location info!");
+}
+
+$(document).ready(() => {
+
+  console.log("latitude: " + input_latitude);
+  console.log("longitude: " + input_longitude);
 
   $('#zw_Low').click(() => {
     console.log("low clicked");
