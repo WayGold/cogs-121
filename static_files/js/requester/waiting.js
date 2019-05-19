@@ -1,19 +1,12 @@
 let requester_data;
+let accepter_latitude;
+let accepter_longitude;
+let map_flag = false;
 
 $(document).ready(() => {
 
   let url = '../../request_info/uid/' + localStorage.getItem("request_id");
   console.log(url);
-
-  $.ajax({
-    url: url,
-    type: 'GET',
-    dataType : 'json',
-    success: (data) => {
-      requester_data = data;
-      console.log("Ajax success, data recieved: ", requester_data);
-    }
-  });
 
   $('#zsy_finish').click(() => {
     $.ajax({
@@ -38,67 +31,67 @@ $(document).ready(() => {
   });
 
   show1();
-  function order() {
+
+  function order(){
 
     $.ajax({
-      url: '../../request_info/' + localStorage.getItem("request_id"),
+      url: url,
       type: 'GET',
       timeout: 2000,
       cache: false,
       async: true,
       dataType: 'json',
       success: (data) => {
-        console.log('You received some data!', data[0].status);
+        requester_data = data[0];
+        console.log("Ajax success, data recieved: ", requester_data);
+        console.log('Current status: ', data[0].status);
 
         if (data[0].status == 'Matched') {
           show2();
-          let script = document.createElement('script');
-          script.type = 'text/javascript';
-          script.defer = true;
-          script.src ='http://www.bing.com/api/maps/mapcontrol?callback=GetMap';
-          document.body.appendChild(script);
+          accepter_latitude = data[0].accepter_latitude;
+          accepter_longitude = data[0].accepter_longitude;
+          if(map_flag == false){
+            displayMap();
+          }
         }
         else if (data[0].status == 'Arrived'){
           show3();
         }
       }
     });
-
   }
 
   order();
-
   setInterval(order, 2000);
 
-  function show1() {
-    document.getElementById("waiting").style.display = "block";
-    document.getElementById("matched").style.display = "none";
-    document.getElementById("finished").style.display = "none";
-  };
-
-  function show2() {
-    document.getElementById("matched").style.display = "block";
-    document.getElementById("waiting").style.display = "none";
-    document.getElementById("finished").style.display = "none";
-  }
-
-  function show3() {
-    document.getElementById("finished").style.display = "block";
-    document.getElementById("waiting").style.display = "none";
-    document.getElementById("matched").style.display = "none";
-  }
 });
+
+function show1() {
+  document.getElementById("waiting").style.display = "block";
+  document.getElementById("matched").style.display = "none";
+  document.getElementById("finished").style.display = "none";
+};
+
+function show2() {
+  document.getElementById("matched").style.display = "block";
+  document.getElementById("waiting").style.display = "none";
+  document.getElementById("finished").style.display = "none";
+}
+
+function show3() {
+  document.getElementById("finished").style.display = "block";
+  document.getElementById("waiting").style.display = "none";
+  document.getElementById("matched").style.display = "none";
+}
 
 function GetMap() {
 
   let map = new Microsoft.Maps.Map('#myMap-match', {credentials: key});
-  let request_location = new Microsoft.Maps.Location(requester_data[0].latitude, requester_data[0].longitude);
+  let request_location = new Microsoft.Maps.Location(requester_data.latitude, requester_data.longitude);
 
-  //get the accepter's Location
-  const accepter_location = localStorage.getItem("volunteer_loca");
-  console.log("Got volunteer's location at: ", accepter_location);
+  console.log("Got volunteer's location at: " + accepter_latitude + " " + accepter_longitude);
 
-  let volunteer_location = new Microsoft.Maps.Location(accepter_location.latitude, accepter_location.longitude);
+  let volunteer_location = new Microsoft.Maps.Location(accepter_latitude, accepter_longitude);
 
   Microsoft.Maps.loadModule('Microsoft.Maps.Directions', function () {
     //Create an instance of the directions manager.
@@ -148,4 +141,13 @@ function directionsUpdated(e) {
 
 function directionsError(e) {
   alert('Error: ' + e.message + '\r\nResponse Code: ' + e.responseCode)
+}
+
+function displayMap(){
+  map_flag = true;
+  let script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.defer = true;
+  script.src ='http://www.bing.com/api/maps/mapcontrol?callback=GetMap';
+  document.body.appendChild(script);
 }

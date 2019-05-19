@@ -3,6 +3,16 @@ $(document).ready(() => {
   // v_task
   let all_records;
   let curr_request;
+  
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(function (position) {
+      console.log("Current location: " + position.coords.latitude + " " + position.coords.longitude);
+    });
+  }
+  else{
+    console.log("Can't access location info!");
+  }
+
 
   $('.record').click(() => {
     window.location = "v_record.html";

@@ -9,13 +9,19 @@ navigator.geolocation.getCurrentPosition(function (position) {
   console.log(position.coords.latitude + " " + position.coords.longitude);
   cur_lati = position.coords.latitude;
   cur_longi = position.coords.longitude;
-  let v_location = {
-    "latitude": cur_lati,
-    "longitude": cur_longi
-  };
 
-  console.log("Setting location: " + v_location + "to local storage!");
-  localStorage.setItem("volunteer_loca", v_location);
+  console.log("Updating location: " + cur_lati + " " + cur_longi + "to database!");
+  $.ajax({
+    url: '../../set_accepter_location/' + localStorage.getItem("request_id"),
+    type: 'POST',
+    data: {
+      accepter_latitude: cur_lati,
+      accepter_longitude: cur_longi
+    },
+    success: (data) => {
+      console.log("Update successfully!");
+    }
+  });
 });
 
 $(document).ready(() => {

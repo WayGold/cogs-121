@@ -5,6 +5,15 @@ $(document).ready(() => {
   let url = '../../request_info/uid/' + localStorage.getItem("request_id");
   console.log(url);
 
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(function (position) {
+      console.log("Current location: " + position.coords.latitude + " " + position.coords.longitude);
+    });
+  }
+  else{
+    console.log("Can't access location info!");
+  }
+
   $.ajax({
     url: url,
     type: 'GET',

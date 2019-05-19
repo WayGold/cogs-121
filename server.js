@@ -137,7 +137,7 @@ app.post('/request_info', (req, res) => {
   console.log(req.body);
 
   db.run(
-    'INSERT INTO request_info VALUES ($uid, $requester, $emergency, $category, $disability, $description, $latitude, $longitude, $status, $accepter)',
+    'INSERT INTO request_info VALUES ($uid, $requester, $emergency, $category, $disability, $description, $latitude, $longitude, $accepter_latitude, $accepter_longitude, $status, $accepter)',
     // parameters to SQL query:
     {
       $uid: null,
@@ -148,6 +148,8 @@ app.post('/request_info', (req, res) => {
       $description: req.body.description,
       $latitude: req.body.latitude,
       $longitude: req.body.longitude,
+      $accepter_latitude: null,
+      $accepter_longitude: null,
       $status: req.body.status,
       $accepter: req.body.accepter,
     },
@@ -198,6 +200,28 @@ app.post('/change_status/:uid', (req, res) => {
       $uid: req.params.uid,
       $status: req.body.status,
       $accepter: req.body.accepter
+    },
+    // callback function to run when the query finishes:
+    (err) => {
+      if (err) {
+        res.send('Fail');
+      } else {
+        res.send('Success');
+      }
+    }
+  );
+});
+
+app.post('/set_accepter_location/:uid', (req, res) => {
+  console.log(req.body);
+
+  db.run(
+    'UPDATE request_info SET accepter_latitude = $accepter_latitude, accepter_longitude = $accepter_longitude WHERE uid = $uid',
+    // parameters to SQL query:
+    {
+      $uid: req.params.uid,
+      $accepter_latitude: req.body.accepter_latitude,
+      $accepter_longitude: req.body.accepter_longitude
     },
     // callback function to run when the query finishes:
     (err) => {
