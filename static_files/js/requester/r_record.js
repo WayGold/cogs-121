@@ -90,8 +90,8 @@ $(document).ready(() => {
         $(btn_id).click(() => {
           localStorage.setItem("request_id", record.uid);
           console.log(record.uid);
+          window.location = redirect;
         });
-          $(".record").click(() => {window.location = redirect});
 
         let cancel_id = "#cancel_"+record.uid;
         $(cancel_id).click(() => {
