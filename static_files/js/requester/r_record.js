@@ -53,7 +53,7 @@ $(document).ready(() => {
         }
         else {
           button_text = "Delete";
-          button_html = `<button class='lqz_rate' id="btn_${record.uid}">${rate_or_report}</button>`;
+          button_html = `<button class='lqz_rate' id="rate_${record.uid}">${rate_or_report}</button>`;
           redirect = "r_report.html";
         }
 
@@ -79,18 +79,27 @@ $(document).ready(() => {
 
         $('.lqz_rate').click(() => {
           localStorage.setItem("request_id", record.uid);
-          if ($('.lqz_rate').html() == "Rate")
-          window.location = "r_finished.html";
-          else {
-            window.location = "r_report.html";
-          }
+
         });
 
         let btn_id = "#btn_"+record.uid;
+        let rate_id = "#rate_"+record.uid;
         $(btn_id).click(() => {
           localStorage.setItem("request_id", record.uid);
           console.log(record.uid);
           window.location = redirect;
+        });
+
+        $(rate_id).click(() => {
+          localStorage.setItem("request_id", record.uid);
+          console.log(record.uid);
+          window.location = redirect;
+          if ($(rate_id).html() == "Rate"){
+            window.location = "r_finished.html";
+          }
+          else {
+            window.location = "r_report.html";
+          }
         });
 
         let cancel_id = "#cancel_"+record.uid;

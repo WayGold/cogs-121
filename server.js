@@ -70,7 +70,7 @@ app.get('/request_info/:requestid', (req, res) => {
 
 app.get('/rating_info/:uid', (req, res) => {
   // db.all() fetches all results from an SQL query into the 'rows' variable:
-  db.all('SELECT uid FROM rating WHERE uid = $uid',
+  db.all('SELECT * FROM rating WHERE uid = $uid',
   {
     $uid: req.params.uid
   },
