@@ -5,8 +5,31 @@ let map_flag = false;
 
 $(document).ready(() => {
 
+
   let url = '../../request_info/uid/' + localStorage.getItem("request_id");
   console.log(url);
+  $.ajax({
+    url: url,
+    type: 'GET',
+    dataType : 'json',
+    success: (data) => {
+      console.log('You received some data!', data);
+      all_records = data;
+
+
+      const source = $("#taskinfo").html();
+      const template = Handlebars.compile(source);
+      const parentDiv = $("#single_task");
+
+      for (const record of all_records) {
+          const curData = record;
+          const curHtml = template(curData);
+          parentDiv.append(curHtml);
+
+          console.log(curData);
+        }
+      }
+    });
 
   $('#zsy_finish').click(() => {
     $.ajax({
@@ -68,20 +91,26 @@ $(document).ready(() => {
 
 function show1() {
   document.getElementById("waiting").style.display = "block";
+  document.getElementById("cancelbtn").style.display = "block";
+  document.getElementById("video").style.display = "block";
   document.getElementById("matched").style.display = "none";
   document.getElementById("finished").style.display = "none";
 };
 
 function show2() {
   document.getElementById("matched").style.display = "block";
+  document.getElementById("cancelbtn").style.display = "block";
   document.getElementById("waiting").style.display = "none";
+  document.getElementById("video").style.display = "none";
   document.getElementById("finished").style.display = "none";
 }
 
 function show3() {
   document.getElementById("finished").style.display = "block";
   document.getElementById("waiting").style.display = "none";
+  document.getElementById("cancelbtn").style.display = "none";
   document.getElementById("matched").style.display = "none";
+  document.getElementById("video").style.display = "none";
 }
 
 function GetMap() {

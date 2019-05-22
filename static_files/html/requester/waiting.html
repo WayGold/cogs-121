@@ -32,35 +32,34 @@
 </head>
 
 <body>
-<ul>
-  <nav class="fixed-top zzzz_navbar" id="mainNav">
-    <div>
-      <a style="position: absolute" href="../../index.html">
-        <img src="../../images/navbar.png" style="height: 40px;">
-      </a>
-    </div>
-    <div style="text-align: right">
-      <a href="../../index.html">
-        <i style="padding: 5px; color: white; font-size: 30px;" class="fas fa-home"></i>
-      </a>
-    </div>
-
-    <div class="dropdown" style="text-align: right">
-      <div class="zsy">
-        <i style="padding: 5px;  color: white; font-size: 30px;" class="far fa-address-card"></i>
+  <ul>
+    <nav class="fixed-top zzzz_navbar" id="mainNav">
+      <div>
+        <a style="position: absolute" href="../../index.html">
+          <img src="../../images/navbar.png" style="height: 40px;">
+        </a>
       </div>
-      <div class="dropdown-content">
-        <!-- <div class ="container2"> -->
-        <div class='dropbtn'>
-        <div class="info">
-          <div class = "requester">
-            <h1>Information</h1>
-          </div>
-          <div class ="icon1">
-            <img src="../../images/dog.png" >
-          </div>
-          <script id="taskinfo" type="text/x-handlebars-template">
-            <div class='recordbox'>
+      <div style="text-align: right">
+        <a href="../../index.html">
+          <i style="padding: 5px; color: white; font-size: 30px;" class="fas fa-home"></i>
+        </a>
+      </div>
+
+      <div class="dropdown" style="text-align: right">
+        <div class="zsy">
+          <i style="padding: 5px;  color: white; font-size: 30px;" class="far fa-address-card"></i>
+        </div>
+        <div class="dropdown-content">
+          <div class='dropbtn'>
+            <div class="info">
+              <div class="requester">
+                <h1>Information</h1>
+              </div>
+              <div class="icon1">
+                <img src="../../images/dog.png">
+              </div>
+              <script id="taskinfo" type="text/x-handlebars-template">
+                <div class='recordbox'>
                 <div class='record'>
                   <p>Request ID: {{uid}}</p>
                   <p>Requester: {{requester}}</p>
@@ -72,19 +71,18 @@
 
               </div>
           </script>
-
           <div class="list">
             <div class="table" id="single_task" >
               <!-- Records will be inserted here -->
             </div>
           </div>
 
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  </nav>
-</ul>
+    </nav>
+  </ul>
 
   <div class="container1">
     <div style="display:none" id="waiting">
@@ -175,10 +173,14 @@
         <button class="button" id="zsy_finish">Finish</button>
       </div>
     </div>
-    <div class="btn">
+
+    <div style="display:none" class="btn" id="cancelbtn">
       <button class="button" id="zsy_cancel">Cancel</button>
     </div>
   </div>
+  <div style="display:none" position="absolute"  align='middle' id="video">
+    <iframe width="560"  height="315" src="https://www.youtube.com/embed/6kWvr40W4Xs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  </div>
+
 
   <div id="container" style="padding-left: 27.8%;">
     <div id="myMap-match" style="position:relative;width:800px;height:600px;"></div>
