@@ -28,6 +28,6 @@ button {
 
 .title_bar{
   padding-top: 20px;
-  background:url(../../images/bgcolor.PNG);
+  background:url(../images/bgcolor.PNG);
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }

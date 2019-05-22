@@ -98,7 +98,7 @@ color: #76b852;
   color: #EF3B3A;
 }
 body {
-  background-image:url('../images/bg.jpg');
+  background-image:url('../images/bgcolor.PNG');
   /*background: #76b852; /* fallback for old browsers */
   /*background: -webkit-linear-gradient(right, #dffad0, rgb(202, 235, 184));
   /*background: -moz-linear-gradient(right, #76b852, #8DC26F);
@@ -108,3 +108,4 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
