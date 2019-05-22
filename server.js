@@ -75,7 +75,7 @@ app.get('/rating_info/:uid', (req, res) => {
     $uid: req.params.uid
   },
   (err, row) => {
-    if (typeof row !== 'undefined') {
+    if (row.length > 0) {
       console.log("Rating found!" + row);
       res.send("1");
     }
