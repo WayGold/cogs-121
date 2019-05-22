@@ -6,7 +6,7 @@
   Xinyi Jiao  
   Siyu Zhou
 
-### IMPORTANT NOTE ABOUT USER ACTIONS
+### IMPORTANT NOTE ABOUT USER ACTIONS (WENT OVER WITH PROF.GUO IN OH)
   Due to unknown glitches with using the navigator.geolocation function, the location may not always be accessible by the user. A known solution to the bug is to first go to the official bing map site and hit locate my current location button before doing any other interaction with our app. If the current location can be get on the official bing site, the location service will most likely work as well on our app.
 
 ### User Action 1:
