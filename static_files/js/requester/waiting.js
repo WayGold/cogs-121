@@ -5,7 +5,6 @@ let map_flag = false;
 
 $(document).ready(() => {
 
-
   let url = '../../request_info/uid/' + localStorage.getItem("request_id");
   console.log(url);
   $.ajax({
@@ -27,8 +26,21 @@ $(document).ready(() => {
           parentDiv.append(curHtml);
 
           console.log(curData);
+
+          $('#zsy_cancel').click(() => {
+            console.log("Cancel clicked");
+            if (confirm("Are you sure to cancel?")) {
+              $.ajax({
+                // all URLs are relative to http://localhost:3000/
+                url: '../../delete/' + record.uid,
+                type: 'POST',
+                success: window.location = "r_record.html" // <-- this is POST, not GET
+              });
+            }
+          });
         }
       }
+
     });
 
   $('#zsy_finish').click(() => {
@@ -46,12 +58,11 @@ $(document).ready(() => {
     });
   });
 
-  $('#zsy_cancel').click(() => {
-    console.log("Cancel clicked");
-    if (confirm("Are you sure to cancel?")) {
-      window.location = "r_record.html";
-    }
+  $("#lqz_back").click(()=> {
+    window.location = "r_record.html";
   });
+
+
 
   show1();
 

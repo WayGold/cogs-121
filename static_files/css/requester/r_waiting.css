@@ -1,7 +1,7 @@
 *{margin:0;padding:0;list-style-type:none;}
 a,img{border:0;}
 body{background:#f2f2f2;font:12px/180% Arial, Helvetica, sans-serif;}
-.stepInfo{position:relative;background:#f2f2f2;margin:100px auto 0 auto;width:500px;top:10%}
+.stepInfo{position:relative;background:#f2f2f2;margin:60px auto 0 auto;width:500px;top:10%}
 .stepInfo li{float:left;width:90%;height:0.15em;background:#bbb;}
 .stepIco{border-radius:2em;padding:1.3em;background:#bbb;text-align:center;line-height:1.em;color:#fff; position:absolute;width:2.4em;height:2.4em;}
 .stepIco11{top:-0.5em;left:-1%;background:#666;}
@@ -39,15 +39,49 @@ body{
   right: -150px;
   top: -40px;
 }
-.container{
-  /*text-align: center;*/
+
+#container{
+  position: absolute;
+  top: 37rem;
+  text-align: center;
+  width: 100%;
 }
+
 .info{
     width:100%;
     display:inline-block;
 }
 
-.button{
+#myMap-match {
+  position: relative;
+  width: 52rem;
+  height: 35rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#video {
+  position: absolute;
+  top: 39rem;
+  text-align: center;
+  width: 100%;
+}
+
+#cancelbtn {
+  position: absolute;
+  top: 75rem;
+  text-align: center;
+  width: 100%;
+}
+
+#finish_btn {
+  position: absolute;
+  top: 75rem;
+  text-align: center;
+  width: 65.4%;
+}
+
+/* .button{
   background: #4CAF50;
   border-radius: 4px;
   border: 0;
@@ -59,7 +93,7 @@ body{
   transition: all 0.3 ease;
   cursor: pointer;
 
-}
+} */
 
 
 
@@ -72,8 +106,8 @@ body{
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     max-width:800px;
     margin:auto;
-    max-height:650px;
-    margin-top:170px;
+    height:75rem;
+    margin-top:100px;
 
 }
 

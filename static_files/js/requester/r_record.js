@@ -28,14 +28,6 @@ $(document).ready(() => {
       const all_records = data;
 
       for (const record of all_records) {
-        let button_text = "";
-        if (record.status != "Finished") {
-          button_text = "Cancel";
-        }
-        else {
-          button_text = "Delete";
-        }
-
         let rate_or_report = "";
         $.ajax ({
           url: '../../rating_info/' + record.uid,
@@ -52,6 +44,16 @@ $(document).ready(() => {
           }
         });
 
+        let button_text = "";
+        let button_html = "";
+        if (record.status != "Finished") {
+          button_text = "Cancel";
+        }
+        else {
+          button_text = "Delete";
+          button_html = `<button class='lqz_rate' id="btn_${record.uid}">${rate_or_report}</button>`;
+        }
+
         const template = `
         <div class='recordbox'>
         <div class='record' id="btn_${record.uid}">
@@ -63,7 +65,7 @@ $(document).ready(() => {
         <p>Description: ${record.description}</p>
         </div>
         <div class='buttons'>
-        <button class='lqz_rate' id="btn_${record.uid}">${rate_or_report}</button>
+        ${button_html}
         <button class='lqz_cancel' id="cancel_${record.uid}">${button_text}</button>
         </div>
         </div>
@@ -76,7 +78,7 @@ $(document).ready(() => {
         $('.lqz_rate').click(() => {
           localStorage.setItem("request_id", record.uid);
           if ($('.lqz_rate').html() == "Rate")
-            window.location = "r_finished.html";
+          window.location = "r_finished.html";
           else {
             window.location = "r_report.html";
           }
@@ -90,20 +92,23 @@ $(document).ready(() => {
 
         let cancel_id = "#cancel_"+record.uid;
         $(cancel_id).click(() => {
-          $.ajax({
-            // all URLs are relative to http://localhost:3000/
-            url: '../../delete/' + record.uid,
-            type: 'POST',
-            success: window.location = "r_record.html" // <-- this is POST, not GET
-          });
+          if (confirm("Are you sure to cancel?")){
+            $.ajax({
+              // all URLs are relative to http://localhost:3000/
+              url: '../../delete/' + record.uid,
+              type: 'POST',
+              success: window.location = "r_record.html" // <-- this is POST, not GET
+            });
+          }
         });
+
 
 
       }}
 
 
+    });
   });
-});
 
 
   $(document).ajaxError(() => {

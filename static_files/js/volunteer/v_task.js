@@ -47,7 +47,7 @@ $(document).ready(() => {
           $("#templatedProjects").append(template);
 
           $('.lqz_report').click(() => {
-            window.location = "v_report.html";
+            window.location = "v_taskinfo.html";
           });
 
           let btn_id = "#btn_"+record.uid;
