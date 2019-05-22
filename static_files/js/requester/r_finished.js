@@ -1,7 +1,7 @@
 $(document).ready(() => {
 
   $.ajax({
-    url: '../../user/' + localStorage.getItem("request_id"),
+    url: '../../request_info/' + localStorage.getItem("request_id"),
     type: 'GET',
     dataType : 'json',
     success: (data) => {
@@ -9,14 +9,16 @@ $(document).ready(() => {
 
       console.log('You received some data!', data);
       for (let record of data) {
+        console.log(record.accepter);
         $.ajax({
-          url: '../../user/' + record.accepter,
+          url: '../../users/' + record.accepter,
           type: 'GET',
           dataType : 'json',
           async:false,
           success:(info) => {
             phone = info.phone;
-          }});
+          }
+        });
         const template = `
         <div class='record'>
         <p>Volunteer: ${record.accepter} </p>
@@ -27,18 +29,41 @@ $(document).ready(() => {
         `;
 
         $("#template").append(template);
+
+        let score = 0;
+        $('#star1').click(()=>{score = 1;});
+        $('#star2').click(()=>{score = 2;});
+        $('#star3').click(()=>{score = 3;});
+        $('#star4').click(()=>{score = 4;});
+        $('#star5').click(()=>{score = 5;});
+
+        $("#zw_finish_cancel").click(() => {
+          console.log("cancel clicked!");
+          window.location = "r_record.html";
+        });
+
+        $("#zw_finish_submit").click(() => {
+          console.log("submit clicked!");
+          const desc = $('#lqz_desc').val();
+          console.log(desc);
+          if(confirm("Are you sure to submit?")){
+            $.ajax({
+              // all URLs are relative to http://localhost:3000/
+              url: '../../add_rating',
+              type: 'POST', // <-- this is POST, not GET
+              data: {
+                uid: record.uid,
+                score:score,
+                description:desc,
+              },
+              success:window.location = "r_record.html",
+
+            });
+
+          }
+        });
       }
     }
-  });
 
-  $("#zw_finish_cancel").click(() => {
-    console.log("cancel clicked!");
-    window.location = "r_record.html";
   });
-
-  $("#zw_finish_submit").click(() => {
-    console.log("submit clicked!");
-    window.location = "r_record.html";
-  });
-
-})
+});

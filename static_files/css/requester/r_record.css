@@ -23,6 +23,10 @@
 .buttons{
   text-align: right;
 }
+
+button{
+  margin: 10px 5px 5px 5px;
+}
 .container{
   text-align: center;
   background: #FFFFFF;

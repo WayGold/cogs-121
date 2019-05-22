@@ -70,7 +70,7 @@ app.get('/request_info/:requestid', (req, res) => {
 
 app.get('/rating_info/:uid', (req, res) => {
   // db.all() fetches all results from an SQL query into the 'rows' variable:
-  db.all('SELECT uid FROM rating_info WHERE uid = $uid',
+  db.all('SELECT uid FROM rating WHERE uid = $uid',
   {
     $uid: req.params.uid
   },
@@ -150,6 +150,47 @@ app.post('/create_user', (req, res) => {
       $phone: req.body.phone,
       $location: req.body.location,
       $role: req.body.role,
+    },
+    // callback function to run when the query finishes:
+    (err) => {
+      if (err) {
+        res.send('Fail');
+      } else {
+        res.send('Success');
+      }
+    }
+  );
+});
+
+app.post('/add_rating', (req, res) => {
+
+  db.run(
+    'INSERT INTO rating VALUES ($uid, $score, $description)',
+    // parameters to SQL query:
+    {
+      $uid: req.body.uid,
+      $score: req.body.score,
+      $description: req.body.description,
+    },
+    // callback function to run when the query finishes:
+    (err) => {
+      if (err) {
+        res.send('Fail');
+      } else {
+        res.send('Success');
+      }
+    }
+  );
+});
+
+app.post('/add_report', (req, res) => {
+
+  db.run(
+    'INSERT INTO report VALUES ($uid, $description)',
+    // parameters to SQL query:
+    {
+      $uid: req.body.uid,
+      $description: req.body.description,
     },
     // callback function to run when the query finishes:
     (err) => {

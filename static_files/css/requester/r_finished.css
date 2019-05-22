@@ -1,141 +1,142 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 body{
-
-    background: url(../../images/leaves.png);
+  background: url(../../images/leaves.png);
 }
 
 .container{
-    background: #FFFFFF;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-    max-width:800px;
-    margin:auto;
-    max-height:650px;
-    margin-top:-10px;
+  background: #FFFFFF;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  max-width:800px;
+  margin:auto;
+  height:650px;
+  margin-top:-10px;
 }
 
 #line{
-    color:rgb(156, 156, 156);
-    margin-top: 15px;
-    margin-left:50px;
-    margin-right:50px;
-    opacity:0.7;
+  color:rgb(156, 156, 156);
+  margin-top: 15px;
+  margin-left:50px;
+  margin-right:50px;
+  opacity:0.7;
 }
 .icon1{
-    margin-left: 210px;
-    margin-top:10px;
-    float: left;
-    padding:0;
+  margin-left: 200px;
+  margin-right: 10px;
+  float: left;
+  padding: 0;
 }
 
 .info{
-    width:100%;
-    display:inline-block;
+  width: 100%;
+  font-size: 18px;
+  line-height: 1rem;
+  display: inline-block;
+  padding: 10px;
+}
+
+.record {
+  margin-left: 1vw;
+  margin-top:0.5rem;
 }
 #title{
-    font-family: "Roboto", sans-serif;
-    text-align:center;
-    color: #fcfdfc; 
-    padding-bottom: 25px;
+  font-family: "Roboto", sans-serif;
+  text-align:center;
+  color: #fcfdfc;
+  padding-bottom: 25px;
 
 }
 .requester{
-    position:flex;
-    margin-top:20px;
-    margin-right: 140px;
-    float: right;
+  position:flex;
+  margin-top:20px;
+  margin-right: 140px;
+  float: right;
 }
 
 
-textarea{
-    width:380px;
-    height:170px;
-    resize:none;
-    margin-top:10px;
-    margin-right: 50px;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-
+#lqz_desc{
+  width: 100%;
+  height:120px;
+  resize:none;
+  margin-top:10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
 }
- h3{
-     padding-bottom:15px;
-     font-family: "Roboto", sans-serif;
- }
+h3{
+  padding-bottom:15px;
+  font-family: "Roboto", sans-serif;
+}
 .text{
-    margin-left:240px;
-    margin-top:10px;
-    align-self:center;
-    padding-right:20px;
+  margin-left:auto;
+  margin-right:auto;
+  width:50%;
 
 }
 
 .btns{
-    margin-top:10px;
-    margin-left:500px;
+
+  margin:10px auto 10px auto;
+  width:100%;
+  text-align: center;
 }
 
 button {
 
-    background: #4CAF50;
-    border-radius: 4px;
-    border: 0;
-    padding: 15px;
-    margin:20px;
-    color: #FFFFFF;
-    font-size: 14px;
-    -webkit-transition: all 0.3 ease;
-    transition: all 0.3 ease;
-    cursor: pointer;
-  }
-
-  .position{
-      margin-top:80px;
-      padding-top: 35px;
-      background:url(../../images/bgcolor.PNG);
-      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-  }
-
-  *{
-    margin: 0;
-    padding: 0;
+  background: #4CAF50;
+  border-radius: 4px;
+  border: 0;
+  padding: 15px;
+  margin:20px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
 }
+
+.position{
+  margin-top:80px;
+  padding-top: 15px;
+  background:url(../../images/bgcolor.PNG);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
 .rate {
-    height: 46px;
-    padding: 0 10px;
-    margin-top:20px;
-    margin-right:235px;
-    margin-bottom:20px;
-    align-self: center;
+  padding-top: 10px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .rate:not(:checked) > input {
-    position:absolute;
-    top:-9999px;
+  position:absolute;
+  top:-9999px;
 }
 .rate:not(:checked) > label {
-    float:right;
-    width:1em;
-    overflow:hidden;
-    white-space:nowrap;
-    cursor:pointer;
-    font-size:60px;
-    color:#ccc;
+  float:right;
+  padding: 0 10px;
+  width:1em;
+  overflow:hidden;
+  white-space:nowrap;
+  cursor:pointer;
+  font-size:60px;
+  color:#ccc;
 }
 .rate:not(:checked) > label:before {
-    content: '★ ';
+  content: '★ ';
 }
 .rate > input:checked ~ label {
-    color: #ffc700;
+  color: #ffc700;
 }
 .rate:not(:checked) > label:hover,
 .rate:not(:checked) > label:hover ~ label {
-    color: #deb217;
+  color: #deb217;
 }
 .rate > input:checked + label:hover,
 .rate > input:checked + label:hover ~ label,
 .rate > input:checked ~ label:hover,
 .rate > input:checked ~ label:hover ~ label,
 .rate > label:hover ~ input:checked ~ label {
-    color: #c59b08;
+  color: #c59b08;
 }
 
 /* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */
