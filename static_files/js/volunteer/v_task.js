@@ -31,7 +31,7 @@ $(document).ready(() => {
       for (const record of all_records) {
         const template = `
         <div class='recordbox'>
-            <div class='lqz_accept' id="btn_${record.uid}">
+            <div class='lqz_accept' id="box_${record.uid}">
             <p>Status: ${record.status}</p>
             <p>Request ID: ${record.uid}</p>
             <p>Emergency Level: ${record.emergency}</p>
@@ -47,7 +47,13 @@ $(document).ready(() => {
           $("#templatedProjects").append(template);
 
           let btn_id = "#btn_"+record.uid;
+          let box_id = "#box_"+record.uid;
           $(btn_id).click(() => {
+            localStorage.setItem("request_id", record.uid);
+            console.log(record.uid);
+            window.location = "v_taskinfo.html";
+          });
+          $(box_id).click(() => {
             localStorage.setItem("request_id", record.uid);
             console.log(record.uid);
             window.location = "v_taskinfo.html";

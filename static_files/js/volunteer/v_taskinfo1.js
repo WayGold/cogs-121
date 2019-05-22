@@ -55,6 +55,20 @@ $(document).ready(() => {
       }
     });
   })
+
+  $("#lqz_cancel").click(() => {
+    if (confirm("Are you sure to cancel?")){
+      $.ajax({
+        url: '../../change_status/' + localStorage.getItem("request_id"),
+        type: 'POST',
+        data: {
+          status: "Waiting",
+          accepter: null,
+        },
+        success:window.location = "v_record.html",
+      });
+    }
+  });
 });
 
 function GetMap() {

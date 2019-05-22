@@ -46,12 +46,15 @@ $(document).ready(() => {
 
         let button_text = "";
         let button_html = "";
+        let redirect = ""
         if (record.status != "Finished") {
           button_text = "Cancel";
+          redirect = "waiting.html"
         }
         else {
           button_text = "Delete";
           button_html = `<button class='lqz_rate' id="btn_${record.uid}">${rate_or_report}</button>`;
+          redirect = "r_report.html";
         }
 
         const template = `
@@ -73,7 +76,6 @@ $(document).ready(() => {
 
         $("#templatedProjects").append(template);
 
-        $(".record").click(() => {window.location = "waiting.html"});
 
         $('.lqz_rate').click(() => {
           localStorage.setItem("request_id", record.uid);
@@ -89,6 +91,7 @@ $(document).ready(() => {
           localStorage.setItem("request_id", record.uid);
           console.log(record.uid);
         });
+          $(".record").click(() => {window.location = redirect});
 
         let cancel_id = "#cancel_"+record.uid;
         $(cancel_id).click(() => {
