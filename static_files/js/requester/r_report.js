@@ -21,7 +21,7 @@ $(document).ready(() => {
         });
         const template = `
         <div class='record'>
-        <p>Volunteer: ${record.accepter} </p>
+        <p>Report Subject: ${record.accepter} </p>
         <p>Contact Number: ${phone} </p>
         <p>Request ID: ${record.uid}</p>
         <p>Description: ${record.description}</p>

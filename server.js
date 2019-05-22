@@ -247,6 +247,24 @@ app.post('/set_accepter_location/:uid', (req, res) => {
   );
 });
 
+app.post('/delete/:property/:uid', (req, res) => {
+  console.log(req.body);
+  const property = req.params.property;
+  const uid= req.params.uid;
+  const sql = 'UPDATE request_info SET ' + property + ' = null WHERE uid = ' + uid;
+  db.run(
+    sql,
+    // callback function to run when the query finishes:
+    (err) => {
+      if (err) {
+        res.send('Fail');
+      } else {
+        res.send('Success');
+      }
+    }
+  );
+});
+
 app.post('/delete/:uid', (req, res) => {
   console.log(req.body);
 

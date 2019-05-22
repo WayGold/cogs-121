@@ -29,6 +29,7 @@ $(document).ready(() => {
       const parentDiv = $("#templatedProjects");
 
       for (const record of all_records) {
+        if (record.status != "Waiting") {continue;}
         const template = `
         <div class='recordbox'>
             <div class='lqz_accept' id="box_${record.uid}">

@@ -1,0 +1,107 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+body{
+  background: url(../../images/leaves.png);
+}
+
+.container{
+  background: #FFFFFF;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  max-width:800px;
+  margin:auto;
+  height:35rem;
+  margin-top:-10px;
+}
+
+#line{
+  color:rgb(156, 156, 156);
+  margin-top: 15px;
+  margin-left:50px;
+  margin-right:50px;
+  opacity:0.7;
+}
+
+.icon1{
+  margin-left: 200px;
+  margin-right: 10px;
+  float: left;
+  padding: 0;
+}
+
+.info{
+  width: 100%;
+  font-size: 18px;
+  line-height: 1rem;
+  display: inline-block;
+  padding: 10px;
+}
+
+.record {
+  margin-left: 1vw;
+  margin-top:0.5rem;
+}
+
+#title{
+  font-family: "Roboto", sans-serif;
+  text-align:center;
+  color: #fcfdfc;
+  padding-bottom: 25px;
+
+}
+
+.requester{
+  position:flex;
+  margin-top:20px;
+  margin-right: 140px;
+  float: right;
+}
+
+#lqz_desc{
+  width: 100%;
+  height:120px;
+  resize:none;
+  margin-top:10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+h3{
+  padding-bottom:15px;
+  font-family: "Roboto", sans-serif;
+}
+.text{
+  margin-left:auto;
+  margin-right:auto;
+  width:50%;
+
+}
+
+.btns{
+
+  margin:30px auto 10px auto;
+  width:100%;
+  text-align: center;
+}
+
+button {
+
+  background: #4CAF50;
+  border-radius: 4px;
+  border: 0;
+  padding: 15px;
+  margin:20px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+.position{
+  margin-top:80px;
+  padding-top: 15px;
+  background:url(../../images/bgcolor.PNG);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+
+/* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */

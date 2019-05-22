@@ -17,13 +17,13 @@ $(document).ready(() => {
           button_text = "Cancel";
           redirect = "v_taskinfo.html"
         }
-        else if (record.status != "Matched") {
+        else if (record.status == "Matched") {
           button_text = "Cancel";
           redirect = "v_taskinfo1.html"
         }
         else {
           button_text = "Delete";
-          redirect = "r_report.html";
+          redirect = "v_report.html";
         }
           const template = `
           <div class='recordbox'>
@@ -37,8 +37,8 @@ $(document).ready(() => {
               <p>Description: ${record.description}</p>
               </div>
               <div class='buttons'>
-                <button class='lqz_report' id="btn_${record.uid}">report</button>
-                <button class='lqz_cancel' id="cancel_${record.uid}">${button_text}</button>
+                <button class='lqz_cancel' id="cancel_${record.uid}">Delete</button>
+                <button class='lqz_report' id="btn_${record.uid}">Report</button>
               </div>
             </div>
           `;
@@ -47,7 +47,7 @@ $(document).ready(() => {
 
           $('.lqz_report').click(() => {
             localStorage.setItem("request_id", record.uid);
-            window.location = "r_report.html";
+            window.location = "v_report.html";
           });
 
           let btn_id = "#btn_"+record.uid;
@@ -59,16 +59,12 @@ $(document).ready(() => {
 
           let cancel_id = "#cancel_"+record.uid;
           $(cancel_id).click(() => {
-            if (confirm("Are you sure to cancel?")){
+            if (confirm("Are you sure to delete?")){
               $.ajax({
-                url: '../../change_status/' + curr_record,
+                // all URLs are relative to http://localhost:3000/
+                url: '../../delete/accepter/' + record.uid,
                 type: 'POST',
-                data: {
-                  status: "Waiting",
-                  accepter: null,
-                },
-                success:
-                  window.location = "v_record.html",
+                success: window.location = "v_record.html" // <-- this is POST, not GET
               });
             }
           });

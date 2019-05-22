@@ -95,14 +95,26 @@ $(document).ready(() => {
 
         let cancel_id = "#cancel_"+record.uid;
         $(cancel_id).click(() => {
-          if (confirm("Are you sure to cancel?")){
+          if (button_text == "Cancel"){
+            if (confirm("Are you sure to cancel?")){
+              $.ajax({
+                // all URLs are relative to http://localhost:3000/
+                url: '../../delete/' + record.uid,
+                type: 'POST',
+                success: window.location = "r_record.html" // <-- this is POST, not GET
+              });
+            }
+          }
+          else {
+          if (confirm("Are you sure to delete?")){
             $.ajax({
               // all URLs are relative to http://localhost:3000/
-              url: '../../delete/' + record.uid,
+              url: '../../delete/requester/' + record.uid,
               type: 'POST',
               success: window.location = "r_record.html" // <-- this is POST, not GET
             });
           }
+        }
         });
 
 
