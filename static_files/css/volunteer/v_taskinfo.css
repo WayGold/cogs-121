@@ -1,7 +1,7 @@
 .icon1{
     margin-left: 0%;
     float: center;
-    size:100%;
+    size:80%;
 }
 
 .info{
@@ -9,30 +9,19 @@
     display:inline-block;
 }
 
-.requester{
-    position:flex;
-    margin-top:20px;
-    margin-right: 50%;
-    display: inline-block;
-    /* float: center; */
+#dog{
+  width: 160px;
+  margin: 1.7vw;
 }
 
-textarea{
-    width:600px;
-    height:200px;
-    resize:none;
-    margin-right: 175px;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-}
  .container{
     text-align: center;
     background: #FFFFFF;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     max-width:800px;
     margin:auto;
-    height:500px;
-    margin-top:130px;
+    height:600px;
+    margin-top:100px;
     padding:0;
  }
 
@@ -56,7 +45,7 @@ textarea{
   .title{
     font-family: "Roboto", sans-serif;
     text-align:center;
-    color: #fcfdfc; 
+    color: #fcfdfc;
     padding-bottom: 25px;
     }
 
@@ -77,4 +66,5 @@ button {
 
   body{
     background: url(../../images/bg.jpg);
+    margin-bottom:40px;
     }

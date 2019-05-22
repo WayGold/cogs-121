@@ -46,17 +46,10 @@ $(document).ready(() => {
 
           $("#templatedProjects").append(template);
 
-          $('.lqz_report').click(() => {
-            window.location = "v_taskinfo.html";
-          });
-
           let btn_id = "#btn_"+record.uid;
           $(btn_id).click(() => {
             localStorage.setItem("request_id", record.uid);
             console.log(record.uid);
-          });
-
-          $('.lqz_accept').click(() => {
             window.location = "v_taskinfo.html";
           });
 
