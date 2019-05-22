@@ -3,7 +3,7 @@ $(document).ready(() => {
   // v_task
   let all_records;
   let curr_request;
-  
+
   if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(function (position) {
       console.log("Current location: " + position.coords.latitude + " " + position.coords.longitude);
@@ -26,14 +26,25 @@ $(document).ready(() => {
       console.log('You received some data!', data);
       all_records = data;
 
-      const source = $("#entry-template").html();
-      const template = Handlebars.compile(source);
       const parentDiv = $("#templatedProjects");
 
       for (const record of all_records) {
-          const curData = record;
-          const curHtml = template(curData);
-          parentDiv.append(curHtml);
+        const template = `
+        <div class='recordbox'>
+            <div class='lqz_accept' id="btn_${record.uid}">
+            <p>Status: ${record.status}</p>
+            <p>Request ID: ${record.uid}</p>
+            <p>Emergency Level: ${record.emergency}</p>
+            <p>Category: ${record.category}</p>
+            <p>Personal Condition: ${record.disability}</p>
+            <p>Description: ${record.description}</p>
+            </div>
+            <div class='buttons'>
+              <button class='lqz_report' id="btn_${record.uid}"> More </button>
+            </div>
+          </div>`;
+
+          $("#templatedProjects").append(template);
 
           $('.lqz_report').click(() => {
             window.location = "v_report.html";
@@ -49,7 +60,6 @@ $(document).ready(() => {
             window.location = "v_taskinfo.html";
           });
 
-          console.log(curData)
         }
       }
     });

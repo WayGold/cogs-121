@@ -1,6 +1,7 @@
 
 $(document).ready(() => {
-  let all_records;
+
+
   if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(function (position) {
       console.log("Current location: " + position.coords.latitude + " " + position.coords.longitude);
@@ -9,74 +10,102 @@ $(document).ready(() => {
   else{
     console.log("Can't access location info!");
   }
+
+  $('#lqz_new_request').click(() => {
+    window.location = "r_request.html";
+  });
+
+  $('#lqz_refresh').click(() => {
+    document.location.reload();
+  });
+
   $.ajax({
     url: '../../request_info/requester/' + localStorage.getItem("user"),
     type: 'GET',
     dataType : 'json',
     success: (data) => {
       console.log('You received some data!', data);
-      all_records = data;
-
-      const source = $("#entry-template").html();
-      const template = Handlebars.compile(source);
-      const parentDiv = $("#templatedProjects");
+      const all_records = data;
 
       for (const record of all_records) {
-          const curData = record;
-          const curHtml = template(curData);
-          parentDiv.append(curHtml);
-
-          $('.lqz_rate').click(() => {
-            window.location = "r_finished.html";
-          });
-
-          $('.lqz_report').click(() => {
-            window.location = "r_report.html";
-          });
-
-          let btn_id = "#btn_"+record.uid;
-          $(btn_id).click(() => {
-            localStorage.setItem("request_id", record.uid);
-            console.log(record.uid);
-          });
-
-          $('.record').click(() => {
-              $.ajax({
-                url: '../../request_info/' + localStorage.getItem("request_id"),
-                type: 'GET',
-                timeout: 2000,
-                cache: false,
-                async: true,
-                dataType: 'json',
-                success: (data) => {
-                  console.log('You received some data!', data[0].status);
-
-                  if (data[0].status == 'Finished') {
-                    window.location = "r_report.html";
-                  } else {
-                    window.location = "waiting.html";
-                  }
-                }
-              });
-            // window.location = "waiting.html";
-          });
-
-          console.log(curData)
+        let button_text = "";
+        if (record.status != "Finished") {
+          button_text = "Cancel";
         }
-      }
-    });
+        else {
+          button_text = "Delete";
+        }
 
-    $('#lqz_new_request').click(() => {
-      window.location = "r_request.html";
-    });
+        let rate_or_report = "";
+        $.ajax ({
+          url: '../../rating_info/' + record.uid,
+          type: 'GET',
+          dataType : 'json',
+          async:false,
+          success: (data) => {
+            if (data == "1") {
+              rate_or_report = "Report";
+            }
+            else {
+              rate_or_report = "Rate";
+            }
+          }
+        });
 
-    $('#lqz_refresh').click(() => {
-      document.location.reload();
-    });
+        const template = `
+        <div class='recordbox'>
+        <div class='record' id="btn_${record.uid}">
+        <p>Status: ${record.status}</p>
+        <p>Request ID: ${record.uid}</p>
+        <p>Emergency Level: ${record.emergency}</p>
+        <p>Category: ${record.category}</p>
+        <p>Personal Condition: ${record.disability}</p>
+        <p>Description: ${record.description}</p>
+        </div>
+        <div class='buttons'>
+        <button class='lqz_rate' id="btn_${record.uid}">${rate_or_report}</button>
+        <button class='lqz_cancel' id="cancel_${record.uid}">${button_text}</button>
+        </div>
+        </div>
+        `;
+
+        $("#templatedProjects").append(template);
+
+        $(".record").click(() => {window.location = "waiting.html"});
+
+        $('.lqz_rate').click(() => {
+          localStorage.setItem("request_id", record.uid);
+          if ($('.lqz_rate').html() == "Rate")
+            window.location = "r_finished.html";
+          else {
+            window.location = "r_report.html";
+          }
+        });
+
+        let btn_id = "#btn_"+record.uid;
+        $(btn_id).click(() => {
+          localStorage.setItem("request_id", record.uid);
+          console.log(record.uid);
+        });
+
+        let cancel_id = "#cancel_"+record.uid;
+        $(cancel_id).click(() => {
+          $.ajax({
+            // all URLs are relative to http://localhost:3000/
+            url: '../../delete/' + record.uid,
+            type: 'POST',
+            success: window.location = "r_record.html" // <-- this is POST, not GET
+          });
+        });
+
+
+      }}
+
 
   });
-
-
-$(document).ajaxError(() => {
-  $('#status').html('Error: unknown ajaxError!');
 });
+
+
+  $(document).ajaxError(() => {
+    $('#status').html('Error: unknown ajaxError!');
+  });

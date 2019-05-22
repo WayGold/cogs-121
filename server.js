@@ -68,20 +68,22 @@ app.get('/request_info/:requestid', (req, res) => {
   });
 });
 
-// app.get('/request_info/:requestid', (req, res) => {
-//   // db.all() fetches all results from an SQL query into the 'rows' variable:
-//   const requestToLookup = req.params.requestid;
-//
-//   db.all('SELECT * FROM request_info WHERE uid=$uid',
-//     // parameters to SQL query:
-//     {
-//       $uid: requestToLookup
-//     },
-//     (err, rows) => {
-//     console.log(rows);
-//     res.send(rows);
-//   });
-// });
+app.get('/rating_info/:uid', (req, res) => {
+  // db.all() fetches all results from an SQL query into the 'rows' variable:
+  db.all('SELECT uid FROM rating_info WHERE uid = $uid',
+  {
+    $uid: req.params.uid
+  },
+  (err, row) => {
+    if (typeof row !== 'undefined') {
+      console.log("Rating found!" + row);
+      res.send("1");
+    }
+    else {
+      res.send("0");
+    }
+  });
+});
 
 app.get('/request_info/:property/:value', (req, res) => {
   // db.all() fetches all results from an SQL query into the 'rows' variable:
@@ -101,36 +103,6 @@ console.log(sql);
     res.send(rows);
   });
 });
-
-// app.get('/request_info/requester/:username', (req, res) => {
-//   // db.all() fetches all results from an SQL query into the 'rows' variable:
-//   const nameToLookup = req.params.username;
-//
-//   db.all('SELECT * FROM request_info WHERE requester=$requester',
-//     // parameters to SQL query:
-//     {
-//       $requester: nameToLookup
-//     },
-//     (err, rows) => {
-//     console.log(rows);
-//     res.send(rows);
-//   });
-// });
-//
-// app.get('/request_info/accepter/:username', (req, res) => {
-//   // db.all() fetches all results from an SQL query into the 'rows' variable:
-//   const nameToLookup = req.params.username;
-//
-//   db.all('SELECT * FROM request_info WHERE accepter=$accepter',
-//     // parameters to SQL query:
-//     {
-//       $accepter: nameToLookup
-//     },
-//     (err, rows) => {
-//     console.log(rows);
-//     res.send(rows);
-//   });
-// });
 
 //post request for adding request to the db
 app.post('/request_info', (req, res) => {
@@ -222,6 +194,26 @@ app.post('/set_accepter_location/:uid', (req, res) => {
       $uid: req.params.uid,
       $accepter_latitude: req.body.accepter_latitude,
       $accepter_longitude: req.body.accepter_longitude
+    },
+    // callback function to run when the query finishes:
+    (err) => {
+      if (err) {
+        res.send('Fail');
+      } else {
+        res.send('Success');
+      }
+    }
+  );
+});
+
+app.post('/delete/:uid', (req, res) => {
+  console.log(req.body);
+
+  db.run(
+    'DELETE FROM request_info WHERE uid = $uid',
+    // parameters to SQL query:
+    {
+      $uid: req.params.uid,
     },
     // callback function to run when the query finishes:
     (err) => {
