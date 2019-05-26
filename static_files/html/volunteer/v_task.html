@@ -1,5 +1,6 @@
 </<!DOCTYPE html>
 <html>
+
 <head>
   <link rel="stylesheet" href="../../lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../../css/main.css">
@@ -14,25 +15,25 @@
 
 <body>
   <nav class="fixed-top zzzz_navbar" id="mainNav">
-      <div>
-          <a style="position: absolute" href="../../index.html">
-              <img src="../../images/navbar.png"  style="height: 40px;">
-           </a>
-         </div>
-        <div style="text-align: right" >
-          <a  href="../../index.html">
-            <i style="padding: 5px; color: white; font-size: 30px;" class="fas fa-home"></i>
-          </a>
-      </div>
+    <div>
+      <a style="position: absolute" href="../../index.html">
+        <img src="../../images/navbar.png" style="height: 40px;">
+      </a>
+    </div>
+    <div style="text-align: right">
+      <a href="../../index.html">
+        <i style="padding: 5px; color: white; font-size: 30px;" class="fas fa-home"></i>
+      </a>
+    </div>
   </nav>
 
 
 
   <div class="container">
-<div class="title_bar">
-  <!-- <button id="lqz_refresh">Refresh</button> -->
-    <h1 class="title"> Request Board <button id="my_record" class='record'> My Record </button>
-    <button id="lqz_refresh" class='record1'> Refresh </button></h1>
+    <div class="title_bar">
+      <!-- <button id="lqz_refresh">Refresh</button> -->
+      <h1 class="title"> Request Board <button id="my_record" class='record'> My Record </button>
+        <button id="lqz_refresh" class='record1'> Refresh </button></h1>
 
 
     </div>
@@ -43,40 +44,65 @@
 
 
     <table>
-      <td><h3> Filter by :</h3></td>
       <td>
-      <div class="div_button">
-        <h3 > Emergency Level </h3>
-        <button class="button" id="zw_Low">Low</button>
+        <h3> Filter by :</h3>
+      </td>
+      <td>
+        <div class="div_button">
+          <h3> Emergency Level </h3>
+          <form action="">
+            <select name="Emergency Level">
+              <option value="Low" class="button" id="zw_Low">Low</option>
+              <option value="Medium" class="button" id="zw_Medium">Medium</option>
+              <option value="High" id="zw_High" class="button" selected>High</option>
+              <div id="zw_emergency_status"></div>
+            </select>
+          </form>
+          <!-- <button class="button" id="zw_Low">Low</button>
         <button class="button" id="zw_Medium">Medium</button>
         <button class="button" id="zw_High">High</button>
-        <div id="zw_emergency_status"></div>
-      </div>
-    </td>
+        <div id="zw_emergency_status"></div> -->
+        </div>
+      </td>
 
-    <td>
-      <h3> Category </h3>
-      <div class="div_button">
-        <button class="button" id="zw_Routine">Routine</button>
-        <button class="button" id="zw_Trans">Transportation</button>
-        <div id="zw_category_status"></div>
-      </div>
-    </td>
+      <td>
+        <h3> Category </h3>
+        <form action="">
+          <select name="Category">
+            <option value="Routine" class="button" id="zw_Routine">Routine</option>
+            <option value="Transportation" class="button" id="zw_Trans">Transportation</option>
+            <div id="zw_category_status"></div>
+          </select>
+        </form>
+        <!-- <div class="div_button">
+          <button class="button" id="zw_Routine">Routine</button>
+          <button class="button" id="zw_Trans">Transportation</button>
+          <div id="zw_category_status"></div>
+        </div> -->
+      </td>
 
-    <td>
-      <h3> Disability Type</h3>
-      <div class="div_button">
-        <button class="button" id="zw_Mental">Mental</button>
-        <button class="button" id="zw_Physical">Physical</button>
-        <div id="zw_disability_status"></div>
-      </div>
-    </td>
-  </table>
+      <td>
+        <h3> Disability Type</h3>
+        <form action="">
+          <select name="Disability Type">
+            <option value="Mental" class="button" id="zw_Mental">Mental</option>
+            <option value="Physical" class="button" id="zw_Physical">Physical</option>
+            <div id="zw_disability_status"></div>
+          </select>
+        </form>
+        <!-- <div class="div_button">
+          <button class="button" id="zw_Mental">Mental</button>
+          <button class="button" id="zw_Physical">Physical</button>
+          <div id="zw_disability_status"></div>
+        </div> -->
+      </td>
+    </table>
 
-  		<div class="request_table" id="templatedProjects" >
-          <!-- Records will be inserted here -->
-  		</div>
-
+    <div class="request_table" id="templatedProjects">
+      <!-- Records will be inserted here -->
     </div>
+
+  </div>
 </body>
+
 </html>
