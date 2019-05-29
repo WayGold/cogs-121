@@ -16,11 +16,13 @@
 ### Data display:
   By connecting to the bing map api, we display the route data via the bing map. Both the requester and the volunteer have access to each others location and estimated arrival time. Specific speaking, this is implemented via getting the current location of the requester and volunteer and create bing map waypoints. These waypoints then got pass in to the bing map api which later return us the route informations and display the route to the map.
 
-  ![Data Display requester](images/Milestone2/homepage.png)
-  ![Data Display volunteer](images/Milestone2/homepage.png)
+  ![Data Display requester](images/Milestone5/r_matched.png)
+  ![Data Display volunteer](images/Milestone5/v_taskinfo1.png)
 
 <!-- (FIXME) -->
 ### UI comparing to previous milestone:
+  Mostly the same except the logout button upper right to the window.
+  Also changed the design of the filter to a dropdown select box.
 
 <!-- (FIXME, MODIFY THE URL TO DISPLAY PICs) -->
 #### Front-end UI Screenshots
@@ -35,16 +37,16 @@
   ![Register](images/Milestone4/register.png)
 
 ##### If login as a volunteer, navigate to the volunteer sections of files  
-  ![v_task](images/Milestone4/v_task.png)  
+  ![v_task](images/Milestone5/v_task.png)  
   ![v_taskinfo](images/Milestone4/v_taskinfo.png)
-  ![v_taskinfo1](images/Milestone4/v_taskinfo1.png)
-  ![v_record](images/Milestone4/v_record.png)
-  ![v_report](images/Milestone4/v_report.png)
+  ![v_taskinfo1](images/Milestone5/v_taskinfo1.png)
+  ![v_record](images/Milestone5/v_record.png)
+  ![v_report](images/Milestone5/v_report.png)
 
 ##### If login as a requester, navigate to requester sections of files
-  ![r_record](images/Milestone4/r_record.png)
+  ![r_record](images/Milestone5/r_record.png)
   ![r_request](images/Milestone4/r_request.png)
   ![r_waiting](images/Milestone4/r_waiting.png)
-  ![r_matched](images/Milestone4/r_matched.png)
+  ![r_matched](images/Milestone5/r_matched.png)
   ![r_finished1](images/Milestone4/r_finished1.png)
-  ![r_finished](images/Milestone4/r_finished.png)
+  ![r_finished](images/Milestone5/r_finished.png)
