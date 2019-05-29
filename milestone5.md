@@ -46,7 +46,9 @@
   ![v_taskinfo](images/Milestone4/v_taskinfo.png)
   ![v_taskinfo1](images/Milestone5/v_taskinfo1.png)
   ![v_record](images/Milestone5/v_record.png)
+  ![r_rating_record](images/Milestone5/r_rating_record.png)
   ![v_report](images/Milestone5/v_report.png)
+
 
 ##### If login as a requester, navigate to requester sections of files
   ![r_record](images/Milestone5/r_record.png)
@@ -55,4 +57,4 @@
   ![r_matched](images/Milestone5/r_matched.png)
   ![r_finished1](images/Milestone4/r_finished1.png)
   ![r_finished](images/Milestone5/r_finished.png)
-  ![rating_record](images/Milestone5/rating_record.png)
+  ![v_rating_record](images/Milestone5/v_rating_record.png)
