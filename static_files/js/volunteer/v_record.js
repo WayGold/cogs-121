@@ -79,7 +79,12 @@ $(document).ready(() => {
     $('#lqz_refresh').click(() => {
       document.location.reload();
     });
-
+    $('#signout').click(()=>{
+      console.log("signout clicked!");
+      localStorage.removeItem('user');
+      // this.navCtrl.setRoot(LoginPage);
+      window.location = "../../index.html";
+    })
   });
 
 

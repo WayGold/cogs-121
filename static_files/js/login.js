@@ -7,48 +7,48 @@ function isPasswd(s) {
 function isTrueName(s) {
   var patrn = /^[a-zA-Z]{1,30}$/;
   if (!patrn.exec(s))
-  return false
+    return false
   return true
 }
-
 
 function isMobil(s) {
   var patrn = /^[+]{0,1}(\d){1,3}[ ]?([-]?((\d)|[ ]){1,12})+$/;
   if (!patrn.exec(s)) return false
   return true
 }
-function isPostalCode(s)
-{
-var patrn=/^[a-zA-Z0-9 ]{3,12}$/;
-if (!patrn.exec(s)) return false
-return true
+
+function isPostalCode(s) {
+  var patrn = /^[a-zA-Z0-9 ]{3,12}$/;
+  if (!patrn.exec(s)) return false
+  return true
 }
 
 function check_login() {
 
-  if (($('#zw_create_account_username').val()).length < 6) {
+  if ((($('#zw_create_account_username').val()).length < 6)||($('#zw_create_account_username').val()).length > 20) {
     alert("username must be between 6 and 20 characters long");
     return false;
   }
-
-  if (!isPasswd($('#zw_create_account_pwd').val())) {
+  else if (!isPasswd($('#zw_create_account_pwd').val())) {
     alert("password must be between 6 and 20 characters long");
     return false
   }
 
-  if (!isMobil($('#zw_create_account_phone').val())) {
+  else if (!isMobil($('#zw_create_account_phone').val())) {
     alert("invaild phone number");
     return false
   }
-  if (!isTrueName($('#zw_create_account_name').val())) {
+  else if (!isTrueName($('#zw_create_account_name').val())) {
     alert("invaild name");
     return false
   }
 
-  if (  !isPostalCode($('#zw_create_account_loc').val())) {
+  else if (!isPostalCode($('#zw_create_account_loc').val())) {
     alert("invaild zipcode");
     return false
   }
+  else
+  return true
 }
 
 $(document).ready(() => {
@@ -94,64 +94,44 @@ $(document).ready(() => {
       }
     });
   });
-
+$('#signout').click(()=>{
+  console.log("signout clicked!");
+  localStorage.removeItem('user');
+  // this.navCtrl.setRoot(LoginPage);
+  window.location = "index.html";
+})
   $('#zw_create_account_btn').click(() => {
     console.log("create clicked!");
-    if (check_login()) {
       if (confirm("Please confirm your action")) {
-        $.ajax({
-          // all URLs are relative to http://localhost:3000/
-          url: '../../create_user',
-          type: 'POST', // <-- this is POST, not GET
-          data: {
-            username: $('#zw_create_account_username').val(),
-            name: $('#zw_create_account_name').val(),
-            password: $('#zw_create_account_pwd').val(),
-            phone: $('#zw_create_account_phone').val(),
-            location: $('#zw_create_account_loc').val(),
-            role: $('#zw_create_account_role').val(),
-          },
-          success: (data) => {
-            console.log(data);
-            if (data == "Success") {
-              window.location = "../html/login.html";
-            } else {
-              console.log("{message: 'error in app.post(/create_user), try another username'}");
-              $('#zw_create_status').html('Fail to create, try another username!');
+        if(check_login()){
+          $.ajax({
+            // all URLs are relative to http://localhost:3000/
+            url: '../../create_user',
+            type: 'POST', // <-- this is POST, not GET
+            data: {
+              username: $('#zw_create_account_username').val(),
+              name: $('#zw_create_account_name').val(),
+              password: $('#zw_create_account_pwd').val(),
+              phone: $('#zw_create_account_phone').val(),
+              location: $('#zw_create_account_loc').val(),
+              role: $('#zw_create_account_role').val(),
+            },
+            success: (data) => {
+              console.log(data);
+              if (data == "Success") {
+                window.location = "../html/login.html";
+              } else {
+                console.log("{message: 'error in app.post(/create_user), try another username'}");
+                $('#zw_create_status').html('Fail to create, try another username!');
+              }
             }
-          }
-        });
-      }
-    } else {
-      $('#zw_create_status').html('Fail to create');
-    }
+          });
+        }
 
-    // if(confirm("Please confirm your action")){
-    //   $.ajax({
-    //     // all URLs are relative to http://localhost:3000/
-    //     url: '../../create_user',
-    //     type: 'POST', // <-- this is POST, not GET
-    //     data: {
-    //       username: $('#zw_create_account_username').val(),
-    //       name: $('#zw_create_account_name').val(),
-    //       password: $('#zw_create_account_pwd').val(),
-    //       phone: $('#zw_create_account_phone').val(),
-    //       location: $('#zw_create_account_loc').val(),
-    //       role: $('#zw_create_account_role').val(),
-    //     },
-    //     success: (data) => {
-    //       console.log(data);
-    //       if(data == "Success") {
-    //         window.location = "../html/login.html";
-    //       }
-    //
-    //       else {
-    //         console.log("{message: 'error in app.post(/create_user), try another username'}");
-    //         $('#zw_create_status').html('Fail to create, try another username!');
-    //       }
-    //     }
-    //   });
-    // }
+        else{
+          $('#zw_create_status').html('Fail to create!');
+        }
+      }
 
   })
 })

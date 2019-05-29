@@ -168,6 +168,12 @@ $(document).ready(() => {
 
   // call display _record everytime user selected a new option so that the front end will be refreshed
   display_record(working_records);
+  $('#signout').click(()=>{
+    console.log("signout clicked!");
+    localStorage.removeItem('user');
+    // this.navCtrl.setRoot(LoginPage);
+    window.location = "../../index.html";
+  })
 });
 
 $(document).ajaxError(() => {
