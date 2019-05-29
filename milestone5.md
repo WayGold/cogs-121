@@ -21,14 +21,13 @@
 
   Also, we added a rating review page which display the rating data the requesters submitted after the requests finished.
 
-  ![Data Submit requester](images/Milestone5/r_finished.png)
   ![Data Display Volunteer](images/Milestone5/rating_record.png)
-  
+
 
 <!-- (FIXME) -->
 ### UI comparing to previous milestone:
-  Mostly the same except the logout button upper right to the window.
-  Also changed the design of the filter to a dropdown select box.
+  A new page was added to display the rating record. For other pages, the UIs are mostly the same except the logout button upper right to the window.
+  Also we changed the design of the filter to a dropdown select box.
 
 <!-- (FIXME, MODIFY THE URL TO DISPLAY PICs) -->
 #### Front-end UI Screenshots
