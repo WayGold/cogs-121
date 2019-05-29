@@ -10,7 +10,7 @@
 #### As a requester:
   People with disability could submit login to our app submitting a request, once a volunteer pick up the ticket, he/she will be notified with the acceptor's info and location. Finally requester can meet with the volunteer and get help with anything he/she requested. Say George broke his leg but he need to move out of his apartment to a new place. George submitted a request with "Ezhelp" and got help from Gold. Gold helped George moving his stuffs to the new apartment.
 #### As a volunteer:
-  Anyone who have passion helping others can login to our app as an volunteer. In the task center, volunteer can pick up tickets submitted by a requester, once the ticket is picked up, location of the request will be shown with other necessary infos. Finally the volunteer can meet up with the requester and help him/her out. Gold is a passionate volunteer looking for volunteer opportunity. He uses "Ezhelp" to look for people that needs help and finds George. Gold helps George move out of his apartment.
+  Anyone who have passion helping others can login to our app as an volunteer. In the task center, volunteer can pick up tickets submitted by a requester, once the ticket is picked up, location of the request will be shown with other necessary infos. Finally the volunteer can meet up with the requester and help him/her out. For example, Gold is a passionate volunteer looking for volunteer opportunity. He uses "Ezhelp" to look for people that needs help and finds George. Gold helps George move out of his apartment.
 
 
 ### Data display:
