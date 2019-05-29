@@ -10,14 +10,20 @@
 #### As a requester:
   People with disability could submit login to our app submitting a request, once a volunteer pick up the ticket, he/she will be notified with the acceptor's info and location. Finally requester can meet with the volunteer and get help with anything he/she requested. Say George broke his leg but he need to move out of his apartment to a new place. George submitted a request with "Ezhelp" and got help from Gold. Gold helped George moving his stuffs to the new apartment.
 #### As a volunteer:
-  Anyone who have passion helping others can login to our app as an volunteer. In the task center, volunteer can pick up tickets submitted by a requester, once the ticket is picked up, location of the request will be shown with other necessary infos. Finally the volunteer can meet up with the requester and help him/her out. For example, Gold is a passionate volunteer looking for volunteer opportunity. He uses "Ezhelp" to look for people that needs help and finds George. Gold helps George move out of his apartment.
+  Anyone who has passion helping others can login to our app as an volunteer. In the task center, volunteer can pick up tickets submitted by a requester, once the ticket is picked up, location of the request will be shown with other necessary infos. Finally the volunteer can meet up with the requester and help him/her out. For example, Gold is a passionate volunteer looking for volunteer opportunity. He uses "Ezhelp" to look for people that needs help and finds George. Gold helps George move out of his apartment.
 
 
 ### Data display:
   By connecting to the bing map api, we display the route data via the bing map. Both the requester and the volunteer have access to each other's location and estimated arrival time. Specificly speaking, this is implemented via getting the current location of the requester and volunteer and create bing map waypoints. These waypoints then got pass in to the bing map api which later return us the route informations and display the route to the map.
 
-  ![Data Display requester](images/Milestone5/r_matched.png)
-  ![Data Display volunteer](images/Milestone5/v_taskinfo1.png)
+  ![Data Display Requester](images/Milestone5/r_matched.png)
+  ![Data Display Volunteer](images/Milestone5/v_taskinfo1.png)
+
+  Also, we added a rating review page which display the rating data the requesters submitted after the requests finished.
+
+  ![Data Submit requester](images/Milestone5/r_finished.png)
+  ![Data Display Volunteer](images/Milestone5/rating_record.png)
+  
 
 <!-- (FIXME) -->
 ### UI comparing to previous milestone:
@@ -50,3 +56,4 @@
   ![r_matched](images/Milestone5/r_matched.png)
   ![r_finished1](images/Milestone4/r_finished1.png)
   ![r_finished](images/Milestone5/r_finished.png)
+  ![rating_record](images/Milestone5/rating_record.png)
