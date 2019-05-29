@@ -14,7 +14,7 @@
 
 
 ### Data display:
-  By connecting to the bing map api, we display the route data via the bing map. Both the requester and the volunteer have access to each others location and estimated arrival time. Specific speaking, this is implemented via getting the current location of the requester and volunteer and create bing map waypoints. These waypoints then got pass in to the bing map api which later return us the route informations and display the route to the map.
+  By connecting to the bing map api, we display the route data via the bing map. Both the requester and the volunteer have access to each other's location and estimated arrival time. Specificly speaking, this is implemented via getting the current location of the requester and volunteer and create bing map waypoints. These waypoints then got pass in to the bing map api which later return us the route informations and display the route to the map.
 
   ![Data Display requester](images/Milestone5/r_matched.png)
   ![Data Display volunteer](images/Milestone5/v_taskinfo1.png)
