@@ -77,10 +77,10 @@ app.get('/rating_info/:uid', (req, res) => {
   (err, row) => {
     if (row.length > 0) {
       console.log("Rating found!" + row);
-      res.send("1");
+      res.send(row);
     }
     else {
-      res.send("0");
+      res.send({});
     }
   });
 });

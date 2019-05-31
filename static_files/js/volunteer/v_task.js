@@ -31,50 +31,124 @@ $(document).ready(() => {
 
       const parentDiv = $("#templatedProjects");
 
-      for (const record of all_records) {
-        if (record.status != "Waiting") {continue;}
-        const template = `
-        <div class='recordbox'>
-        <div class='lqz_accept' id="box_${record.uid}">
-        <p>Status: ${record.status}</p>
-        <p>Request ID: ${record.uid}</p>
-        <p>Emergency Level: ${record.emergency}</p>
-        <p>Category: ${record.category}</p>
-        <p>Personal Condition: ${record.disability}</p>
-        <p>Description: ${record.description}</p>
-        </div>
-        <div class='buttons'>
-        <button class='lqz_report' id="btn_${record.uid}"> More </button>
-        </div>
-        </div>`;
-
-        $("#templatedProjects").append(template);
-
-        let btn_id = "#btn_"+record.uid;
-        let box_id = "#box_"+record.uid;
-
-        $(btn_id).click(() => {
-          localStorage.setItem("request_id", record.uid);
-          console.log(record.uid);
-          window.location = "v_taskinfo.html";
-        });
-        $(box_id).click(() => {
-          localStorage.setItem("request_id", record.uid);
-          console.log(record.uid);
-          window.location = "v_taskinfo.html";
-        });
-
-      }
-    }
-  });
-
   $('#lqz_refresh').click(() => {
     document.location.reload();
   });
 
+  // Function used to filter the all_records array with the specified flag
+  function filter_record(flag, all_records){
+    // new record to return
+    let new_record = [];
+
+    // switch statement to filter the array
+    switch (flag) {
+      case "Low":
+        for(const record of all_records){
+          if(record.emergency == "Low"){
+            // unshift = push_front
+            new_record.unshift(record);
+          }
+        }
+        break;
+
+      case "Medium":
+        for(const record of all_records){
+          if(record.emergency == "Medium"){
+            new_record.unshift(record);
+          }
+        }
+        break;
+
+      case "High":
+        for(const record of all_records){
+          if(record.emergency == "High"){
+            new_record.unshift(record);
+          }
+        }
+        break;
+
+      case "Routine":
+        for(const record of all_records){
+          if(record.category == "Routine"){
+            new_record.unshift(record);
+          }
+        }
+        break;
+
+      case "Transportation":
+        for(const record of all_records){
+          if(record.category == "Transportation"){
+            new_record.unshift(record);
+          }
+        }
+        break;
+
+      case "Mental":
+        for(const record of all_records){
+          if(record.disability == "Mental"){
+            new_record.unshift(record);
+          }
+        }
+        break;
+
+      case "Physical":
+        for(const record of all_records){
+          if(record.disability == "Physical"){
+            new_record.unshift(record);
+          }
+        }
+        break;
+
+      default:
+        console.log("Flag not specified!");
+    }
+    return new_record;
+  }
+
+  // FIXME move the template into the function, should work
+  function display_record(all_records){
+    $("#templatedProjects").empty();
+
+    for (const record of all_records) {
+      if (record.status != "Waiting") {continue;}
+      const template = `
+      <div class='recordbox'>
+      <div class='lqz_accept' id="box_${record.uid}">
+      <p>Status: ${record.status}</p>
+      <p>Request ID: ${record.uid}</p>
+      <p>Emergency Level: ${record.emergency}</p>
+      <p>Category: ${record.category}</p>
+      <p>Personal Condition: ${record.disability}</p>
+      <p>Description: ${record.description}</p>
+      </div>
+      <div class='buttons'>
+      <button class='lqz_report' id="btn_${record.uid}"> More </button>
+      </div>
+      </div>`;
+
+      $("#templatedProjects").append(template);
+
+      let btn_id = "#btn_"+record.uid;
+      let box_id = "#box_"+record.uid;
+
+      $(btn_id).click(() => {
+        localStorage.setItem("request_id", record.uid);
+        console.log(record.uid);
+        window.location = "v_taskinfo.html";
+      });
+      $(box_id).click(() => {
+        localStorage.setItem("request_id", record.uid);
+        console.log(record.uid);
+        window.location = "v_taskinfo.html";
+      });
+
+    }
+  }
+
   //filter by emergency level
+  let flag;
   $('#emergency_select').change(()=>{
-    let flag;
+    working_records= all_records;
     let new_record;
     //extracting text value selected
     let selected = $("#emergency_select option:selected").text();
@@ -102,6 +176,7 @@ $(document).ready(() => {
 
     // store the filtered records back to the global variable
     working_records = new_record;
+    console.log(new_record);
 
     // call display _record everytime user selected a new option so that the front end will be refreshed
     display_record(working_records);
@@ -110,7 +185,7 @@ $(document).ready(() => {
 
   // filter by category
   $('#category_select').change(()=>{
-    let flag;
+    working_records= all_records;
     //extracting text value selected
     let selected = $("#category_select option:selected").text();
     console.log(selected + " selected!");
@@ -140,7 +215,7 @@ $(document).ready(() => {
 
   // filter by disability type
   $('#type_select').change(()=>{
-    let flag;
+working_records= all_records;
     //extracting text value selected
     let selected = $("#type_select option:selected").text();
     console.log(selected + " selected!");
@@ -158,8 +233,6 @@ $(document).ready(() => {
       console.log("Nothing selected or Something bad happened!");
     }
 
-  });
-
   // create a new array with filtered values, call helper function to filter
   new_record = filter_record(flag, working_records);
 
@@ -168,89 +241,18 @@ $(document).ready(() => {
 
   // call display _record everytime user selected a new option so that the front end will be refreshed
   display_record(working_records);
+  });
+
   $('#signout').click(()=>{
     console.log("signout clicked!");
     localStorage.removeItem('user');
     // this.navCtrl.setRoot(LoginPage);
     window.location = "../../index.html";
   })
+}});
+
 });
 
 $(document).ajaxError(() => {
   $('#status').html('Error: unknown ajaxError!');
 });
-
-// Function used to filter the all_records array with the specified flag
-function filter_record(flag, all_records){
-  // new record to return
-  let new_record = [];
-
-  // switch statement to filter the array
-  switch (flag) {
-    case "Low":
-      for(const record of all_records){
-        if(record.emergency == "Low"){
-          // unshift = push_front
-          new_record.unshift(record);
-        }
-      }
-      break;
-
-    case "Medium":
-      for(const record of all_records){
-        if(record.emergency == "Medium"){
-          new_record.unshift(record);
-        }
-      }
-      break;
-
-    case "High":
-      for(const record of all_records){
-        if(record.emergency == "High"){
-          new_record.unshift(record);
-        }
-      }
-      break;
-
-    case "Routine":
-      for(const record of all_records){
-        if(record.category == "Routine"){
-          new_record.unshift(record);
-        }
-      }
-      break;
-
-    case "Transportation":
-      for(const record of all_records){
-        if(record.category == "Transportation"){
-          new_record.unshift(record);
-        }
-      }
-      break;
-
-    case "Mental":
-      for(const record of all_records){
-        if(record.disability == "Mental"){
-          new_record.unshift(record);
-        }
-      }
-      break;
-
-    case "Physical":
-      for(const record of all_records){
-        if(record.disability == "Physical"){
-          new_record.unshift(record);
-        }
-      }
-      break;
-
-    default:
-      console.log("Flag not specified!");
-  }
-  return new_record;
-}
-
-// FIXME move the template into the function, should work
-function display_record(all_records){
-
-}

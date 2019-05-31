@@ -6,11 +6,11 @@
 
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/requester/r_finished.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script src="../../js/requester/r_finished.js"></script>
+  <script src="../js/rating_record.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="../../css/rating_record.css">
 </head>
 
 <body>
@@ -34,33 +34,24 @@
       <h1 id = "title">Rate Your Service</h1>
     </div>
     <div class="rate">
-      <input type="radio" id="star5" name="rate" value="5" />
-      <label for="star5" title="text">5 stars</label>
-      <input type="radio" id="star4" name="rate" value="4" />
-      <label for="star4" title="text">4 stars</label>
-      <input type="radio" id="star3" name="rate" value="3" />
-      <label for="star3" title="text">3 stars</label>
-      <input type="radio" id="star2" name="rate" value="2" />
-      <label for="star2" title="text">2 stars</label>
-      <input type="radio" id="star1" name="rate" value="1" />
-      <label for="star1" title="text">1 star</label>
+      <input type="radio" name="rate" value="5" />
+      <label for="star5" id="star5" title="text">5 stars</label>
+      <input type="radio" name="rate" value="4" />
+      <label for="star4" id="star4" title="text">4 stars</label>
+      <input type="radio" name="rate" value="3" />
+      <label for="star3" id="star3" title="text">3 stars</label>
+      <input type="radio" name="rate" value="2" />
+      <label for="star2" id="star2" title="text">2 stars</label>
+      <input type="radio" name="rate" value="1" />
+      <label for="star1" id="star1" title="text">1 star</label>
     </div>
     <div class="info">
-      <div class ="icon1">
-        <img src="../../images/v_icon.PNG" style="width:150px; height:150px">
-      </div>
       <div id="template">
       </div>
     </div>
-    <div>
-      <div class="text">
-        <!-- <textarea name="comments" maxlength="500" placeholder="Your Complaints"></textarea> -->
-        <input id="lqz_desc" type="text" size="50"/>
-    </div>
 
     <div class= "btns">
-      <button id="zw_finish_cancel">Cancel</button>
-      <button id="zw_finish_submit">Submit</button>
+      <button id="lqz_back">Back</button>
     </div>
 
   </div>

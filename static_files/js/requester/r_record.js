@@ -35,7 +35,7 @@ $(document).ready(() => {
           dataType : 'json',
           async:false,
           success: (data) => {
-            if (data == "1") {
+            if (data) {
               rate_or_report = "Report";
             }
             else {
@@ -54,7 +54,13 @@ $(document).ready(() => {
         else {
           button_text = "Delete";
           button_html = `<button class='lqz_rate' id="rate_${record.uid}">${rate_or_report}</button>`;
-          redirect = "r_report.html";
+          if (rate_or_report == "Rate") {
+            redirect = "r_finished.html";
+          }
+          else {
+            localStorage.setItem("request_id", record.id);
+            redirect = "../rating_record.html";
+          }
         }
 
         const template = `
@@ -84,6 +90,7 @@ $(document).ready(() => {
 
         let btn_id = "#btn_"+record.uid;
         let rate_id = "#rate_"+record.uid;
+
         $(btn_id).click(() => {
           localStorage.setItem("request_id", record.uid);
           console.log(record.uid);
@@ -125,12 +132,7 @@ $(document).ready(() => {
           }
         }
         });
-
-
-
       }}
-
-
     });
     $('#signout').click(()=>{
       console.log("signout clicked!");
