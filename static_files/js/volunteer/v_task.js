@@ -35,6 +35,7 @@ $(document).ready(() => {
     document.location.reload();
   });
 
+display_record(working_records);
   // Function used to filter the all_records array with the specified flag
   function filter_record(flag, all_records){
     // new record to return
@@ -148,7 +149,7 @@ $(document).ready(() => {
   //filter by emergency level
   let flag;
   $('#emergency_select').change(()=>{
-    working_records= all_records;
+
     let new_record;
     //extracting text value selected
     let selected = $("#emergency_select option:selected").text();
@@ -185,7 +186,7 @@ $(document).ready(() => {
 
   // filter by category
   $('#category_select').change(()=>{
-    working_records= all_records;
+
     //extracting text value selected
     let selected = $("#category_select option:selected").text();
     console.log(selected + " selected!");
@@ -215,7 +216,7 @@ $(document).ready(() => {
 
   // filter by disability type
   $('#type_select').change(()=>{
-working_records= all_records;
+
     //extracting text value selected
     let selected = $("#type_select option:selected").text();
     console.log(selected + " selected!");
