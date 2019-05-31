@@ -1,6 +1,7 @@
 //Server backend file
 
 const express = require('express');
+const url = require('url');
 app = express();
 
 const sqlite3 = require('sqlite3');
@@ -83,6 +84,36 @@ app.get('/rating_info/:uid', (req, res) => {
       res.send({});
     }
   });
+});
+
+app.get('/filter', (req, res) => {
+  // db.all() fetches all results from an SQL query into the 'rows' variable:
+  let emer_sql = "";
+  let type_sql = "";
+  let cate_sql = "";
+
+  let params = url.parse(req.url, true).query;
+
+  if(params.emergency!=""){
+    emer_sql = ` AND emergency = "${params.emergency}"`
+  }
+  if(params.category!=""){
+    cate_sql = ` AND category = "${params.category}"`
+  }
+  if(params.disability!=""){
+    type_sql = ` AND disability = "${params.disability}"`
+  }
+
+  const sql = `SELECT * FROM request_info WHERE 1=1 ${emer_sql} ${cate_sql} ${type_sql}`;
+  console.log(sql);
+
+  db.all(sql,
+  (err, row) => {
+      console.log(row);
+      res.send(row);
+  },
+
+);
 });
 
 app.get('/request_info/:property/:value', (req, res) => {
