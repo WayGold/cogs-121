@@ -1,4 +1,14 @@
-//Server backend file
+/*
+ *  File Name: server.js
+ *
+ *  Functionalities:
+ *  1. Get requests including fetching all usernames, finding one specific users,
+ *     fetching all requests, finding the specific request with id, get filtered
+ *     requests with specified keys, rating infos with specified request id,
+ *     requests with specified key and value pairs.
+ *  2. Post request including creating a new request ticket and register for a
+ *     new user account.
+ */
 
 const express = require('express');
 const url = require('url');

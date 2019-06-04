@@ -1,9 +1,21 @@
+/*
+ *  File Name: login.js
+ *
+ *  Functionalities:
+ *  1. Some error handling functions for input
+ *  2. login functionality by calling a get request from the backend and compare
+ *     the userid and password
+ *  3. Register via a post request to the backend
+ */
+
+// password error handling
 function isPasswd(s) {
   var patrn = /^(\w){6,20}$/;
   if (!patrn.exec(s)) return false
   return true
 }
 
+// Name error handling
 function isTrueName(s) {
   var patrn = /^[a-zA-Z]{1,30}$/;
   if (!patrn.exec(s))
@@ -11,18 +23,21 @@ function isTrueName(s) {
   return true
 }
 
+// Phone error handling
 function isMobil(s) {
   var patrn = /^[+]{0,1}(\d){1,3}[ ]?([-]?((\d)|[ ]){1,12})+$/;
   if (!patrn.exec(s)) return false
   return true
 }
 
+// Postal code error handling
 function isPostalCode(s) {
   var patrn = /^[a-zA-Z0-9 ]{3,12}$/;
   if (!patrn.exec(s)) return false
   return true
 }
 
+// Check for all error
 function check_login() {
 
   if ((($('#zw_create_account_username').val()).length < 6)||($('#zw_create_account_username').val()).length > 20) {
@@ -60,6 +75,7 @@ $(document).ready(() => {
     const pwd = $('#zw_login_pwd').val();
     const requestURL = '../users/' + username;
 
+    // Get request to the backend getting all users
     $.ajax({
       // all URLs are relative to http://localhost:3000/
       url: requestURL,
@@ -104,6 +120,7 @@ $('#signout').click(()=>{
     console.log("create clicked!");
       if (confirm("Please confirm your action")) {
         if(check_login()){
+          // Post request to the backend with user input
           $.ajax({
             // all URLs are relative to http://localhost:3000/
             url: '../../create_user',

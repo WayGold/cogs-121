@@ -1,5 +1,17 @@
+/*
+ *  File Name: r_request.js
+ *
+ *  Functionalities:
+ *  1. Button onclick functions to get user input
+ *  2. Get requester location
+ *  3. Post request to the backend server, push the request data into the db
+ *
+ */
+
+// Globals for user input
 let input_emergency, input_category, input_disability, input_description, input_latitude, input_longitude;
-//FIXMe
+
+// Get user location
 if(navigator.geolocation){
   navigator.geolocation.getCurrentPosition(function (position) {
     input_latitude = position.coords.latitude;
@@ -12,8 +24,11 @@ else{
 
 $(document).ready(() => {
 
+  // Debug geolocation
   console.log("latitude: " + input_latitude);
   console.log("longitude: " + input_longitude);
+
+  /* Onclick Function Handlers */
 
   $('#zw_Low').click(() => {
     console.log("low clicked");
@@ -80,6 +95,7 @@ $(document).ready(() => {
     input_description = $('#zw_description').val();
 
     if(confirm("Are you sure to submit?")){
+      // Ajax call to backend post data
       $.ajax({
         // all URLs are relative to http://localhost:3000/
         url: '../../request_info',
