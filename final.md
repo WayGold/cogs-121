@@ -14,7 +14,7 @@
 r_finished.html -
 r_record.html -
 r_report.html -
-r_request.html -
+r_request.html - front end for request page ticket submission
 waiting.html -
 
 #### Volunteer Section
@@ -36,22 +36,24 @@ report.html -
 r_finished.js -
 r_record.js -
 r_report.js -
-r_request.js -
-waiting.js -
+r_request.js - ticket submission functionality
+waiting.js - requester waiting status processing and map
 
 #### Volunteer Section
 v_record.js -
 v_report.js -
 v_task.js -
 v_taskinfo.js -
-v_taskinfo1.js -
+v_taskinfo1.js - ticket acceptance and map
 
 #### Other Pages
 index.js - empty
-login.js -
+login.js - login function and register function
 rating_record.js -
 key.js - store api key
 main.js - store current userid
+create_db.js - create sqlite database
+server.js - server backend code
 
 ### CSS Files
 
@@ -72,5 +74,5 @@ v_taskinfo1.css -
 #### Other Pages
 index.css -
 login.css -
-main.css - 
+main.css -
 rating_record.css -
