@@ -1,10 +1,6 @@
 body {
   background: url(../../images/bg-02.jpg);
-  /*background: #76b852; /* fallback for old browsers */
-  /*background: -webkit-linear-gradient(right, #dffad0, rgb(202, 235, 184));
-  /*background: -moz-linear-gradient(right, #76b852, #8DC26F);
-  background: -o-linear-gradient(right, #76b852, #8DC26F);
-  background: linear-gradient(to left, #76b852, #8DC26F);*/
+
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -15,6 +11,7 @@ h2{
   color: #063a3a;
   font-family: "Montserrat", sans-serif;
 }
+
 .click{
   background-color: #1c5f5b;
 }

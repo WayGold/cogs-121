@@ -244,12 +244,7 @@
 //   display_record(working_records);
 //   });
 //
-//   $('#signout').click(()=>{
-//     console.log("signout clicked!");
-//     localStorage.removeItem('user');
-//     // this.navCtrl.setRoot(LoginPage);
-//     window.location = "../../index.html";
-//   })
+
 // }});
 //
 // });
@@ -260,6 +255,8 @@
 $(document).ready(() => {
   let params = {emergency:"", category:"", disability:""};
   console.log(params);
+
+
   filtered_data ()
   $('#emergency_select').change(()=>{
     params["emergency"] = $("#emergency_select option:selected").text();
@@ -268,6 +265,7 @@ $(document).ready(() => {
     }
     filtered_data ()
   })
+
   $('#category_select').change(()=>{
     params["category"] = $("#category_select option:selected").text();
     if (params.category == "Nothing selected...") {
@@ -275,6 +273,7 @@ $(document).ready(() => {
     }
     filtered_data ()
   })
+
   $('#type_select').change(()=>{
     params["disability"] = $("#type_select option:selected").text();
     if (params.disability == "Nothing selected...") {
@@ -302,6 +301,22 @@ $(document).ready(() => {
 
        for (const record of all_records) {
          if (record.status != "Waiting") {continue;}
+
+         const point = `${record.latitude},${record.longitude}`
+         const entityTypes = "Address"
+         const url = `http://dev.virtualearth.net/REST/v1/Locations/${point}?includeEntityTypes=${entityTypes}&key=${key}`
+         let address = ""
+
+         $.ajax({
+            url: url,
+            type: 'GET',
+            dataType : 'json',
+            async: false,
+            success: (data) => {
+              address = data.resourceSets[0].resources[0].name
+            }
+          })
+
          const template = `
          <div class='recordbox'>
          <div class='lqz_accept' id="box_${record.uid}">
@@ -310,6 +325,7 @@ $(document).ready(() => {
          <p>Emergency Level: ${record.emergency}</p>
          <p>Category: ${record.category}</p>
          <p>Personal Condition: ${record.disability}</p>
+         <p>Location: ${address}</p>
          <p>Description: ${record.description}</p>
          </div>
          <div class='buttons'>
@@ -335,4 +351,19 @@ $(document).ready(() => {
 
        }
      }
+
+       $('#signout').click(()=>{
+         console.log("signout clicked!");
+         localStorage.removeItem('user');
+         // this.navCtrl.setRoot(LoginPage);
+         window.location = "../../index.html";
+       })
+
+         $('.record').click(() => {
+           window.location = "v_record.html";
+         });
+
+         $('#lqz_refresh').click(() => {
+           document.location.reload();
+         });
  })
