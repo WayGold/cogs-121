@@ -89,3 +89,6 @@ index.css - dispalying the slogan, picture of the volunteer/requester and the ma
 login.css - displaying the login box for username and password
 main.css - adjusting the position and displaying the navigation bar
 rating_record.css -
+
+## Google Slide Link
+https://docs.google.com/presentation/d/1T_9Q9mQG6tSy4qrH_YnzBw2XsaaLTXPbJbcKt2XX4Wc/edit?usp=sharing
