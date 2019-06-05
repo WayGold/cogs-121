@@ -1,4 +1,13 @@
-
+/*
+ *  File Name: v_taskinfo.js
+ *
+ *  Functionalities:
+ *  1. Get requests including finding one specific users, receiving all records,
+ *     finding the specific request with id, get filtered requests with specified
+ *     keys.
+ *  2. The cancel key can be linked to the previous page, the submit key can be
+ *     linked to the next page, and change the current state of record to 'Matched'.
+ */
 
 $(document).ready(() => {
 
