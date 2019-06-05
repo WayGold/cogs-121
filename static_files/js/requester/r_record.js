@@ -79,6 +79,7 @@ $(document).ready(() => {
         <div class='recordbox'>
         <div class='record' id="btn_${record.uid}">
         <p>Status: ${record.status}</p>
+        <p>Accepter: ${record.accepter}</p>
         <p>Request ID: ${record.uid}</p>
         <p>Emergency Level: ${record.emergency}</p>
         <p>Category: ${record.category}</p>
