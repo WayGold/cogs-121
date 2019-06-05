@@ -1,7 +1,13 @@
-
+/*
+*  File Name: r_record.js
+*
+*  Functionalities:
+*  1. see the past tickets that are relevant to the logged in user
+*  2. able to click the ticket and show the rating record
+*/
 $(document).ready(() => {
 
-
+  // location service test
   if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(function (position) {
       console.log("Current location: " + position.coords.latitude + " " + position.coords.longitude);
@@ -11,14 +17,17 @@ $(document).ready(() => {
     console.log("Can't access location info!");
   }
 
+  // new request button handler
   $('#lqz_new_request').click(() => {
     window.location = "r_request.html";
   });
 
+  // refresh button handler
   $('#lqz_refresh').click(() => {
     document.location.reload();
   });
 
+  // get all tickets with specified requester
   $.ajax({
     url: '../../request_info/requester/' + localStorage.getItem("user"),
     type: 'GET',
@@ -27,6 +36,7 @@ $(document).ready(() => {
       console.log('You received some data!', data);
       const all_records = data;
 
+      // get rating info with specified uid
       for (const record of all_records) {
         let rate_or_report = "";
         $.ajax ({
@@ -47,6 +57,7 @@ $(document).ready(() => {
         let button_text = "";
         let button_html = "";
         let redirect = ""
+        // status handling
         if (record.status != "Finished") {
           button_text = "Cancel";
           redirect = "waiting.html"
@@ -63,6 +74,7 @@ $(document).ready(() => {
           }
         }
 
+        // template for displaying record
         const template = `
         <div class='recordbox'>
         <div class='record' id="btn_${record.uid}">
@@ -82,7 +94,7 @@ $(document).ready(() => {
 
         $("#templatedProjects").append(template);
 
-
+        // rate button handler
         $('.lqz_rate').click(() => {
           localStorage.setItem("request_id", record.uid);
 
@@ -91,12 +103,14 @@ $(document).ready(() => {
         let btn_id = "#btn_"+record.uid;
         let rate_id = "#rate_"+record.uid;
 
+
         $(btn_id).click(() => {
           localStorage.setItem("request_id", record.uid);
           console.log(record.uid);
           window.location = redirect;
         });
 
+        // rate/report button handler
         $(rate_id).click(() => {
           localStorage.setItem("request_id", record.uid);
           console.log(record.uid);
