@@ -69,7 +69,7 @@ $(document).ready(() => {
 
           $('.lqz_report').click(() => {
             localStorage.setItem("request_id", record.uid);
-            window.location = "v_report.html";
+            window.location = "../report.html";
           });
 
           function cancel(uid){

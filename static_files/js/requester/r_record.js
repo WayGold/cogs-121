@@ -28,7 +28,7 @@ $(document).ready(() => {
       const all_records = data;
 
       for (const record of all_records) {
-        let rate_oreport = "";
+        let rate_or_report = "";
         $.ajax ({
           url: '../../rating_info/' + record.uid,
           type: 'GET',
@@ -36,10 +36,10 @@ $(document).ready(() => {
           async:false,
           success: (data) => {
             if (data) {
-              rate_oreport = "Report";
+              rate_or_report = "Report";
             }
             else {
-              rate_oreport = "Rate";
+              rate_or_report = "Rate";
             }
           }
         });
@@ -53,8 +53,8 @@ $(document).ready(() => {
         }
         else {
           button_text = "Delete";
-          button_html = `<button class='lqz_rate' id="rate_${record.uid}">${rate_oreport}</button>`;
-          if (rate_oreport == "Rate") {
+          button_html = `<button class='lqz_rate' id="rate_${record.uid}">${rate_or_report}</button>`;
+          if (rate_or_report == "Rate") {
             redirect = "r_finished.html";
           }
           else {
