@@ -4,10 +4,11 @@ COGS 121 Team ZZZZ final deliverable
 Team Members:
 -------------
 
-Wei Zeng  
- Qianzi Li  
- Xinyi Jiao  
- Siyu Zhou
+ Wei Zeng   --  backend server, create sql database, requester ticket submission,
+                location functionalities, maps, filter.
+ Qianzi Li  --  
+ Xinyi Jiao --   
+ Siyu Zhou  -- 
 
 Source Files
 ------------
