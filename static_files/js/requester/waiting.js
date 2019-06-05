@@ -1,3 +1,15 @@
+/*
+ *  File Name: waiting.js
+ *
+ *  Functionalities:
+ *  1.
+ *  2.
+ *  3. Map display volunteer location and estimation of arriving time
+ *
+ *
+ */
+
+// Globals
 let requester_data;
 let accepter_latitude;
 let accepter_longitude;

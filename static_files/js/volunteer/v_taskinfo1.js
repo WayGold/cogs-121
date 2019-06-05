@@ -1,3 +1,13 @@
+/*
+ *  File Name: v_taskinfo1.js
+ *
+ *  Functionalities:
+ *  1. Get volunteer location
+ *  2. handle ticket acceptance status
+ *  3. Display map to the volunteers
+ */
+
+// Globals
 let request_location;
 let directionsManager;
 let volunteer_location;
@@ -5,12 +15,15 @@ let req_data;
 let cur_lati;
 let cur_longi;
 
+// Get volunteer location
 navigator.geolocation.getCurrentPosition(function (position) {
   console.log(position.coords.latitude + " " + position.coords.longitude);
   cur_lati = position.coords.latitude;
   cur_longi = position.coords.longitude;
 
   console.log("Updating location: " + cur_lati + " " + cur_longi + "to database!");
+
+  // Push the accepter's location to the db for map in waiting page
   $.ajax({
     url: '../../set_accepter_location/' + localStorage.getItem("request_id"),
     type: 'POST',
@@ -58,6 +71,7 @@ $(document).ready(() => {
 
   $("#lqz_cancel").click(() => {
     if (confirm("Are you sure to cancel?")){
+      // reset ticket status
       $.ajax({
         url: '../../change_status/' + localStorage.getItem("request_id"),
         type: 'POST',
@@ -77,6 +91,7 @@ $(document).ready(() => {
   })
 });
 
+// Get map callback function to the bing api call
 function GetMap() {
 
   let map = new Microsoft.Maps.Map('#myMap', {credentials: key});
