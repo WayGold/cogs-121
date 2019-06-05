@@ -1,4 +1,9 @@
-//create sqlite db
+/*
+*  File Name: create_db.js
+*
+*  Functionalities:
+*  1. create a sqlite3 db and initialize some preset data for testing purposes
+*/
 const sqlite3 = require('sqlite3');
 const db = new sqlite3.Database('ezhelp.db');
 
