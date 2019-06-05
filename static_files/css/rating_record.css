@@ -9,8 +9,9 @@ body{
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
   max-width:800px;
   margin:auto;
-  height:650px;
-  margin-top:-10px;
+  height: 600px;
+  margin-top: 20vh;
+  margin-bottom: 10vh;
 }
 
 #line{

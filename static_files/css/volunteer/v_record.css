@@ -72,8 +72,12 @@ padding-bottom: 25px;
   margin: 1vw;
 }
 
+button {
+  margin:15px 10px 5px 5px;
+}
 .buttons{
-  text-align: right;
+
+  text-align: center;
 }
 .container{
   text-align: center;
@@ -89,6 +93,7 @@ padding-bottom: 25px;
 
  body{
   background: url(../../images/bg.jpg);
+  background-attachment: fixed;
  }
 
  .title{

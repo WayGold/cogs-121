@@ -18,7 +18,7 @@ Source Files
 
 r_finished.html -   
 r_record.html -   
-r_report.html -   
+report.html -   
 r_request.html - front end for request page ticket submission  
 waiting.html - front end for matching status with the volunteer
 
@@ -42,7 +42,7 @@ report.html -
 
 r_finished.js -   
 r_record.js -   
-r_report.js -   
+report.js -   
 r_request.js - ticket submission functionality   
 waiting.js - requester waiting status processing and map
 
@@ -69,7 +69,7 @@ server.js - server backend code
 
 r_finished.css -   
 r_record.css -   
-r_report.css -   
+report.css -   
 r_request.css -   
 r_waiting.css - displaying three waiting states
 
