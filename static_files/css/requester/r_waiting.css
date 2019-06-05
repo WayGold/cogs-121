@@ -1,13 +1,9 @@
 /*
- *  File Name: r_waiting.css
- *
- *  Functionalities:
- *  1. Displays three different waiting states: waiting, matched, and arrived.
- *     Different states correspond to different progress. The finished states
- *     are lit up, and the unfinished states are gray.
- *  2. There is a profile button in the navbar, and when the mouse moves
- *     over it, the user's basic information will be displayed automatically */
-
+* File Name: r_waiting.css
+*
+* Functionalities:
+* Describe the presentation of r_waiting.html
+*/
 
 *{margin:0;padding:0;list-style-type:none;}
 a,img{border:0;}
@@ -106,8 +102,6 @@ body{
 
 } */
 
-
-
 .div_button{
   text-align: center;
 }
@@ -119,7 +113,7 @@ body{
     margin:auto;
     height:75rem;
     margin-top:100px;
-
+    margin-bottom:5vh;
 }
 
 #name{

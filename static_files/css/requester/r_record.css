@@ -1,3 +1,9 @@
+/*
+* File Name: r_record.css
+*
+* Functionalities:
+* Describe the presentation of r_record.html
+*/
 
 .btns button{
   margin: 1.5rem 1rem 0.5rem 1rem;
@@ -13,7 +19,6 @@
   margin-right: 2vw;
   margin-bottom: 20px;
   text-align: left;
-
 }
 
 .recordbox{
@@ -35,23 +40,23 @@ button {
 .container{
   text-align: center;
   background: #FFFFFF;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-    width: 80vw;
-    margin:auto;
-    height:auto;
-    margin-top:17vh;
-    margin-bottom:14vh;
-    padding: 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  width: 80vw;
+  margin:auto;
+  height:auto;
+  margin-top:17vh;
+  margin-bottom:14vh;
+  padding: 0;
 }
 
- body{
+body{
   background: url(../../images/bg-02.jpg);
   background-attachment: fixed;
- }
+}
 
- .title{
+.title{
   font-family: "Roboto", sans-serif;
   text-align:center;
   color: #fcfdfc;
   padding-bottom: 25px;
- }
+}

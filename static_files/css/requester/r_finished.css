@@ -1,13 +1,10 @@
-   /*
-    *  File Name: r_finished.css
-    *
-    *  Functionalities:
-    *  1. Display the background image and navigation bar 
-    *  2. Display the rate your service box and set it at the center of the screen
-    *  3. Align all the elements in the box at the center, set the fonts and adjust
-    *     the size of the rating stars
-    *  4. Display the text box for comments 
-    */
+/*
+* File Name: r_finished.css
+*
+* Functionalities:
+* Describe the presentation of r_finished.html
+*/
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 body{
@@ -49,6 +46,7 @@ body{
   margin-left: 1vw;
   margin-top:0.5rem;
 }
+
 #title{
   font-family: "Roboto", sans-serif;
   text-align:center;
@@ -56,6 +54,7 @@ body{
   padding-bottom: 25px;
 
 }
+
 .requester{
   position:flex;
   margin-top:20px;
@@ -72,26 +71,25 @@ body{
   border: 2px solid #ccc;
   border-radius: 4px;
 }
+
 h3{
   padding-bottom:15px;
   font-family: "Roboto", sans-serif;
 }
+
 .text{
   margin-left:auto;
   margin-right:auto;
   width:50%;
-
 }
 
 .btns{
-
   margin:10px auto 10px auto;
   width:100%;
   text-align: center;
 }
 
 button {
-
   background: #4CAF50;
   border-radius: 4px;
   border: 0;
@@ -148,5 +146,3 @@ button {
 .rate > label:hover ~ input:checked ~ label {
   color: #c59b08;
 }
-
-/* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */

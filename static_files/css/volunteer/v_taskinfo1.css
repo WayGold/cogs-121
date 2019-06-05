@@ -1,6 +1,12 @@
+/*
+* File Name: v_taskinfo1.css
+*
+* Functionalities:
+* Describe the presentation of v_taskinfo1.html
+*/
+
 .icon1{
   margin-left: 0%;
-  /* float: center; */
   width:30%;
   margin-top:0px;
 }
@@ -43,12 +49,14 @@
   text-align: center;
   top:85%;
 }
+
 #routeInfoPanel{
   position: absolute;
   width: 800px;
   top: 78%;
   z-index:1;
 }
+
 .title{
   font-family: "Roboto", sans-serif;
   text-align: center;
@@ -65,13 +73,13 @@
 .position{
   margin-top:100px;
   float:center;
-  /* margin-left: 350px; */
 }
 
 *{
   margin: 0;
   padding: 0;
 }
+
 body{
   background: url(../../images/bg.jpg);
   margin-bottom:40px;

@@ -1,14 +1,14 @@
 /*
- *  File Name: server.js
- *
- *  Functionalities:
- *  1. Get requests including fetching all usernames, finding one specific users,
- *     fetching all requests, finding the specific request with id, get filtered
- *     requests with specified keys, rating infos with specified request id,
- *     requests with specified key and value pairs.
- *  2. Post request including creating a new request ticket and register for a
- *     new user account.
- */
+*  File Name: server.js
+*
+*  Functionalities:
+*  1. Get requests including fetching all usernames, finding one specific users,
+*     fetching all requests, finding the specific request with id, get filtered
+*     requests with specified keys, rating infos with specified request id,
+*     requests with specified key and value pairs.
+*  2. Post request including creating a new request ticket and register for a
+*     new user account.
+*/
 
 const express = require('express');
 const url = require('url');
@@ -69,11 +69,11 @@ app.get('/request_info/:requestid', (req, res) => {
   const requestToLookup = req.params.requestid;
 
   db.all('SELECT * FROM request_info WHERE uid=$uid',
-    // parameters to SQL query:
-    {
-      $uid: requestToLookup
-    },
-    (err, rows) => {
+  // parameters to SQL query:
+  {
+    $uid: requestToLookup
+  },
+  (err, rows) => {
     console.log(rows);
     res.send(rows);
   });
@@ -118,12 +118,12 @@ app.get('/filter', (req, res) => {
   console.log(sql);
 
   db.all(sql,
-  (err, row) => {
+    (err, row) => {
       console.log(row);
       res.send(row);
-  },
+    },
 
-);
+  );
 });
 
 app.get('/request_info/:property/:value', (req, res) => {
@@ -133,17 +133,17 @@ app.get('/request_info/:property/:value', (req, res) => {
   const sql = 'SELECT * FROM request_info WHERE ' + property +" = $value";
 
 
-console.log(sql);
+  console.log(sql);
   db.all(sql,
     // parameters to SQL query:
     {
       $value: value
     },
     (err, rows) => {
-    console.log(rows);
-    res.send(rows);
+      console.log(rows);
+      res.send(rows);
+    });
   });
-});
 
 //post request for adding request to the db
 app.post('/request_info', (req, res) => {
@@ -312,9 +312,7 @@ app.post('/delete/:uid', (req, res) => {
   db.run(
     'DELETE FROM request_info WHERE uid = $uid',
     // parameters to SQL query:
-    {
-      $uid: req.params.uid,
-    },
+    {$uid: req.params.uid},
     // callback function to run when the query finishes:
     (err) => {
       if (err) {

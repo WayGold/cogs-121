@@ -4,7 +4,7 @@ COGS 121 Team ZZZZ final deliverable
 Team Members:
 -------------
 
-Wei Zeng  
+ Wei Zeng  
  Qianzi Li  
  Xinyi Jiao  
  Siyu Zhou
@@ -16,51 +16,45 @@ Source Files
 
 #### Requester Section
 
-r_finished.html - front end for dinshed page, showing that the service is finished and let the user rate
-the volunteer and submit any necessary coments about that service
-r_record.html -  
+r_finished.html - front end for finished page, showing that the service is finished and let the user rate the volunteer and submit any necessary comments about that service
+r_record.html -  front end for showing request records
 r_request.html - front end for request page ticket submission
-waiting.html - front end for matching status with the volunteer
+waiting.html - front end for showing matching status
 
 #### Volunteer Section
 
-v_record.html -
-v_task.html -
+v_record.html - front end for showing accepted requests
+v_task.html - front end for displaying requests to be accepted
 v_taskinfo.html - front end for the specific data of the disabled
-v_taskinfo1.html -
+v_taskinfo1.html - front end for showing finishing status
 
 #### Other Pages
 
-index.html - front end for intriducing the main purpose of the website
-login.html - front end for volunteer/requester login, if don't have account, regesiter
-rating_record.html -
-report.html - front end for volunteer/requester to report any issue they hace
-v_record.html -   
-v_report.html -   
-v_task.html -   
-v_taskinfo.html - front end for the specific data of the disabled v_taskinfo1.html -
-
+index.html - front end for introducing the main purpose of the website
+login.html - front end for volunteer/requester login or register
+rating_record.html - front end for showing the rating record
+report.html - front end for volunteer/requester to report any issue they have
 
 ### Javascript Files
 
 #### Requester Section
 
-r_finished.js - star rating function for the
-r_record.js -  
+r_finished.js - star rating function for the requester
+r_record.js - appending user's request record
 r_request.js - ticket submission functionality
 waiting.js - requester waiting status processing and map
 
 #### Volunteer Section
 
-v_record.js -
-v_task.js -
-v_taskinfo.js - displaying the data that matches the specific userid v_taskinfo1.js - ticket acceptance and map
+v_record.js - appending user's accepted request
+v_task.js - appending requests to be accepted
+v_taskinfo.js - displaying the data that matches the specific userid
+v_taskinfo1.js - ticket acceptance and map
 
 #### Other Pages
 
-index.js - empty
 login.js - login function and register function
-rating_record.js -
+rating_record.js - displaying rating record
 key.js - store api key
 main.js - store current userid
 create_db.js - create sqlite
@@ -71,21 +65,20 @@ server.js - server backend code
 
 #### Requester Section
 
-r_finished.css - dispalying the user's information, star rating and text box for comments
-r_record.css -
-r_request.css -
-r_waiting.css - displaying three waiting states
+r_finished.css - stylesheet for the user's information, star rating and text box for comments
+r_record.css - stylesheet for requester's record
+r_request.css - stylesheet for the request form
+r_waiting.css - stylesheet for three waiting states
 
 #### Volunteer Section
 
-v_record.css -
-v_task.css -
-v_taskinfo.css - displaying specific information and images in the box
-v_taskinfo1.css -
+v_record.css - stylesheet for volunteer's record
+v_task.css - stylesheet for requests to be accepted
+v_taskinfo.css - stylesheet for specific information and images in the box
+v_taskinfo1.css - stylesheet for the map
 
 #### Other Pages
 
-index.css - dispalying the slogan, picture of the volunteer/requester and the main concepts
-login.css - displaying the login box for username and password
-main.css - adjusting the position and displaying the navigation bar
-rating_record.css -
+login.css - stylesheet for the login box for username and password
+main.css - stylesheet for the position and displaying the navigation bar
+rating_record.css - stylesheet for rating record

@@ -1,6 +1,12 @@
+/*
+* File Name: main.css
+*
+* Functionalities:
+* Describe the presentation of common elements in all html files
+*/
+
 body {
   font-family: 'Open Sans', sans-serif;
-
 }
 .fixed-top {
   position: fixed;
