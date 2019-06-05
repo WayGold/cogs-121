@@ -2,12 +2,18 @@
  *  File Name: waiting.js
  *
  *  Functionalities:
- *  1.
- *  2.
+ *  1. Get requests including finding one specific users, receiving all records,
+ *     finding the specific request with id, finding the specific status with id,
+ *     get filtered requests with specified keys.
+ *  2. The cancel key can be linked to the index page, the Go Back key can be
+ *     linked to the previous page.
  *  3. Map display volunteer location and estimation of arriving time
- *
- *
+ *  4. Play the video.
+ *  5. Div corresponding to id is displayed according to the value of the obtained
+ *     state, and it is refreshed every two seconds to ensure timely jump to the
+ *     new state.
  */
+
 
 // Globals
 let requester_data;
