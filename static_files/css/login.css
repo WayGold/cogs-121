@@ -1,3 +1,14 @@
+   /*
+    *  File Name: login.css
+    *
+    *  Functionalities:
+    *  1. Display the navigation bar and the background image
+    *  2. Display the login boxes and text boxes for the user to enter the username 
+    *     and password
+    *  3. Do the animation of changing the login box to regesiter new account box
+    *  4. Set the style of the button
+    */
+
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 h2{
