@@ -1,3 +1,4 @@
+/* THIS IS NOT A FILE USERD FOR CURRENT VERSION. PLS IGNORE */
 $(document).ready(() => {
 
   $.ajax({
