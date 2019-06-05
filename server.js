@@ -21,6 +21,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static('static_files'));
 
+// get request for all user info
 app.get('/users', (req, res) => {
   // db.all() fetches all results from an SQL query into the 'rows' variable:
   db.all('SELECT name FROM users', (err, rows) => {
@@ -31,6 +32,7 @@ app.get('/users', (req, res) => {
   });
 });
 
+// get request for user info by username
 app.get('/users/:username', (req, res) => {
   const nameToLookup = req.params.username; // matches ':userid' above
   console.log("ID to look up:" + nameToLookup);
@@ -56,6 +58,7 @@ app.get('/users/:username', (req, res) => {
   );
 });
 
+// get request for all the request info
 app.get('/request_info', (req, res) => {
   // db.all() fetches all results from an SQL query into the 'rows' variable:
   db.all('SELECT * FROM request_info', (err, rows) => {
@@ -64,6 +67,7 @@ app.get('/request_info', (req, res) => {
   });
 });
 
+// get request for request info by uid
 app.get('/request_info/:requestid', (req, res) => {
   // db.all() fetches all results from an SQL query into the 'rows' variable:
   const requestToLookup = req.params.requestid;
@@ -79,6 +83,7 @@ app.get('/request_info/:requestid', (req, res) => {
   });
 });
 
+// get request for rating info by uid
 app.get('/rating_info/:uid', (req, res) => {
   // db.all() fetches all results from an SQL query into the 'rows' variable:
   db.all('SELECT * FROM rating WHERE uid = $uid',
@@ -96,6 +101,7 @@ app.get('/rating_info/:uid', (req, res) => {
   });
 });
 
+// get request for filtered request info
 app.get('/filter', (req, res) => {
   // db.all() fetches all results from an SQL query into the 'rows' variable:
   let emer_sql = "";
@@ -126,6 +132,7 @@ app.get('/filter', (req, res) => {
   );
 });
 
+// get request for request info by specific property
 app.get('/request_info/:property/:value', (req, res) => {
   // db.all() fetches all results from an SQL query into the 'rows' variable:
   const property = req.params.property;
@@ -178,6 +185,7 @@ app.post('/request_info', (req, res) => {
   );
 });
 
+// post request for adding new user
 app.post('/create_user', (req, res) => {
   console.log(req.body);
 
@@ -203,6 +211,7 @@ app.post('/create_user', (req, res) => {
   );
 });
 
+// post requesting for adding new rating
 app.post('/add_rating', (req, res) => {
 
   db.run(
@@ -224,6 +233,7 @@ app.post('/add_rating', (req, res) => {
   );
 });
 
+// post request for adding new report
 app.post('/add_report', (req, res) => {
 
   db.run(
@@ -244,6 +254,7 @@ app.post('/add_report', (req, res) => {
   );
 });
 
+// post requesting for updating request status
 app.post('/change_status/:uid', (req, res) => {
   console.log(req.body);
 
@@ -266,6 +277,7 @@ app.post('/change_status/:uid', (req, res) => {
   );
 });
 
+// post request for setting accepter's location
 app.post('/set_accepter_location/:uid', (req, res) => {
   console.log(req.body);
 
@@ -288,6 +300,7 @@ app.post('/set_accepter_location/:uid', (req, res) => {
   );
 });
 
+// post request for deleting request by property
 app.post('/delete/:property/:uid', (req, res) => {
   console.log(req.body);
   const property = req.params.property;
@@ -306,6 +319,7 @@ app.post('/delete/:property/:uid', (req, res) => {
   );
 });
 
+// post request for deleting request by uid
 app.post('/delete/:uid', (req, res) => {
   console.log(req.body);
 
@@ -324,6 +338,7 @@ app.post('/delete/:uid', (req, res) => {
   );
 });
 
+// server listener
 app.listen(3000, () => {
   console.log('Server started at http://localhost:3000/');
 });

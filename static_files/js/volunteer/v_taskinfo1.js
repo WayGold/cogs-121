@@ -1,11 +1,11 @@
 /*
- *  File Name: v_taskinfo1.js
- *
- *  Functionalities:
- *  1. Get volunteer location
- *  2. handle ticket acceptance status
- *  3. Display map to the volunteers
- */
+*  File Name: v_taskinfo1.js
+*
+*  Functionalities:
+*  1. Get volunteer location
+*  2. handle ticket acceptance status
+*  3. Display map to the volunteers
+*/
 
 // Globals
 let request_location;
@@ -41,7 +41,7 @@ $(document).ready(() => {
 
   let url = '../../request_info/uid/' + localStorage.getItem("request_id");
   console.log(url);
-
+  //get request info from backend
   $.ajax({
     url: url,
     type: 'GET',
@@ -55,6 +55,7 @@ $(document).ready(() => {
 
   $("#zw_v_report_submit").click(() => {
     let curr_record = localStorage.getItem("request_id");
+    // reset ticket status
     $.ajax({
       url: '../../change_status/' + curr_record,
       type: 'POST',
@@ -83,10 +84,11 @@ $(document).ready(() => {
       });
     }
   });
+
+  //signout handler
   $('#signout').click(()=>{
     console.log("signout clicked!");
     localStorage.removeItem('user');
-    // this.navCtrl.setRoot(LoginPage);
     window.location = "../../index.html";
   })
 });

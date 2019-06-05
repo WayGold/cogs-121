@@ -1,5 +1,12 @@
+/*
+*  File Name: rating_record.js
+*
+*  Functionalities:
+*  1. see the rating that was given by the requester
+*/
 $(document).ready(() => {
 
+  // backend get request to get rating info with specified ticket id
   $.ajax({
     url: '../../rating_info/' + localStorage.getItem("request_id"),
     type: 'GET',
@@ -8,6 +15,7 @@ $(document).ready(() => {
       console.log(data);
 
       for (const rating of data){
+        // get the ticket info
         $.ajax({
           url: '../../request_info/uid/' + localStorage.getItem("request_id"),
           type: 'GET',
@@ -18,7 +26,7 @@ $(document).ready(() => {
               if (rating.description == null){
                 rating.description = ""
               }
-
+              // display with template
               const template = `
               <div class='record'>
               <p>Rater: ${record.requester} </p>
@@ -42,10 +50,12 @@ $(document).ready(() => {
     }
   });
 
-  $('#lqz_back').click(()=>{window.history.back();})
-  $('#signout').click(()=>{
-    console.log("signout clicked!");
-    localStorage.removeItem('user');
-    window.location = "../../index.html";
-  })
-});
+    // button handlers
+    $('#lqz_back').click(()=>{window.history.back();})
+    $('#signout').click(()=>{
+      console.log("signout clicked!");
+      localStorage.removeItem('user');
+      // this.navCtrl.setRoot(LoginPage);
+      window.location = "../../index.html";
+    })
+  });

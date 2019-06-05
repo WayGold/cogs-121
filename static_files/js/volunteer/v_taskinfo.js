@@ -10,10 +10,11 @@
  */
 
 $(document).ready(() => {
-
+  // get current request id
   let url = '../../request_info/uid/' + localStorage.getItem("request_id");
   console.log(url);
 
+  // get latitude and longitude
   if(navigator.geolocation){
     navigator.geolocation.getCurrentPosition(function (position) {
       console.log("Current location: " + position.coords.latitude + " " + position.coords.longitude);
@@ -23,6 +24,7 @@ $(document).ready(() => {
     console.log("Can't access location info!");
   }
 
+  // get request info from backend
   $.ajax({
     url: url,
     type: 'GET',
@@ -32,12 +34,12 @@ $(document).ready(() => {
       all_records = data;
 
       for (const record of all_records) {
-
         const point = `${record.latitude},${record.longitude}`
         const entityTypes = "Address"
         const url = `http://dev.virtualearth.net/REST/v1/Locations/${point}?includeEntityTypes=${entityTypes}&key=${key}`
         let address = ""
 
+        // get Address by calling Bing Maps's api
         $.ajax({
           url: url,
           type: 'GET',
@@ -48,6 +50,7 @@ $(document).ready(() => {
           }
         })
 
+        // create and append template
         const template =
         `<div class='recordbox'>
         <div class='record'>
@@ -59,20 +62,20 @@ $(document).ready(() => {
         <p>Location: ${address}</p>
         <p>Description: ${record.description}</p>
         </div>
-
         </div>
         `
         $("#single_task").append(template);
-
       }
     }
   });
 
+  // click button to go back
   $("#zw_v_report_cancel").click(() => {
     console.log("cancel clicked!");
     window.location = "v_task.html";
   })
 
+  // click button to set request status
   $("#zw_v_report_submit").click(() => {
     curr_record = localStorage.getItem("request_id");
     $.ajax({
@@ -84,15 +87,15 @@ $(document).ready(() => {
       },
       success: (data) => {
         console.log("Successfully accepted!");
-        // console.log(data);
         window.location = "v_taskinfo1.html";
       }
     });
   })
+
+  // signout handler
   $('#signout').click(()=>{
     console.log("signout clicked!");
     localStorage.removeItem('user');
-    // this.navCtrl.setRoot(LoginPage);
     window.location = "../../index.html";
   })
 });
