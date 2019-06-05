@@ -1,13 +1,19 @@
 
+.btns button{
+  margin: 1.5rem 1rem 0.5rem 1rem;
+  font-size: 20px
+}
+
 .request_table {
   border-spacing: 0;
   border-collapse: collapse;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 19vw));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   margin-left: 2vw;
   margin-right: 2vw;
   margin-bottom: 20px;
   text-align: left;
+
 }
 
 .recordbox{
@@ -17,15 +23,14 @@
   padding: 2vw;
   margin-top:2vh;
   margin: 1vw;
-  width: 90%;
 }
 
+button {
+  margin: 15px 5px -5px 5px;
+}
 .buttons{
-  text-align: right;
-}
 
-button{
-  margin: 10px 5px 5px 5px;
+  text-align: center;
 }
 .container{
   text-align: center;
@@ -36,17 +41,12 @@ button{
     height:auto;
     margin-top:17vh;
     margin-bottom:14vh;
-    padding:0;
+    padding: 0;
 }
 
-.position{
- padding-top: 1px;
- background-color: #76b852;
- box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1), 0 5px 5px 0 rgba(0, 0, 0, 0.2);
-}
  body{
   background: url(../../images/bg-02.jpg);
-  background-size:100%;
+  background-attachment: fixed;
  }
 
  .title{

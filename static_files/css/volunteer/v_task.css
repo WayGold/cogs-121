@@ -27,19 +27,12 @@ button {
 }
 
 .record {
-  display: inline;
-  font-size: 25px;
-  margin-top: -0.8vw;
-  margin-right: 2vw;
-  float:right;
+  font-size: 20px;
+
 }
 
 .record1 {
-  display: inline;
-  font-size: 25px;
-  margin-top: -0.8vw;
-  margin-left: -12vw;
-  float:left;
+  font-size: 20px;
 }
 
 .buttons{
@@ -49,26 +42,26 @@ button {
 .container{
   text-align: center;
   background: #FFFFFF;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-    width: 80vw;
-    margin:auto;
-    height:auto;
-    margin-top:17vh;
-    margin-bottom:14vh;
-    padding:0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  width: 80vw;
+  margin:auto;
+  height:auto;
+  margin-top:17vh;
+  margin-bottom:14vh;
+  padding:0;
 }
 
- body{
+body{
   background: url(../../images/bg.jpg);
- }
+  background-attachment: fixed;
+}
 
- .title{
-  margin-left: 14vw;
+.title{
   font-family: "Roboto", sans-serif;
   text-align:center;
   color: #fcfdfc;
   padding-bottom: 25px;
- }
+}
 
 td {
   padding: 1.5vw;
@@ -79,53 +72,3 @@ table {
   margin-top: -5vh;
   max-width: 90vw;
 }
-
-/*
-.table {
-  border-spacing: 0;
-  border-collapse: collapse;
-  display: flex;
-  flex-wrap: wrap;
-
-  margin-left: -1vw;
-}
-
-.recordbox{
-  border-style: solid;
-  border-width: 1px;
-  padding: 2vw;
-  margin-top:2vh;
-  margin: 1vw;
-  text-align: left;
-}
-
-.buttons{
-  text-align: right;
-}
-
-.container{
-  text-align: center;
-  background: #FFFFFF;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-  max-width:800px;
-  margin:auto;
-  height:600px;
-  margin-top:130px;
-  padding:0;
-}
-
-.position{
-  padding-top: 25px;
-  background:url(../../images/bgcolor.PNG);
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-}
-body{
-background: url(../../images/bg.jpg);
-}
-
-.title{
-font-family: "Roboto", sans-serif;
-text-align:center;
-color: #fcfdfc;
-padding-bottom: 25px;
-} */

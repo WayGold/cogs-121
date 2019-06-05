@@ -73,7 +73,7 @@ $(document).ready(() => {
         <p>Personal Condition: ${record.disability}</p>
         <p>Description: ${record.description}</p>
         </div>
-        <div class='buttons'>
+        <div class='buttons' style="text-align:center">
         ${button_html}
         <button class='lqz_cancel' id="cancel_${record.uid}">${button_text}</button>
         </div>

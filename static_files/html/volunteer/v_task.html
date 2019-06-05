@@ -35,68 +35,64 @@
 
   <div class="container">
     <div class="title_bar">
-      <!-- <button id="lqz_refresh">Refresh</button> -->
-      <h1 class="title"> Request Board <button id="my_record" class='record'> My Record </button>
-        <button id="lqz_refresh" class='record1'> Refresh </button></h1>
+      <h1 class="title"> Request Board
+      </div>
 
+      <table>
+        <td>
+          <h3> Filter by :</h3>
+        </td>
+        <td>
+          <div class="div_button">
+            <h3> Emergency Level </h3>
+            <form action="">
+              <select name="Emergency Level" id="emergency_select">
+                <option value=undefined class="button" selected>Nothing selected...</option>
+                <option value="Low" class="button" id="zw_Low">Low</option>
+                <option value="Medium" class="button" id="zw_Medium">Medium</option>
+                <option value="High" id="zw_High" class="button">High</option>
+                <div id="zw_emergency_status"></div>
+              </select>
+            </form>
+          </div>
+        </td>
 
-    </div>
-
-    <div>
-
-    </div>
-
-
-    <table>
-      <td>
-        <h3> Filter by :</h3>
-      </td>
-      <td>
-        <div class="div_button">
-          <h3> Emergency Level </h3>
+        <td>
+          <h3> Category </h3>
           <form action="">
-            <select name="Emergency Level" id="emergency_select">
+            <select name="Category" id="category_select">
               <option value=undefined class="button" selected>Nothing selected...</option>
-              <option value="Low" class="button" id="zw_Low">Low</option>
-              <option value="Medium" class="button" id="zw_Medium">Medium</option>
-              <option value="High" id="zw_High" class="button">High</option>
-              <div id="zw_emergency_status"></div>
+              <option value="Routine" class="button" id="zw_Routine">Routine</option>
+              <option value="Transportation" class="button" id="zw_Trans">Transportation</option>
+              <div id="zw_category_status"></div>
             </select>
           </form>
-        </div>
-      </td>
+        </td>
 
-      <td>
-        <h3> Category </h3>
-        <form action="">
-          <select name="Category" id="category_select">
-            <option value=undefined class="button" selected>Nothing selected...</option>
-            <option value="Routine" class="button" id="zw_Routine">Routine</option>
-            <option value="Transportation" class="button" id="zw_Trans">Transportation</option>
-            <div id="zw_category_status"></div>
-          </select>
-        </form>
-      </td>
+        <td>
+          <h3> Disability Type</h3>
+          <form action="">
+            <select name="Disability Type" id="type_select">
+              <option value=undefined class="button" selected>Nothing selected...</option>
+              <option value="Mental" class="button">Mental</option>
+              <option value="Physical" class="button">Physical</option>
+              <div id="zw_disability_status"></div>
+            </select>
+          </form>
+        </td>
 
-      <td>
-        <h3> Disability Type</h3>
-        <form action="">
-          <select name="Disability Type" id="type_select">
-            <option value=undefined class="button" selected>Nothing selected...</option>
-            <option value="Mental" class="button">Mental</option>
-            <option value="Physical" class="button">Physical</option>
-            <div id="zw_disability_status"></div>
-          </select>
-        </form>
-      </td>
+        <td style="text-align: left;padding-top: 7rem;display: table-cell;">
+          <button id="lqz_refresh" class='record1'> Reset </button></h1>
+          <button id="my_record" class='record'> My Record </button>
+        </td>
 
-    </table>
+      </table>
 
-    <div class="request_table" id="templatedProjects">
-      <!-- Records will be inserted here -->
+      <div class="request_table" id="templatedProjects">
+        <!-- Records will be inserted here -->
+      </div>
+
     </div>
+  </body>
 
-  </div>
-</body>
-
-</html>
+  </html>

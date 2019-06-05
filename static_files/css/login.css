@@ -3,7 +3,7 @@
     *
     *  Functionalities:
     *  1. Display the navigation bar and the background image
-    *  2. Display the login boxes and text boxes for the user to enter the username 
+    *  2. Display the login boxes and text boxes for the user to enter the username
     *     and password
     *  3. Do the animation of changing the login box to regesiter new account box
     *  4. Set the style of the button
@@ -11,13 +11,28 @@
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
+.login_navbar{
+  background: #ffffff!important;
+  transition: none;
+  min-height: 77px;
+}
+
 h2{
 color: #76b852;
 }
+
 .login-page {
   width: 360px;
-  padding: 8% 0 0;
+  padding: 25vh 0 0;
   margin: auto;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  z-index: 1;
 }
 .icon{
  padding-bottom: 20px;
@@ -110,13 +125,7 @@ color: #76b852;
 }
 body {
   background-image:url('../images/bgcolor.PNG');
-  /*background: #76b852; /* fallback for old browsers */
-  /*background: -webkit-linear-gradient(right, #dffad0, rgb(202, 235, 184));
-  /*background: -moz-linear-gradient(right, #76b852, #8DC26F);
-  background: -o-linear-gradient(right, #76b852, #8DC26F);
-  background: linear-gradient(to left, #76b852, #8DC26F);*/
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
