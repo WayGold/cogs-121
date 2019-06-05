@@ -6,7 +6,7 @@ $(document).ready(() => {
     dataType : 'json',
     success:(data) => {
       console.log("Rating:" + data);
-        for (const rating of data){
+        const rating = data;
         $.ajax({
           url: '../../request_info/uid/' + localStorage.getItem("request_id"),
           type: 'GET',
@@ -14,6 +14,10 @@ $(document).ready(() => {
           success:(request) => {
             console.log("Request:" + request);
             for (record of request){
+              if (rating.description == null){
+                rating.description = ""
+              }
+              
               const template = `
               <div class='record'>
               <p>Rater: ${record.requester} </p>
@@ -32,8 +36,7 @@ $(document).ready(() => {
           }
         });
       }
-    }
-  });
+    });
 
   $('#lqz_back').click(()=>{window.history.back();})
   $('#signout').click(()=>{

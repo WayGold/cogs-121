@@ -1,70 +1,80 @@
 .icon1{
-    margin-left: 0%;
-    float: center;
-    size:80%;
+  margin-left: 0%;
+  float: center;
+  size:80%;
 }
 
 .info{
-    width:100%;
-    display:inline-block;
+  width:100%;
+  display:inline-block;
 }
 
-#dog{
-  width: 160px;
-  margin: 1.7vw;
+#btns{
+  margin-bottom: 20px;
+  margin-top: -30px;
+}
+.container{
+  text-align: center;
+  background: #FFFFFF;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  max-width:800px;
+  margin:auto;
+  height:100%;
+  margin-top:15vh;
+  padding:0;
 }
 
- .container{
-    text-align: center;
-    background: #FFFFFF;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-    max-width:800px;
-    margin:auto;
-    height:600px;
-    margin-top:100px;
-    padding:0;
- }
+.position{
+  float:center;
+}
 
-  .position{
-      margin-top:100px;
-      float:center;
-      /* margin-left: 350px; */
-  }
-
-  *{
-    margin: 0;
-    padding: 0;
+*{
+  margin: 0;
+  padding: 0;
 }
 
 #box{
-    padding-top: 25px;
-    background:url(../../images/bgcolor.PNG);
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
-  }
+  padding-top: 25px;
+  background:url(../../images/bgcolor.PNG);
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
 
-  .title{
-    font-family: "Roboto", sans-serif;
-    text-align:center;
-    color: #fcfdfc;
-    padding-bottom: 25px;
-    }
+.title{
+  font-family: "Roboto", sans-serif;
+  text-align:center;
+  color: #fcfdfc;
+  padding-bottom: 25px;
+}
 
 
 button {
 
-    background: #4CAF50;
-    border-radius: 4px;
-    border: 0;
-    padding: 15px;
-    margin:10px;
-    color: #FFFFFF;
-    font-size: 14px;
-    -webkit-transition: all 0.3 ease;
-    transition: all 0.3 ease;
-    cursor: pointer;
-  }
+  background: #4CAF50;
+  border-radius: 4px;
+  border: 0;
+  padding: 15px;
+  margin:10px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
 
-  body{
-    background: url(../../images/bg.jpg);
-    margin-bottom:40px;
-    }
+body{
+  background: url(../../images/bg.jpg);
+  margin-bottom:40px;
+}
+
+#single_task{
+  text-align: left;
+  font-size: 25px;
+}
+
+.recordbox{
+  padding: 4vw;
+  line-height: 5rem;
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+}

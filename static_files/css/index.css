@@ -1,14 +1,8 @@
-.container{
-    width: 100%;
-    top:0;
-    position: relative;
-    text-align: center;
-    color: white;
+body{
+  font-size: 60px !important;
 }
-
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+.btn-md{
+  border-radius: 200px;
+  padding: 40px 80px;
+  font-size: 30px;
+}
