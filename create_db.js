@@ -14,7 +14,7 @@ db.serialize(() => {
   db.run("INSERT INTO users VALUES ('Joy', 'Joyce', '123', '858-888-8888', '9500 Gilman Dr., La Jolla, CA', '1')");
   db.run("INSERT INTO users VALUES ('Siyu', 'Siyu', '123', '858-999-9999', '9500 Gilman Dr., La Jolla, CA', '1')");
   db.run("INSERT INTO users VALUES ('George', 'Paul George', '123', '858-666-6666', '9500 Gilman Dr., La Jolla, CA', '0')");
-
+  db.run("INSERT INTO request_info VALUES ('1', 'George', 'High', 'Transportation', 'Physical', 'Default testing ticket', '32.731571', '-117.151985', 'NULL', 'NULL', 'Waiting', 'NULL')");
   console.log('successfully created the users, request_info tables in ezhelp.db');
 
   // print them out to confirm their contents:
