@@ -14,7 +14,6 @@
  *     new state.
  */
 
-
 // Globals
 let requester_data;
 let accepter_latitude;

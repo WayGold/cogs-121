@@ -1,12 +1,12 @@
 /*
- *  File Name: login.js
- *
- *  Functionalities:
- *  1. Some error handling functions for input
- *  2. login functionality by calling a get request from the backend and compare
- *     the userid and password
- *  3. Register via a post request to the backend
- */
+*  File Name: login.js
+*
+*  Functionalities:
+*  1. Some error handling functions for input
+*  2. login functionality by calling a get request from the backend and compare
+*     the userid and password
+*  3. Register via a post request to the backend
+*/
 
 // password error handling
 function isPasswd(s) {
@@ -19,7 +19,7 @@ function isPasswd(s) {
 function isTrueName(s) {
   var patrn = /^[a-zA-Z]{1,30}$/;
   if (!patrn.exec(s))
-    return false
+  return false
   return true
 }
 
@@ -97,9 +97,9 @@ $(document).ready(() => {
               localStorage.setItem("user", data.username);
               // Check user role
               if (data.role == 1) // volunteer
-                window.location = "/html/volunteer/v_task.html";
+              window.location = "/html/volunteer/v_task.html";
               else // requester
-                window.location = "/html/requester/r_record.html";
+              window.location = "/html/requester/r_record.html";
             }
             // Pwd not match
             else {
@@ -110,45 +110,45 @@ $(document).ready(() => {
       }
     });
   });
-$('#signout').click(()=>{
-  console.log("signout clicked!");
-  localStorage.removeItem('user');
-  // this.navCtrl.setRoot(LoginPage);
-  window.location = "index.html";
-})
+
+  $('#signout').click(()=>{
+    console.log("signout clicked!");
+    localStorage.removeItem('user');
+    // this.navCtrl.setRoot(LoginPage);
+    window.location = "index.html";
+  })
+
   $('#zw_create_account_btn').click(() => {
     console.log("create clicked!");
-      if (confirm("Please confirm your action")) {
-        if(check_login()){
-          // Post request to the backend with user input
-          $.ajax({
-            // all URLs are relative to http://localhost:3000/
-            url: '../../create_user',
-            type: 'POST', // <-- this is POST, not GET
-            data: {
-              username: $('#zw_create_account_username').val(),
-              name: $('#zw_create_account_name').val(),
-              password: $('#zw_create_account_pwd').val(),
-              phone: $('#zw_create_account_phone').val(),
-              location: $('#zw_create_account_loc').val(),
-              role: $('#zw_create_account_role').val(),
-            },
-            success: (data) => {
-              console.log(data);
-              if (data == "Success") {
-                window.location = "../html/login.html";
-              } else {
-                console.log("{message: 'error in app.post(/create_user), try another username'}");
-                $('#zw_create_status').html('Fail to create, try another username!');
-              }
+    if (confirm("Please confirm your action")) {
+      if(check_login()){
+        // Post request to the backend with user input
+        $.ajax({
+          // all URLs are relative to http://localhost:3000/
+          url: '../../create_user',
+          type: 'POST', // <-- this is POST, not GET
+          data: {
+            username: $('#zw_create_account_username').val(),
+            name: $('#zw_create_account_name').val(),
+            password: $('#zw_create_account_pwd').val(),
+            phone: $('#zw_create_account_phone').val(),
+            location: $('#zw_create_account_loc').val(),
+            role: $('#zw_create_account_role').val(),
+          },
+          success: (data) => {
+            console.log(data);
+            if (data == "Success") {
+              window.location = "../html/login.html";
+            } else {
+              console.log("{message: 'error in app.post(/create_user), try another username'}");
+              $('#zw_create_status').html('Fail to create, try another username!');
             }
-          });
-        }
-
-        else{
-          $('#zw_create_status').html('Fail to create!');
-        }
+          }
+        });
       }
-
+      else{
+        $('#zw_create_status').html('Fail to create!');
+      }
+    }
   })
 })

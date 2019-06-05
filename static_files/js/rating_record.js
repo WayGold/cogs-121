@@ -7,13 +7,12 @@ $(document).ready(() => {
     success:(data) => {
       console.log(data);
 
-        for (const rating of data){
+      for (const rating of data){
         $.ajax({
           url: '../../request_info/uid/' + localStorage.getItem("request_id"),
           type: 'GET',
           dataType : 'json',
           success:(request) => {
-
 
             for (record of request){
               if (rating.description == null){
@@ -39,14 +38,14 @@ $(document).ready(() => {
             }
           }
         });
-      }}
-    });
+      }
+    }
+  });
 
   $('#lqz_back').click(()=>{window.history.back();})
   $('#signout').click(()=>{
     console.log("signout clicked!");
     localStorage.removeItem('user');
-    // this.navCtrl.setRoot(LoginPage);
     window.location = "../../index.html";
   })
 });

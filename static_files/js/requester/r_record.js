@@ -136,27 +136,24 @@ $(document).ready(() => {
             }
           }
           else {
-          if (confirm("Are you sure to delete?")){
-            $.ajax({
-              // all URLs are relative to http://localhost:3000/
-              url: '../../delete/requester/' + record.uid,
-              type: 'POST',
-              success: window.location = "r_record.html" // <-- this is POST, not GET
-            });
+            if (confirm("Are you sure to delete?")){
+              $.ajax({
+                // all URLs are relative to http://localhost:3000/
+                url: '../../delete/requester/' + record.uid,
+                type: 'POST',
+                success: window.location = "r_record.html" // <-- this is POST, not GET
+              });
+            }
           }
-        }
         });
-      }}
-    });
-    $('#signout').click(()=>{
-      console.log("signout clicked!");
-      localStorage.removeItem('user');
-      // this.navCtrl.setRoot(LoginPage);
-      window.location = "../../index.html";
-    })
+      }
+    }
   });
 
-
-  $(document).ajaxError(() => {
-    $('#status').html('Error: unknown ajaxError!');
-  });
+  $('#signout').click(()=>{
+    console.log("signout clicked!");
+    localStorage.removeItem('user');
+    // this.navCtrl.setRoot(LoginPage);
+    window.location = "../../index.html";
+  })
+});
