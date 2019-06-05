@@ -1,3 +1,10 @@
+<!--
+File Name: v_taskinfo1.html
+
+Functionalities:
+1. Create map for navigation
+2. Create button to cancel or assert 'Arrived'
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,48 +20,39 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="../../css/main.css">
 
-  </head>
-  <body>
-    <nav class="fixed-top zzzz_navbar" id="mainNav">
-      <div>
-        <a style="position: absolute" href="../../index.html">
-          <img src="../../images/navbar.png"  style="height: 40px;">
-        </a>
-      </div>
-      <div style="text-align: right" >
-        <a  href="../../index.html">
-          <i style="padding: 5px; color: white; font-size: 30px;" class="fas fa-home"></i>
-        </a>
-      </div>
-      <div id="signout" style="position: absolute; right: 50px; top: 8px">
-        <i style="padding: 5px; color: white; font-size: 30px;" class="fas fa-sign-out-alt"></i>
-      </div>
-    </nav>
-
-    <div class ="container">
-      <div class = "title_bar requester">
-        <h1 class = "title">MAP</h1>
-      </div>
-      <div id='routeInfoPanel'></div>
-      <div id="myMap"></div>
-
-
-      <!-- <div class = "requester">
-        <h4>Walk 7 min (0.3mi)</h4>
-        <h4>101 Oceanside Scheduled in 5:26PM</h4>
-        <h4>Ride 4 stops(17 min)</h4>
-        <h4>arrive at Las Palmas Square in 5:38PM</h4>
-      </div> -->
-      <div class= "btns">
-        <button class="btn_white" id="lqz_cancel">Cancel</button>
-        <button class="btn_white" id="zw_v_report_submit">Arrived</button>
-      </div>
-
+</head>
+<body>
+  <!-- nav bar -->
+  <nav class="fixed-top zzzz_navbar" id="mainNav">
+    <div>
+      <a style="position: absolute" href="../../index.html">
+        <img src="../../images/navbar.png"  style="height: 40px;">
+      </a>
     </div>
+    <div style="text-align: right" >
+      <a  href="../../index.html">
+        <i style="padding: 5px; color: white; font-size: 30px;" class="fas fa-home"></i>
+      </a>
+    </div>
+    <div id="signout" style="position: absolute; right: 50px; top: 8px">
+      <i style="padding: 5px; color: white; font-size: 30px;" class="fas fa-sign-out-alt"></i>
+    </div>
+  </nav>
 
+  <!-- page content -->
+  <div class ="container">
+    <!-- map -->
+    <div class = "title_bar requester">
+      <h1 class = "title">MAP</h1>
+    </div>
+    <div id='routeInfoPanel'></div>
+    <div id="myMap"></div>
 
-
-
-  </body>
-
-  </html>
+    <!-- buttons -->
+    <div class= "btns">
+      <button class="btn_white" id="lqz_cancel">Cancel</button>
+      <button class="btn_white" id="zw_v_report_submit">Arrived</button>
+    </div>
+  </div>
+</body>
+</html>

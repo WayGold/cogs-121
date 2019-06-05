@@ -1,44 +1,50 @@
 <!--
-  request page front end code
-  Create buttons for user input, also the description input box
--->
+File Name: r_request.html
 
+Functionalities:
+1. request page front end code
+2. Create buttons for user input, also the description input box
+-->
 </<!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-  <head>
-    <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="../../js/main.js"></script>
-    <script src="../../js/requester/r_request.js"></script>
-    <link rel="stylesheet" href="../../css/requester/r_request.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  </head>
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="../../js/main.js"></script>
+  <script src="../../js/requester/r_request.js"></script>
+  <link rel="stylesheet" href="../../css/requester/r_request.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link rel="stylesheet" href="../../css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+</head>
 
-  <body>
-    <nav class="fixed-top zzzz_navbar" id="mainNav">
-        <div>
-            <a style="position: absolute" href="../../index.html">
-                <img src="../../images/navbar.png"  style="height: 40px;">
-             </a>
-           </div>
-          <div style="text-align: right" >
-            <a  href="../../index.html">
-              <i style="padding: 5px; color: white; font-size: 30px;" class="fas fa-home"></i>
-            </a>
-        </div>
-        <div id="signout" style="position: absolute; right: 50px; top: 8px">
-          <i style="padding: 5px; color: white; font-size: 30px;" class="fas fa-sign-out-alt"></i>
-        </div>
-    </nav>
+<body>
+  <!-- nav bar -->
+  <nav class="fixed-top zzzz_navbar" id="mainNav">
+    <div>
+      <a style="position: absolute" href="../../index.html">
+        <img src="../../images/navbar.png"  style="height: 40px;">
+      </a>
+    </div>
+    <div style="text-align: right" >
+      <a  href="../../index.html">
+        <i style="padding: 5px; color: white; font-size: 30px;" class="fas fa-home"></i>
+      </a>
+    </div>
+    <div id="signout" style="position: absolute; right: 50px; top: 8px">
+      <i style="padding: 5px; color: white; font-size: 30px;" class="fas fa-sign-out-alt"></i>
+    </div>
+  </nav>
 
-    <div class="containerb">
-      <div class="title_bar">
-    <h1 class="container" id="title"> Request </h1>
-      </div>
+  <!-- page content -->
+  <div class="containerb">
+    <div class="title_bar">
+      <h1 class="container" id="title"> Request </h1>
+    </div>
+
+    <!-- request options -->
     <div class="container">
       <h2 style="font-size: 20px;"> Emergency Level </h2>
       <div class="div_button">
@@ -48,7 +54,6 @@
         <div id="zw_emergency_status"></div>
       </div>
     </div>
-
     <div class="container">
       <h2 style="font-size: 20px;"> Category </h2>
       <div class="div_button">
@@ -57,7 +62,6 @@
         <div id="zw_category_status"></div>
       </div>
     </div>
-
     <div class="container">
       <h2 style="font-size: 20px;"> Disability Type</h2>
       <div class="div_button">
@@ -66,20 +70,18 @@
         <div id="zw_disability_status"></div>
       </div>
     </div>
-
     <div class="container">
       <h2 style="font-size: 20px;"> Description</h2>
       <div class="div_button">
         <input id="zw_description" style="height: 100px; margin-bottom:6vh" type="text" size="50"/>
       </div>
     </div>
+  </div>
 
-
-    </div>
-    <div class="container" >
-      <button class="btn btn_white" id="zw_cancel">Cancel</button>
-      <button class="btn btn_white" id="zw_submit">Submit</button>
-    </div>
-
-  </body>
+  <!-- submit&cancel buttons -->
+  <div class="container" >
+    <button class="btn btn_white" id="zw_cancel">Cancel</button>
+    <button class="btn btn_white" id="zw_submit">Submit</button>
+  </div>
+</body>
 </html>

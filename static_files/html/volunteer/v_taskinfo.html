@@ -1,10 +1,10 @@
-<!-- /*
- *  File Name: v_taskinfo.html
- *
- *  Functionalities:
- *  1. Create record box for the requester.
- *  2. Create buttons for accept or cancel.
- */ -->
+<!--
+File Name: v_taskinfo.html
+
+Functionalities:
+1. Create record box for the requester.
+2. Create buttons for accept or cancel.
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,45 +22,42 @@
   <script src="../../js/volunteer/v_taskinfo.js"></script>
 </head>
 
-
 <body>
+  <!-- nav bar -->
   <nav class="fixed-top zzzz_navbar" id="mainNav">
-      <div>
-          <a style="position: absolute" href="../../index.html">
-              <img src="../../images/navbar.png"  style="height: 40px;">
-           </a>
-         </div>
-        <div style="text-align: right" >
-          <a  href="../../index.html">
-            <i style="padding: 5px; color: white; font-size: 30px;" class="fas fa-home"></i>
-          </a>
-      </div>
-      <div id="signout" style="position: absolute; right: 50px; top: 8px">
-        <i style="padding: 5px; color: white; font-size: 30px;" class="fas fa-sign-out-alt"></i>
-      </div>
+    <div>
+      <a style="position: absolute" href="../../index.html">
+        <img src="../../images/navbar.png"  style="height: 40px;">
+      </a>
+    </div>
+    <div style="text-align: right" >
+      <a  href="../../index.html">
+        <i style="padding: 5px; color: white; font-size: 30px;" class="fas fa-home"></i>
+      </a>
+    </div>
+    <div id="signout" style="position: absolute; right: 50px; top: 8px">
+      <i style="padding: 5px; color: white; font-size: 30px;" class="fas fa-sign-out-alt"></i>
+    </div>
   </nav>
 
+  <!-- page content -->
   <div class ="container">
     <div class="info">
       <div class = "title_bar">
         <h1 class="title">Information</h1>
       </div>
       <div class="list" id="single_task">
-          <!-- Records will be inserted here -->
+        <!-- Records will be appended here -->
       </div>
-
     </div>
+
+    <!-- buttons -->
     <div class="list" id="btns">
-
-    <div class= "btns">
-      <button id="zw_v_report_cancel">Cancel</button>
-      <button id="zw_v_report_submit">Accept</button>
+      <div class= "btns">
+        <button id="zw_v_report_cancel">Cancel</button>
+        <button id="zw_v_report_submit">Accept</button>
+      </div>
     </div>
-
   </div>
-
-
-
 </body>
-
 </html>

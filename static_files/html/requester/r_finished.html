@@ -1,18 +1,16 @@
 <!--
 File Name: r_finished.html
 
-Functionalities:
+Description:
 1. Rate the volunteer in five star scales, the system will record the stars the volunteer
 recieved in the database
 2. Give necessary comments about this servece
 -->
-
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <title> Finished Assignment </title>
-
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <link rel="stylesheet" href="../../css/requester/r_finished.css">
@@ -23,8 +21,9 @@ recieved in the database
 </head>
 
 <body>
+  <!-- nav bar -->
   <nav class="fixed-top zzzz_navbar" id="mainNav">
-    <div >
+    <div>
       <a style="position: absolute" href="../../index.html">
         <img src="../../images/navbar.png"  style="height: 40px;">
       </a>
@@ -38,10 +37,14 @@ recieved in the database
       <i style="padding: 5px; color: white; font-size: 30px;" class="fas fa-sign-out-alt"></i>
     </div>
   </nav>
+
+  <!-- page content -->
   <div class ="container">
     <div class="position">
       <h1 id = "title">Rate Your Service</h1>
     </div>
+
+    <!-- star rating -->
     <div class="rate">
       <input type="radio" id="star5" name="rate" value="5" />
       <label for="star5" title="text">5 stars</label>
@@ -54,28 +57,27 @@ recieved in the database
       <input type="radio" id="star1" name="rate" value="1" />
       <label for="star1" title="text">1 star</label>
     </div>
+
+    <!-- request info -->
     <div class="info">
       <div class ="icon1">
         <img src="../../images/v_icon.PNG" style="width:150px; height:150px">
       </div>
       <div id="template">
+        <!-- template will be appended here -->
       </div>
     </div>
+
+    <!-- input box and buttons -->
     <div>
       <div class="text">
-        <!-- <textarea name="comments" maxlength="500" placeholder="Your Complaints"></textarea> -->
         <input id="lqz_desc" type="text" size="50"/>
       </div>
-
       <div class= "btns">
         <button id="zw_finish_cancel">Cancel</button>
         <button id="zw_finish_submit">Submit</button>
       </div>
-
     </div>
-
-
-
-  </body>
-
-  </html>
+  </div>
+</body>
+</html>
