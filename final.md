@@ -8,7 +8,7 @@ Team Members:
                 location functionalities, maps, filter.
  Qianzi Li  --  
  Xinyi Jiao --   
- Siyu Zhou  -- 
+ Siyu Zhou  --
 
 Source Files
 ------------
@@ -93,3 +93,6 @@ rating_record.css -
 
 ## Google Slide Link
 https://docs.google.com/presentation/d/1T_9Q9mQG6tSy4qrH_YnzBw2XsaaLTXPbJbcKt2XX4Wc/edit?usp=sharing
+
+## Final Demo Video Link
+https://youtu.be/jRYZ0QMpTa4
