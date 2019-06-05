@@ -4,10 +4,10 @@ COGS 121 Team ZZZZ final deliverable
 Team Members:
 -------------
 
- Wei Zeng  
- Qianzi Li  
- Xinyi Jiao  
- Siyu Zhou
+Wei Zeng -- backend server, create sql database, requester ticket submission, location functionalities, maps, filter.
+Qianzi Li -- some server functions, request board, request filter, request records, rating records, etc.
+Xinyi Jiao --  
+Siyu Zhou -- dropdown navigation bar, background periodic refresh, responsive jump, Registration validity judgment and logout.
 
 Source Files
 ------------
@@ -82,3 +82,13 @@ v_taskinfo1.css - stylesheet for the map
 login.css - stylesheet for the login box for username and password
 main.css - stylesheet for the position and displaying the navigation bar
 rating_record.css - stylesheet for rating record
+
+Google Slide Link
+-----------------
+
+https://docs.google.com/presentation/d/1T_9Q9mQG6tSy4qrH_YnzBw2XsaaLTXPbJbcKt2XX4Wc/edit?usp=sharing
+
+Final Demo Video Link
+---------------------
+
+https://youtu.be/jRYZ0QMpTa4
