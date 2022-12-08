@@ -13,8 +13,8 @@
     "url": "git://github.com/WayGold/cogs-121.git"
   },
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.3",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
     "jquery": "^3.4.0",
     "nodemon": "^1.19.1",
     "sqlite3": "^4.0.8"
